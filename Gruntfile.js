@@ -21,14 +21,24 @@ module.exports = function(grunt) {
         options: {
           port: process.env.PORT || 3000,
           script: 'app/server/app.js',
-          background: false
+          background: true
+        }
+      }
+    },
+    watch: {
+      express: {
+        files:  [ 'app/**/*.{js,json,hbs,html}' ],
+        tasks:  [ 'express:default' ],
+        options: {
+          spawn: false // for grunt-contrib-watch v0.5.0+, "nospawn: true" for lower versions. Without this option specified express won't be reloaded
         }
       }
     }
   });
 
-  grunt.registerTask('server', ['shell:installDependencies','express']);
-  //grunt.registerTask('server', ['express']);
+  grunt.registerTask('install', ['shell:installDependencies']);
+
+  grunt.registerTask('server', ['express:default', 'watch']);
 
   // Default task(s).
   grunt.registerTask('default', ['server']);

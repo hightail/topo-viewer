@@ -1,0 +1,21 @@
+/*************************************************
+ * TopoViewerComponent Properties
+ ************************************************/
+// Default Properties for the topo-viewer component go here
+
+/*************************************************
+ * TopoViewerComponent Styles
+ ************************************************/
+$tdMaxWidth: 300px;
+
+.ht-topo-viewer {
+  table{
+    table-layout: fixed;
+  }
+
+  th, td {
+    word-wrap: break-word;
+    overflow: hidden;
+    width: $tdMaxWidth;
+  }
+}

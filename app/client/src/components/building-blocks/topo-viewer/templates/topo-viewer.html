@@ -1,0 +1,58 @@
+<div class="ht-topo-viewer">
+  <div class="page-header">
+    <h1>TOPO<small ng-click="stateMachine.next()">[[ stateMachine.current ]]</small></h1>
+  </div>
+
+  <div ht-selection-helper="envSelectionManager"
+       selection-data="envCollection"
+       selection-id-field="id">
+  </div>
+
+  <span>
+    <!--<div ng-repeat="group in groupKeys">-->
+      <!--<label>[[group]]</label><br/>-->
+      <!--<div class="btn-group">-->
+        <!--<button ng-repeat="env in envGroups[group]"-->
+                <!--type="button"-->
+                <!--class="btn btn-default"-->
+                <!--ng-class="{ 'btn-primary': envSelectionManager.isIdSelected(env) }"-->
+                <!--ng-click="envSelectionManager.toggleSelectionById(env)">[[ env ]]</button>-->
+      <!--</div>-->
+    <!--</div>-->
+    <div class="btn-toolbar" role="toolbar">
+      <div class="btn-group" ng-repeat="group in groupKeys">
+        <button ng-repeat="env in envGroups[group]"
+                type="button"
+                class="btn btn-default"
+                ng-class="{ 'btn-primary': envSelectionManager.isIdSelected(env) }"
+                ng-click="envSelectionManager.toggleSelectionById(env)">[[ env ]]</button>
+      </div>
+    </div>
+  </span>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" ng-model="showEmptyKeys">
+      Show empty keys
+    </label>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" ng-model="showExpandedValues">
+      Show expanded values
+    </label>
+  </div>
+  <table class="table table-hover">
+    <th>Key</th>
+    <th ng-repeat="env in selectedEnvs">
+      [[ env ]]
+    </th>
+    <tr ng-repeat="key in filteredKeys">
+      <td>
+        [[ key ]]
+      </td>
+      <td ng-repeat="env in selectedEnvs">
+        [[ getTopoValue(env, key) ]]
+      </td>
+    </tr>
+  </table>
+</div>

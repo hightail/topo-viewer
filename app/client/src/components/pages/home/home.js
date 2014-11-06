@@ -20,15 +20,15 @@ angular.wilson.component('home', {
   controller: ['$scope', function($scope) {
     var controller = this;
 
-    $scope.message = $scope.translate('Welcome to the homepage');
-//  controller.setState({
-//    initial: '',
-//    events: [
-//      { name: '',  from: '',  to: '' }
-//    ],
-//    timeouts: [],
-//    callbacks: {}
-//  });
+//    controller.setState({
+//      initial: 'Viewer',
+//      events: [
+//        { name: 'next',  from: 'Viewer',  to: 'Editor' },
+//        { name: 'next',  from: 'Editor',  to: 'Viewer' }
+//      ],
+//      timeouts: [],
+//      callbacks: {}
+//    });
   }]
   
 });

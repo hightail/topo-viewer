@@ -1,6 +1,7 @@
 <html id="ng-app" ng-app="myApp">
   <head>
-    <script type="stylesheet" src="/client/appearence/{{wilsonConfig.tags.brand}}/my.css"></script>
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{wilsonConfig.client.app.mountpath}}/{{wilsonConfig.client.app.version}}/wilson.min.css">
 
     <!-- Wilson -->
     <script type="text/javascript" src="/client/bower_components/jquery/dist/jquery.js"></script>
@@ -23,10 +24,10 @@
     <!--<script type="text/javascript" src="/client/src/behaviors/event-bus/event-bus.js"></script>-->
 
     <!-- My App -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/client/app.js"></script>
   </head>
   <body>
-    <span>{{__ 'Hola'}}</span>
     <div ng-view></div>
   </body>
 </html>
