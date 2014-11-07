@@ -36,6 +36,14 @@ angular.wilson.service('TopoModel', function() {
     this.topos = topos;
   }
 
+  /**
+   * Returns the TOPO value for @env and @key
+   *
+   * @param env
+   * @param key
+   * @param showDefault   If true values will fallback to 'default' env if there is no value for @key in @env
+   * @returns {*}
+   */
   TopoModel.prototype.getValue = function(env, key, showDefault) {
     var value = this.topos[env][key];
 
@@ -46,6 +54,14 @@ angular.wilson.service('TopoModel', function() {
     return value;
   };
 
+  /**
+   * Returns the exapanded TOPO value for @env and @key
+   *
+   * @param env
+   * @param key
+   * @param showDefault   If true values will fallback to 'default' env if there is no value for @key in @env
+   * @returns {*}
+   */
   TopoModel.prototype.getExpandedValue = _.memoize(function(env, key, showDefault) {
     var _self = this;
     var value = this.getValue(env, key, showDefault);
@@ -54,7 +70,7 @@ angular.wilson.service('TopoModel', function() {
       var topoVars = getTopoVariables(value);
       var varDictionary = {};
       _.each(topoVars, function(topoVar) {
-        var topoValue = _self.getValue(env, topoVar, showDefault);
+        var topoValue = _self.getExpandedValue(env, topoVar, true);
         if(_.isUndefined(topoValue)) {
           topoValue = topoVar;
         }
