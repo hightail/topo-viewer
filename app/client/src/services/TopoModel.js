@@ -15,6 +15,17 @@
 angular.wilson.service('TopoModel', function() {
   var TOPO_VAR_REGEX = /\$\{(\w+)\}/g;
 
+  var ENV_GROUP_LOCATORS = {
+    'global': 'global',
+    'default': 'default',
+    'ITX': /^it.?/i,
+    'SQX': /^sq.?/i,
+    'ODP': /^odp.?/i,
+    'SJCPRD': /^sjcprd((?!wrk).)*$/i,
+    'SJCPRDWRK': /^sjcprdwrk/i,
+    'misc': ''
+  };
+
   /**
    * Returns and array of the TOPO vars in the topoValue
    *
@@ -111,6 +122,43 @@ angular.wilson.service('TopoModel', function() {
 
     return topoKeys;
   };
+
+  TopoModel.prototype.getGroupNames = function() {
+    return _.keys(ENV_GROUP_LOCATORS);
+  }
+
+  TopoModel.prototype.getGroupDicitonary = function() {
+    var grouppedEnvs = [];
+    var groups = {};
+    var envs = this.getAllEnvironments();
+
+    _.each(ENV_GROUP_LOCATORS, function (locator, key) {
+      groups[key] = _.filter(envs, function (env) {
+        var match = false;
+        if (_.isString(locator)) {
+          match = (locator === env);
+        } else {
+          //console.log(typeof locator);
+          //regex
+          match = locator.test(env);
+        }
+
+        if (match) {
+          grouppedEnvs.push(env);
+        }
+
+        return match;
+      });
+    });
+
+    grouppedEnvs = _.uniq(grouppedEnvs);
+
+    groups['misc'] = _.difference(envs, grouppedEnvs);
+
+    return groups;
+  };
+
+
 
   return TopoModel;
 });

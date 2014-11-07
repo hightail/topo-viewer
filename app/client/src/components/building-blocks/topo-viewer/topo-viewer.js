@@ -45,45 +45,8 @@ angular.wilson.component('topo-viewer', {
         //$scope.environments = ['default', 'sbx', 'ita', 'partners'];
 
         $scope.topoKeys = topoModel.getAllKeys();
-
-        var envGroupsLocators = {
-          'global': 'global',
-          'default': 'default',
-          'ITX': /^it.?/i,
-          'SQX': /^sq.?/i,
-          'ODP': /^odp.?/i,
-          'SJCPRD': /^sjcprd/i,
-          'misc': ''
-        };
-
-        var grouppedEnvs = [];
-        $scope.groupKeys = _.keys(envGroupsLocators);
-        $scope.envGroups = {};
-
-        _.each(envGroupsLocators, function (locator, key) {
-          $scope.envGroups[key] = _.filter($scope.allEnvironments, function (env) {
-            var match = false;
-            if (_.isString(locator)) {
-              match = (locator === env);
-            } else {
-              //console.log(typeof locator);
-              //regex
-              match = locator.test(env);
-            }
-
-            if (match) {
-              grouppedEnvs.push(env);
-            }
-
-            return match;
-          });
-        });
-
-        grouppedEnvs = _.uniq(grouppedEnvs);
-
-        $scope.envGroups['misc'] = _.difference($scope.allEnvironments, grouppedEnvs);
-
-        //console.log($scope.envGroups);
+        $scope.groupKeys = topoModel.getGroupNames();
+        $scope.envGroups = topoModel.getGroupDicitonary();
 
         $scope.envSelectionManager.setDataCollection($scope.envCollection);
         _.each($scope.selectedEnvs, function (env) {
