@@ -17,7 +17,7 @@
 
 angular.wilson.component('topo-viewer', {
 
-  controller: ['$scope', 'TopoService', 'TopoModel', function($scope, TopoService, TopoModel) {
+  controller: ['$scope', 'TopoModel', function($scope, TopoModel) {
     var controller = this;
 
     controller.watchAndPersist('selectedEnvs', []);
@@ -28,15 +28,16 @@ angular.wilson.component('topo-viewer', {
 
     var topoModel;
 
-    TopoService.getTopos().then(
-      function(topos) {
-        $scope.topos = topos;
+    $scope.$watch('topos', function(topos) {
+      if (!_.isEmpty(topos)) {
+        console.log('topos', topos);
+
         topoModel = new TopoModel(topos);
 
         $scope.allEnvironments = topoModel.getAllEnvironments();
 
         $scope.envCollection = [];
-        _.each($scope.allEnvironments, function(env) {
+        _.each($scope.allEnvironments, function (env) {
           $scope.envCollection.push({
             id: env
           });
@@ -59,8 +60,8 @@ angular.wilson.component('topo-viewer', {
         $scope.groupKeys = _.keys(envGroupsLocators);
         $scope.envGroups = {};
 
-        _.each(envGroupsLocators, function(locator, key) {
-          $scope.envGroups[key] = _.filter($scope.allEnvironments, function(env) {
+        _.each(envGroupsLocators, function (locator, key) {
+          $scope.envGroups[key] = _.filter($scope.allEnvironments, function (env) {
             var match = false;
             if (_.isString(locator)) {
               match = (locator === env);
@@ -85,14 +86,11 @@ angular.wilson.component('topo-viewer', {
         //console.log($scope.envGroups);
 
         $scope.envSelectionManager.setDataCollection($scope.envCollection);
-        _.each($scope.selectedEnvs, function(env) {
+        _.each($scope.selectedEnvs, function (env) {
           $scope.envSelectionManager.selectById(env);
         });
-      },
-      function(error) {
-        console.log(error);
       }
-    );
+    });
 
     $scope.getTopoValue = function(env, key) {
       if ($scope.showExpandedValues) {

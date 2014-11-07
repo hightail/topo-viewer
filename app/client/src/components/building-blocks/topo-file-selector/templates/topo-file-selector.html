@@ -1,0 +1,37 @@
+<div class="ht-topo-file-selector">
+  <!--BRANCH-->
+  <span>
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="branchDropDown" data-toggle="dropdown">
+        Branch
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="branchDropDown">
+        <li ng-repeat="branch in branches"
+            role="presentation"
+            ng-click="selectBranch(branch)">
+          <a role="menuitem" tabindex="-1" href="#">[[branch]]</a>
+        </li>
+      </ul>
+    </div>
+    [[selectedBranch]]
+  </span>
+
+  <!-- FILE NAME-->
+  <span>
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="fileNameDropDown" data-toggle="dropdown">
+        TOPO file
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="fileNameDropDown">
+        <li ng-repeat="fileName in fileNames"
+            role="presentation"
+            ng-click="selectFileName(fileName)">
+          <a role="menuitem" tabindex="-1" href="#">[[fileName]]</a>
+        </li>
+      </ul>
+    </div>
+    [[selectedFileName]]
+  </span>
+</div>

@@ -8,6 +8,8 @@
        selection-id-field="id">
   </div>
 
+  <ht-topo-file-selector topos="topos"></ht-topo-file-selector>
+
   <ht-environment-nav groups="envGroups"
                       group-names="groupKeys"
                       selection-manager="envSelectionManager">
@@ -32,7 +34,8 @@
       Show expanded values
     </label>
   </div>
-  <table class="table table-hover">
+
+  <table ng-if="topos" class="table table-hover">
     <th>Key</th>
     <th ng-repeat="env in selectedEnvs">
       [[ env ]]
