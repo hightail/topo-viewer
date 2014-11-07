@@ -8,27 +8,12 @@
        selection-id-field="id">
   </div>
 
-  <span>
-    <!--<div ng-repeat="group in groupKeys">-->
-      <!--<label>[[group]]</label><br/>-->
-      <!--<div class="btn-group">-->
-        <!--<button ng-repeat="env in envGroups[group]"-->
-                <!--type="button"-->
-                <!--class="btn btn-default"-->
-                <!--ng-class="{ 'btn-primary': envSelectionManager.isIdSelected(env) }"-->
-                <!--ng-click="envSelectionManager.toggleSelectionById(env)">[[ env ]]</button>-->
-      <!--</div>-->
-    <!--</div>-->
-    <div class="btn-toolbar" role="toolbar">
-      <div class="btn-group" ng-repeat="group in groupKeys">
-        <button ng-repeat="env in envGroups[group]"
-                type="button"
-                class="btn btn-default"
-                ng-class="{ 'btn-primary': envSelectionManager.isIdSelected(env) }"
-                ng-click="envSelectionManager.toggleSelectionById(env)">[[ env ]]</button>
-      </div>
-    </div>
-  </span>
+  <ht-environment-nav groups="envGroups"
+                      group-names="groupKeys"
+                      selection-manager="envSelectionManager">
+  </ht-environment-nav>
+
+
   <div class="checkbox">
     <label>
       <input type="checkbox" ng-model="showEmptyKeys">
