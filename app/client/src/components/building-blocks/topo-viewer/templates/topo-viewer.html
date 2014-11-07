@@ -37,6 +37,12 @@
   </div>
   <div class="checkbox">
     <label>
+      <input type="checkbox" ng-model="showDefaultValues">
+      Show default values
+    </label>
+  </div>
+  <div class="checkbox">
+    <label>
       <input type="checkbox" ng-model="showExpandedValues">
       Show expanded values
     </label>
@@ -50,7 +56,7 @@
       <td>
         [[ key ]]
       </td>
-      <td ng-repeat="env in selectedEnvs">
+      <td ng-repeat="env in selectedEnvs" ng-class="{ 'default-value': isDefaultValue(env, key) }">
         [[ getTopoValue(env, key) ]]
       </td>
     </tr>

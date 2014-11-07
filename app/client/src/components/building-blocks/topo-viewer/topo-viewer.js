@@ -22,6 +22,7 @@ angular.wilson.component('topo-viewer', {
 
     controller.watchAndPersist('selectedEnvs', []);
     controller.watchAndPersist('showEmptyKeys', false);
+    controller.watchAndPersist('showDefaultValues', false);
     controller.watchAndPersist('showExpandedValues', false);
     controller.watchAndPersist('filteredKeys', []);
 
@@ -94,7 +95,15 @@ angular.wilson.component('topo-viewer', {
     );
 
     $scope.getTopoValue = function(env, key) {
-      return topoModel.getTopoValue(env, key, $scope.showExpandedValues);
+      if ($scope.showExpandedValues) {
+        return topoModel.getExpandedValue(env, key, $scope.showDefaultValues);
+      } else {
+        return topoModel.getValue(env, key, $scope.showDefaultValues);
+      }
+    };
+
+    $scope.isDefaultValue = function(env, key) {
+      return topoModel.isDefaultValue(env, key);
     };
 
     controller.setState({

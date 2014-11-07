@@ -17,5 +17,9 @@ $tdMaxWidth: 300px;
     word-wrap: break-word;
     overflow: hidden;
     width: $tdMaxWidth;
+
+    &.default-value {
+      color: blue;
+    }
   }
 }
