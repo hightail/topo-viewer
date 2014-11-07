@@ -25,7 +25,9 @@ var wilson = Wilson(app, wilsonConfigJson);
 app.use(wilson.config.client.app.mountpath, wilson.router);
 
 //Load topos
-var toposPath = path.join(wilson.config.server.projectPaths.root, '/server/topos/environment-sbx.topo');
+var TOPO_NAME = 'environment-sbx';
+//var TOPO_NAME = 'environment-ita-11-6-14';
+var toposPath = path.join(wilson.config.server.projectPaths.root, '/server/topos/' + TOPO_NAME +'.topo');
 var toposStr = fs.readFileSync(toposPath, 'utf8');
 var topoJson = TopoParser.topo2Json(toposStr);
 

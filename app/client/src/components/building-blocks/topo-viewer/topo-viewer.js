@@ -17,7 +17,7 @@
 
 angular.wilson.component('topo-viewer', {
 
-  controller: ['$scope', 'TopoService', function($scope, TopoService) {
+  controller: ['$scope', 'TopoService', 'TopoModel', function($scope, TopoService, TopoModel) {
     var controller = this;
 
     controller.watchAndPersist('selectedEnvs', []);
@@ -25,11 +25,15 @@ angular.wilson.component('topo-viewer', {
     controller.watchAndPersist('showExpandedValues', false);
     controller.watchAndPersist('filteredKeys', []);
 
+    var topoModel;
+
     TopoService.getTopos().then(
       function(topos) {
         $scope.topos = topos;
+        topoModel = new TopoModel(topos);
 
-        $scope.allEnvironments = _.keys(topos);
+        $scope.allEnvironments = topoModel.getAllEnvironments();
+
         $scope.envCollection = [];
         _.each($scope.allEnvironments, function(env) {
           $scope.envCollection.push({
@@ -38,13 +42,7 @@ angular.wilson.component('topo-viewer', {
         });
         //$scope.environments = ['default', 'sbx', 'ita', 'partners'];
 
-        var topoKeys = [];
-
-        _.each($scope.allEnvironments, function(env) {
-          topoKeys = _.union(topoKeys, _.keys(topos[env]));
-        });
-
-        $scope.topoKeys = topoKeys;
+        $scope.topoKeys = topoModel.getAllKeys();
 
         var envGroupsLocators = {
           'global': 'global',
@@ -96,13 +94,7 @@ angular.wilson.component('topo-viewer', {
     );
 
     $scope.getTopoValue = function(env, key) {
-      var value = $scope.topos[env][key];
-
-      if ($scope.showExpandedValues) {
-        value = TopoService.getExpandedValue(env, key, $scope.topos);
-      }
-
-      return value;
+      return topoModel.getTopoValue(env, key, $scope.showExpandedValues);
     };
 
     controller.setState({

@@ -12,44 +12,7 @@
  */
 'use strict';
 
-angular.wilson.service('TopoService', ['$http', '$q', function($http, $q) {
-    function topo2Json(topoStr) {
-      var env = "global";
-      var topoObject = {
-        "global": {}
-      };
-
-      var lines = topoStr.split('\n');
-
-      _.each(lines, function(line) {
-        //get rid of whitesapce
-        line = line.replace(/\s/g,'');
-
-        if (line === '' || _.str.startsWith(line, '#')) {
-          //blank or comment, ignore
-        } else if (_.str.startsWith(line, '[')) {
-          //[default] or [[env]]
-          env = line.replace(/[\[\]]/g, '');
-
-          if(topoObject[env]) {
-            console.log('WARNING: Same')
-          } else {
-            topoObject[env] = {};
-          }
-        } else if (_.str.contains(line, '=')) {
-          var keyPair = line.split('=');
-          var key = keyPair[0];
-          var value = keyPair[1];
-
-          topoObject[env][key] = value;
-        } else {
-          console.log('Unhandled line: ', line);
-        }
-      });
-
-      return topoObject;
-    }
-
+angular.wilson.service('TopoService', ['$http', '$q', 'TopoParser', function($http, $q, TopoParser) {
     function loadTopos(path) {
       return $http.get(path).then(
         function(res){
@@ -68,36 +31,30 @@ angular.wilson.service('TopoService', ['$http', '$q', function($http, $q) {
         dataType: "jsonp",
         success: function (data) {
           console.log(data)
-          deferred.resolve(topo2Json(data));
+          deferred.resolve(TopoParser.topo2Json(data));
         }
       });
-
-//      return loadTopos(topoPath).then(
-//        function(topoStr) {
-//          return topo2Json(topoStr);
-//        }
-//      )
 
       return deferred.promise;
     }
 
-    function getExpandedValue(env, key, topos) {
-      var value = topos[env][key];
-
-
-      var topoValues = _.merge({}, topos['default'], topos[env]);
-
-      while(value && value.indexOf('${') >= 0) {
-        //console.log('topoValues', topoValues);
-        //console.log('value', value);
-        value = _.template(value, topoValues, {
-          evaluate: /\$\{(.+?)\}/g
-        });
-        //console.log('new', value);
-      }
-
-      return value;
-    }
+//    function getExpandedValue(env, key, topos) {
+//      var value = topos[env][key];
+//
+//
+//      var topoValues = _.merge({}, topos['default'], topos[env]);
+//
+//      while(value && value.indexOf('${') >= 0) {
+//        //console.log('topoValues', topoValues);
+//        console.log('value', value);
+//        value = _.template(value, topoValues, {
+//          evaluate: /\$\{(.+?)\}/g
+//        });
+//        //console.log('new', value);
+//      }
+//
+//      return value;
+//    }
 
     // Service Object
     var service = {
@@ -105,8 +62,8 @@ angular.wilson.service('TopoService', ['$http', '$q', function($http, $q) {
         return loadTopos('/topo');
         //return loadTopos('/topo/environment/ccb5a8aefee5f18c16c376519a0cc7cd6d7c4201');
         //return loadToposFromGitHub('environment', 'ccb5a8aefee5f18c16c376519a0cc7cd6d7c4201');
-      },
-      getExpandedValue: getExpandedValue
+      }
+      //getExpandedValue: getExpandedValue
     };
 
     return service;

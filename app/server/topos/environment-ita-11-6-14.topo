@@ -1,0 +1,2726 @@
+[default]
+  # These variables are common to all internal deployments
+  #DELETE_IPS			= 10.10.255.255/16
+  #SERVER_STATUS_IPS             = 10.10.255.255/16
+
+#    BRAND_VERSION = yousendit 
+    BRAND_VERSION = hightail 
+
+    EXTERNAL_DOMAIN		= ${BRAND_VERSION}.com
+    EXTERNAL_WEB_FQDN		= www.${EXTERNAL_DOMAIN}
+    EXTERNAL_WEB_BASE_URL	= http://${EXTERNAL_WEB_FQDN}
+    EXTERNAL_WEB_BASE_URL_SSL	= https://${EXTERNAL_WEB_FQDN}
+    HT_EXTERNAL_WEB_BASE_URL	    = https://${ENV_HTL_BASE_FQDN}
+    WD_EXTERNAL_WEB_BASE_URL	    = ${WD_BASE_URL}
+
+    KASPERSKY_EXTERNAL_BASE_URL	    = https://beta.ucp.kaspersky-labs.com
+    KASPERSKY_EXTERNAL_WEB_BASE_URL = ${KASPERSKY_EXTERNAL_BASE_URL}/MyFiles
+    KASPERSKY_UPGRADE_URL	    = ${KASPERSKY_EXTERNAL_BASE_URL}/dr/Store/ProductDetails/14
+    KASPERSKY_SESSION_PING_URL	    = ${KASPERSKY_EXTERNAL_BASE_URL}/UserSessionManagement/renewSession
+
+    EMAIL_BASE_FQDN		= ${EXTERNAL_WEB_FQDN}
+
+  ##########YSI_VERSION		=    ### This needs populating at build time!
+
+  HTL_SERVER_NAME		= hightail.com
+  YSI_SERVER_NAME		= yousendit.com
+  YSI_DOMAIN			= yousendit.com
+  HTL_DOMAIN			= hightail.com
+  ENV_SUFFIX			= ${YSI_SERVER_NAME}
+  COOKIE_DOMAIN                 = .${HTL_DOMAIN}
+
+  AMD_PREFIX			= ${ENV_PREFIX}-amd
+
+  ENV_BASE_FQDN                 = ${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_HTL_BASE_FQDN             = www.${ENV_PREFIX}.${HTL_DOMAIN}
+  ENV_BASE_URL                  = http://${ENV_BASE_FQDN}
+  ENV_BASE_URL_SSL              = https://${ENV_BASE_FQDN}
+  ENV_CDN_FQDN                  = ${ENV_BASE_FQDN}
+  ENV_CDN_SSL_FQDN              = ${ENV_BASE_FQDN}
+  HTL_ENV_CDN_FQDN              = ${ENV_HTL_BASE_FQDN}
+  HTL_ENV_CDN_SSL_FQDN          = ${ENV_HTL_BASE_FQDN}
+  HTL_DROPBOX_FQDN	        = ${DROPBOX_FQDN_PREFIX}.${HTL_DOMAIN}
+  HTL_WEB_APP_FQDN		= ${WEB_APP_FQDN_PREFIX}.${HTL_DOMAIN}
+
+    HTL_FACEBOOK_CONSUMER_KEY	    = 296658507135704
+    HTL_FACEBOOK_CONSUMER_SECRET    = 202c6b19d3a3d5767fde5ece9c238965
+    HTL_YAHOO_OAUTH_DOMAIN	    = https://www.hightail.com/socialOpenidConnectLogin
+    HTL_YAHOO_CONSUMER_KEY	    = dj0yJmk9VDhWS2lqWlNTNjB2JmQ9WVdrOVJreHVPSFZ3TkhVbWNHbzlORFEwTkRFek9UWXkmcz1jb25zdW1lcnNlY3JldCZ4PWYw
+    HTL_YAHOO_CONSUMER_SECRET	    = 99e9bc9a96921201f07f5613552ea7834aec7aea
+    HTL_YAHOO_OAUTH_APP_ID	    = FLn8up4u
+
+  ACT_SVC_FQDN		     	= ${ACT_SVC_FQDN_PREFIX}.${ENV_SUFFIX}
+  ADP_SVC_FQDN		     	= ${ADP_SVC_FQDN_PREFIX}.${ENV_SUFFIX}
+  AMQ_APP_FQDN		     	= ${AMQ_APP_FQDN_PREFIX}.${ENV_SUFFIX}
+  API_SVC_FQDN			= ${API_SVC_FQDN_PREFIX}.${ENV_SUFFIX}
+  AUT_SVC_FQDN			= ${AUT_SVC_FQDN_PREFIX}.${ENV_SUFFIX}
+  BLG_SVC_FQDN			= ${BLG_SVC_FQDN_PREFIX}.${ENV_SUFFIX}	
+  BKR_SVC_FQDN			= ${BKR_SVC_FQDN_PREFIX}.${ENV_SUFFIX}
+  CCH_APP_FQDN			= ${CCH_APP_FQDN_PREFIX}.${ENV_SUFFIX}
+  CNT_APP_FQDN			= ${WEB_APP_FQDN}
+  DBM_V2_FQDN			= ${DBM_V2_FQDN_PREFIX}.${ENV_SUFFIX}
+  DBS_V2_FQDN			= ${DBS_V2_FQDN_PREFIX}.${ENV_SUFFIX}  
+  DBM_V3_FQDN			= ${DBM_V3_FQDN_PREFIX}.${ENV_SUFFIX}
+  DBS_V3_FQDN			= ${DBS_V3_FQDN_PREFIX}.${ENV_SUFFIX}
+  DEVAPI_SVC_FQDN		= ${DEVAPI_SVC_FQDN_PREFIX}.${ENV_SUFFIX}
+  DL_FAIL_FQDN		    	= ${WEB_APP_FQDN}
+  DOWNLOAD_FQDN			= ${DOWNLOAD_FQDN_PREFIX}.${ENV_PREFIX}
+  DROPBOX_FQDN	                = ${DROPBOX_FQDN_PREFIX}.${ENV_SUFFIX}
+  DPI_SVC_FQDN                  = ${DPI_SVC_FQDN_PREFIX}.${ENV_SUFFIX}
+  ESIGN_SVC_FQDN		= ${ESIGN_SVC_FQDN_PREFIX}.${ENV_SUFFIX}
+  EVT_SVC_FQDN			= ${EVT_SVC_FQDN_PREFIX}.${ENV_SUFFIX}
+  GRP_SVC_FQDN			= ${GRP_SVC_FQDN_PREFIX}.${ENV_SUFFIX}
+  JWS_SVC_FQDN			= ${JWS_SVC_FQDN_PREFIX}.${ENV_SUFFIX}
+  NGW_SVC_FQDN			= ${NGW_SVC_FQDN_PREFIX}.${ENV_SUFFIX}
+  PAY_PAL_FQDN			= www.sandbox.paypal.com
+  PBK_APP_FQDN            	= ${PBK_APP_FQDN_PREFIX}.${ENV_SUFFIX}
+  PEN_SVC_FQDN			= ${PEN_SVC_FQDN_PREFIX}.${ENV_SUFFIX}
+  PHI_APP_FQDN			= ${PHI_APP_FQDN_PREFIX}.${ENV_SUFFIX}
+  PRA_SVC_FQDN			= ${PRA_SVC_FQDN_PREFIX}.${ENV_SUFFIX}
+  RBL_SVC_FQDN	            	= ${RBL_SVC_FQDN_PREFIX}.${ENV_SUFFIX}
+  SKU_SVC_FQDN			= ${SKU_SVC_FQDN_PREFIX}.${ENV_SUFFIX}
+  SMQ_MST_FQDN			= ${SMQ_MST_FQDN_PREFIX}.${ENV_SUFFIX}
+  SMQ_SLV_FQDN			= ${SMQ_SLV_FQDN_PREFIX}.${ENV_SUFFIX}
+  STATIC_FQDN                   = ${STATIC_FQDN_PREFIX}.${ENV_SUFFIX}
+  STATSD_FQDN		        = 127.0.0.1
+  TPL_SVC_FQDN			= ${TPL_SVC_FQDN_PREFIX}.${ENV_SUFFIX}
+  USR_SVC_FQDN			= ${USR_SVC_FQDN_PREFIX}.${ENV_SUFFIX}
+    CMS_APP_FQDN                = ${CMS_APP_FQDN_PREFIX}.${ENV_SUFFIX}
+    TAU_APP_FQDN		= ${ENV_PREFIX}-app.${ENV_SUFFIX}
+    WEB_TAU_URL			= ${TAU_APP_FQDN}
+
+    TPI_SVC_FQDN		= ${ENV_PREFIX}-tpi.${ENV_SUFFIX}
+    TPI_SVC_ENDP		= http://${TPI_SVC_FQDN}
+
+    HT_TAU_APP_FQDN		= app.${ENV_PREFIX}.${HTL_DOMAIN}
+    HT_TPI_SVC_FQDN		= tpi.${ENV_PREFIX}.${HTL_DOMAIN}
+
+    SMQ_REPORTING_MST_FQDN      = ${SMQ_MST_FQDN}
+    SMQ_REPORTING_SLV_FQDN      = ${SMQ_SLV_FQDN}
+    SMQ_REPORTING_PROVIDER_URL  = ${SMQ_PROVIDER_URL}
+
+    # we need follow this model from now on, instead of having fqdn.prefix for every env:
+    CMS_APP_FQDN_PREFIX         = ${ENV_PREFIX}-web
+
+    LITHIUM_KEY = FE032D4133C7699151F7228EE596B70521B9A7D5CE545CBF2A14C9DC3D5EDE47
+    LITHIUM_URL = stage-lithium.yousendit.com 
+    LITHIUM_URL_HTL = learn.stg.hightail.com 
+
+##  vindicia fqdn
+  VND_ACCT_SVC_FQDN             = ${VND_ACCT_SVC_FQDN_PREFIX}.${ENV_SUFFIX}
+  VND_ENTL_SVC_FQDN             = ${VND_ENTL_SVC_FQDN_PREFIX}.${ENV_SUFFIX}
+  VND_PROD_SVC_FQDN             = ${VND_PROD_SVC_FQDN_PREFIX}.${ENV_SUFFIX}
+  VND_BILL_SVC_FQDN             = ${VND_BILL_SVC_FQDN_PREFIX}.${ENV_SUFFIX}
+  VND_USRP_SVC_FQDN             = ${VND_USRP_SVC_FQDN_PREFIX}.${ENV_SUFFIX}
+  VND_SCHL_SVC_FQDN             = ${VND_SCHL_SVC_FQDN_PREFIX}.${ENV_SUFFIX}
+  WRK_SVC_FQDN			= ${WRK_SVC_FQDN_PREFIX}.${ENV_SUFFIX}
+  WEB_APP_FQDN			= ${WEB_APP_FQDN_PREFIX}.${ENV_SUFFIX}
+  XMPP_MST_FQDN			= ${XMPP_MST_FQDN_PREFIX}.${ENV_SUFFIX}
+  XMPP_SLV_FQDN			= ${XMPP_SLV_FQDN_PREFIX}.${ENV_SUFFIX}
+  YPI_SVC_FQDN                  = ${YPI_SVC_FQDN_PREFIX}.${ENV_SUFFIX}
+
+  # for testing purposes on rebranding
+  WEB_HTL_PARTNER_FQDN		= partners.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DROPBOX_FQDN		= dropbox.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DOWNLOAD_FQDN		= download.${ENV_PREFIX}.hightail.com
+  ##### Note:  web download endpoints must have trailing "/"
+  WEB_HTL_DOWNLOAD_ENDP		= http://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_DOWNLOAD_SSL_ENDP	= https://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_IMAGE_FQDN		= images.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_FQDN		= files.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_ENDP		= http://${WEB_HTL_FILE_FQDN}/
+  WEB_HTL_RCPT_FQDN		= rcpt.${ENV_PREFIX}.hightail.com
+
+  # for testing purposes on rebranding
+  WEB_YSI_PARTNER_FQDN		= ${ENV_PREFIX}-partners.yousendit.com
+  WEB_YSI_DROPBOX_FQDN		= ${ENV_PREFIX}-dropbox.yousendit.com
+  WEB_YSI_DOWNLOAD_FQDN		= ${ENV_PREFIX}-download.yousendit.com
+  ##### Note:  web download endpoints must have trailing "/"
+  WEB_YSI_DOWNLOAD_ENDP		= http://${WEB_YSI_DOWNLOAD_FQDN}/
+  WEB_YSI_DOWNLOAD_SSL_ENDP	= https://${WEB_YSI_DOWNLOAD_FQDN}/
+  WEB_YSI_IMAGE_FQDN		= ${ENV_PREFIX}-images.yousendit.com
+  WEB_YSI_FILE_FQDN		= ${ENV_PREFIX}-files.yousendit.com
+  WEB_YSI_FILE_ENDP		= http://${WEB_YSI_FILE_FQDN}/
+  WEB_YSI_RCPT_FQDN		= ${ENV_PREFIX}-rcpt.yousendit.com
+
+  WEB_PARTNER_FQDN		= ${ENV_PREFIX}-partners.${ENV_SUFFIX}
+  WEB_DROPBOX_FQDN		= ${ENV_PREFIX}-dropbox.${ENV_SUFFIX}
+  WEB_DOWNLOAD_FQDN		= ${ENV_PREFIX}-download.${ENV_SUFFIX}
+  ##### Note:  web download endpoints must have trailing "/"
+  WEB_DOWNLOAD_ENDP		= http://${WEB_DOWNLOAD_FQDN}/
+  WEB_DOWNLOAD_SSL_ENDP		= https://${WEB_DOWNLOAD_FQDN}/
+  WEB_IMAGE_FQDN		= ${ENV_PREFIX}-images.${ENV_SUFFIX}
+  WEB_FILE_FQDN			= ${ENV_PREFIX}-files.${ENV_SUFFIX}
+  WEB_FILE_ENDP			= http://${WEB_FILE_FQDN}/
+  WEB_RCPT_FQDN			= ${ENV_PREFIX}-rcpt.${ENV_SUFFIX}
+
+  DBM_V2_USERNAME               = ysi
+  DBM_V2_PASSWORD               = ysi
+  DBM_V3_USERNAME               = ysi
+  DBM_V3_PASSWORD               = ysi
+
+  XMPP_USERNAME			= broker01
+  XMPP_PASSWORD			= password01
+
+  AUTH2_PORT			= 8080
+
+  AUTH_PORT			= 8040
+  AUTHW_PORT			= 8042
+  BILLING_PORT			= 8080
+  CCH_APP_PORT			= 11211
+  ENCRYPTION_PORT		= 8490
+  ESIGN_PORT			= 80
+  EVENTW_PORT			= 8071
+  FILEPROCESSAGENT_PORT		= ${PRA_PORT}
+  FILEPROCESSAGENTW_PORT	= ${PRAW_PORT}
+  JWS_PORT			= 8080
+  NGW_PORT			= 8021
+  NOTIFY_PORT			= 8020
+  NOTIFYW_PORT			= 8021
+  OAUTHW_PORT			= 8041
+  POLICY_PORT			= 8050
+  POLICYW_PORT			= 8051
+  PRA_PORT			= 9030
+  PRAW_PORT			= 9031
+  PREVIEW_PORT                  = 8080
+  RBL_PORT			= 8090
+  RBLW_PORT			= 8091
+  SHUTDOWN_PORT			= 8083
+  SKU_PORT			= 8010
+  SKUW_PORT			= 8011
+  SMQ_MST_PORT			= 19801
+  SMQ_SLV_PORT			= 19901
+  STATSD_PORT  			= 66666
+  STORAGE_PORT			= 9020
+  STORAGEW_PORT			= 9021
+  TEMPLATE_PORT			= 8030
+  TEMPLATEW_PORT		= 8031
+  USER_PORT			= 8080
+  USERW_PORT			= 8081
+##  vindicia ports
+  VND_ACCOUNT_PORT              = 8101
+  VND_BILLING_PORT              = 8111
+  VND_ENTITLEMENT_PORT          = 8121
+  VND_PRODUCT_PORT              = 8131
+  VND_SCHEDULING_PORT            = 8141
+  VND_USERPROVISIONING_PORT      = 8151
+  WORKSPACE_PORT		= 8060
+  WORKSPACEW_PORT		= 8061
+  YSIQ_PORT               	= 8161
+
+    CMS_PUB_RECEIVER_PORT       = 9191
+    CMS_TOMCAT_PORT             = 8080
+    CMS_HTTPD_PORT              = 8140
+    CMS_AJP_PORT                = 8009
+    CMS_AJP_REDIRECT_PORT       = 8443
+
+    AUTH2_ENDP			= http://auth01.${ENV_PREFIX}.${HTL_DOMAIN}/auth2
+
+  ACCOUNT_V4_ENDP  		= ${VND_ACCT_APP}
+  API_SVC_ENDP                  = http://${API_SVC_FQDN}
+  AUTH_V4_ENDP                  = ${VND_USRPW_APP}/soap/Auth
+#  AUTH_V4_ENDP                  = http://${VND_USRP_SVC_FQDN}:${VND_USERPROVISIONING_PORT}/userprovisioning-service/soap/Auth
+  AUTH_ENDP                     = http://${AUT_SVC_FQDN}:${AUTH_PORT}/auth/Auth
+  AUTHW_ENDP                    = http://${AUT_SVC_FQDN}:${AUTHW_PORT}/authw/AuthW
+  BRANDING_ENDP                 = http://${USR_SVC_FQDN}:${USER_PORT}/user/Branding
+  BRANDINGW_ENDP                = http://${USR_SVC_FQDN}:${USERW_PORT}/userw/BrandingW
+  DEVAPI_ENDP			= https://${DEVAPI_SVC_FQDN}
+  DEVAPI_VIP_ENDP		= ${DEVAPI_ENDP}
+  DPI_ENDP                      = https://${DPI_SVC_FQDN}
+  ENCRYPTION_ENDP               = https://${RBL_SVC_FQDN}:${ENCRYPTION_PORT}/rbl/YsiEncryption
+  ENTITLEMENT_V4_ENDP           = ${VND_ENTL_APP}
+  ERROR_ENDP                    = http://${RBL_SVC_FQDN}:${RBL_PORT}/rbl/Error
+  ERRORW_ENDP                   = http://${RBL_SVC_FQDN}:${RBLW_PORT}/rblw/ErrorW
+#esas endpoint requires trailing /
+  ESIGN_ENDP                    = http://${ESIGN_SVC_FQDN}:${ESIGN_PORT}/esas/
+  EVENTW_ENDP		 	= http://${EVT_SVC_FQDN}:${EVENTW_PORT}/eventw/EventW
+  FILEPROCESSAGENT_ENDP		= http://${PRA_SVC_FQDN}:${PRA_PORT}/fileprocessagent/FileProcessAgent
+  FILEPROCESSAGENTW_ENDP	= http://${PRA_SVC_FQDN}:${PRAW_PORT}/fileprocessagentw/FileProcessAgentW
+  GROUP_ENDP			= http://${USR_SVC_FQDN}:${USER_PORT}/user/Group
+  GROUPW_ENDP			= http://${USR_SVC_FQDN}:${USERW_PORT}/userw/GroupW
+  JWS_ENDP			= http://${JWS_SVC_FQDN}:${JWS_PORT}/su2
+  MIGRATEUSERW_ENDP             = http://${RBL_SVC_FQDN}:${RBLW_PORT}/rblw/MigrateUserW
+  NOTIFYW_ENDP                  = http://${NGW_SVC_FQDN}:${NOTIFYW_PORT}/notificationw/NotifyW
+  OAUTHW_ENDP		 	= http://${AUT_SVC_FQDN}:${OAUTHW_PORT}/oauthw/OAuthW
+  PAYMENT_ENDP                  = http://${SKU_SVC_FQDN}:${SKU_PORT}/sku/Payments
+  PAYMENTW_ENDP                 = http://${SKU_SVC_FQDN}:${SKUW_PORT}/skuw/PaymentsW
+  PAYMENT_V4_ENDP               = ${VND_BILL_APP}/soap/Payments
+#  PAYMENT_V4_ENDP		= http://${SKU_SVC_FQDN}:${SKU_PORT}/sku/Payments
+  PAYMENTW_V4_ENDP              = ${VND_USRPW_APP}/soap/PaymentsW
+#  PAYMENTW_V4_ENDP 		= http://${SKU_SVC_FQDN}:${SKUW_PORT}/skuw/PaymentsW
+  PBK_ENDP			= http://${PBK_APP_FQDN}/postback/pbhandler.php
+  PHI_APP_ENDP                  = http://${PHI_APP_FQDN}
+  POLICY_ENDP                   = http://${PEN_SVC_FQDN}:${POLICY_PORT}/policies/Policies
+  POLICYW_ENDP                  = http://${PEN_SVC_FQDN}:${POLICYW_PORT}/policiesw/PoliciesW
+  PREVIEW_ENDP			= http://${ENV_PREFIX}preview02.${ENV_PREFIX}.${EXTERNAL_DOMAIN}:${PREVIEW_PORT}/api
+
+    PREVIEW_V1_ENDP		= http://${ENV_PREFIX}preview02.${ENV_PREFIX}.${EXTERNAL_DOMAIN}:${PREVIEW_PORT}/api
+
+  PRODUCTPROVISIONING_ENDP  	= http://${USR_SVC_FQDN}:${USER_PORT}/user/ProductProvisioning
+  PRODUCTPROVISIONINGW_ENDP     = http://${USR_SVC_FQDN}:${USERW_PORT}/userw/ProductProvisioningW
+  RELIABILITY_ENDP              = http://${RBL_SVC_FQDN}:${RBL_PORT}/rbl/Reliability
+  RELIABILITYW_ENDP             = http://${RBL_SVC_FQDN}:${RBLW_PORT}/rblw/ReliabilityW
+  REST_AUTH_ENDP                = http://${AUT_SVC_FQDN}:${AUTH_PORT}/auth/services/rest
+  REWARD_REST_ENDP              = dummyEndp
+  REWARDS_REST_BASE_URL         = dummyUrl
+    REWARDS_NOTIFY_ENABLED	= false 
+
+  SKU_ENDP                      = http://${SKU_SVC_FQDN}:${SKU_PORT}/sku/Skus
+  SKUW_ENDP                     = http://${SKU_SVC_FQDN}:${SKUW_PORT}/skuw/SkusW
+  SKU_V4_ENDP                   = ${VND_PROD_APP}/soap/Skus
+#  SKU_V4_ENDP 			= http://${SKU_SVC_FQDN}:${SKU_PORT}/sku/Skus
+  SKU_REST_ENDP                 = http://${SKU_SVC_FQDN}:${SKU_PORT}/sku/rest/Skus
+    SKUW_REST_BASE_URL		= http://${SKU_SVC_FQDN}:${SKUW_PORT}/skuw/rest/sku
+
+  SRT_ENDP			= ${PBK_ENDP}
+  STATIC_ENDP                   = http://${STATIC_FQDN}
+  STORAGE_ENDP                  = http://${BKR_SVC_FQDN}:${STORAGE_PORT}/storageserver/StorageServer
+  STORAGEW_ENDP                 = http://${BKR_SVC_FQDN}:${STORAGEW_PORT}/storageserverw/StorageServerW
+  STORAGEW_REST_ENDP            = http://${BKR_SVC_FQDN}:${STORAGEW_PORT}/storageserverw
+  TEMPLATE_ENDP                 = http://${TPL_SVC_FQDN}:${TEMPLATE_PORT}/template/Template
+  TEMPLATEW_ENDP                = http://${TPL_SVC_FQDN}:${TEMPLATEW_PORT}/templatew/TemplateW
+  TRACE_ENDP                    = http://${RBL_SVC_FQDN}:${RBL_PORT}/rbl/Trace
+  TRACEW_ENDP                   = http://${RBL_SVC_FQDN}:${RBLW_PORT}/rblw/TraceW
+  USER_ENDP                     = http://${USR_SVC_FQDN}:${USER_PORT}/user/User
+  USERW_ENDP                    = http://${USR_SVC_FQDN}:${USERW_PORT}/userw/UserW
+  USER_V4_ENDP                  = ${VND_ENTL_APP}/soap/User
+#  USER_V4_ENDP 			= http://${USR_SVC_FQDN}:${USER_PORT}/user/User
+  USERW_V4_ENDP                 = ${VND_USRPW_APP}/soap/UserW
+#  USERW_V4_ENDP 		= http://${USR_SVC_FQDN}:${USERW_PORT}/userw/UserW
+  USER_REST_ENDP                = http://${USR_SVC_FQDN}:${USER_PORT}/user/rest/User
+  USERW_REST_ENDP               = http://${USR_SVC_FQDN}:${USERW_PORT}/userw/rest/UserW
+
+    USER_REPORT_ENDP            = http://${USR_SVC_FQDN}:${USER_PORT}
+    USERW_REPORT_ENDP		= http://${USR_SVC_FQDN}:${USERW_PORT}
+
+  WEB_APP_ENDP                  = http://${WEB_APP_FQDN}
+  WORKSPACE_ENDP                = http://${WRK_SVC_FQDN}:${WORKSPACE_PORT}/workspace/Workspace
+  WORKSPACEW_ENDP               = http://${WRK_SVC_FQDN}:${WORKSPACEW_PORT}/workspacew/WorkspaceW
+  WORKSPACE_REST_ENDP           = http://${WRK_SVC_FQDN}:${WORKSPACE_PORT}/workspace/rest/Workspace
+  WORKSPACEW_REST_ENDP          = http://${WRK_SVC_FQDN}:${WORKSPACEW_PORT}/workspacew/rest/WorkspaceW
+  HTL_WEB_APP_ENDP              = http://${HTL_WEB_APP_FQDN}
+
+  WRKW_REST_BASE_URL            = http://${WRK_SVC_FQDN}:${WORKSPACEW_PORT}/workspacew/rest/wrk 
+
+    USER_REST_BASE_URL		= http://${USR_SVC_FQDN}:${USER_PORT}/user/rest/usr
+
+    YPI_SVC_ENDP                = http://${YPI_SVC_FQDN}
+    YPI_SVC_ENDP_V2             = https://ypi.${ENV_PREFIX}.${HTL_DOMAIN} 
+    EXTERNAL_YPI_SVC_ENDP       = ${YPI_SVC_ENDP}
+
+  YPI_API_SECURITY_ENABLED	    = false
+  YPI_FILE_UPLOADS_USE_CLIENT_IP    = true
+
+  BATCH_DATA_LOAD_MONTHS	    = 3
+  BATCH_DATA_ITEMS_PER_PAGE	    = 20
+  BATCH_MEMCACHED_EXPIRY	    = 30
+  BATCH_MEMCACHED_SECONDARY_EXPIRY  = 300
+
+## vindicia svc endpoints
+  VND_ACCT_APP                 = http://${VND_ACCT_SVC_FQDN}:${VND_ACCOUNT_PORT}/account-service
+  VND_ACCTW_APP                = http://${VND_ACCT_SVC_FQDN}:${VND_ACCOUNT_PORT}/account-service
+  VND_BILL_APP                 = http://${VND_BILL_SVC_FQDN}:${VND_BILLING_PORT}/billing-service
+  VND_BILLW_APP                = http://${VND_BILL_SVC_FQDN}:${VND_BILLING_PORT}/billing-service
+  VND_ENTL_APP                 = http://${VND_ENTL_SVC_FQDN}:${VND_ENTITLEMENT_PORT}/entitlement-service
+  VND_ENTLW_APP                = http://${VND_ENTL_SVC_FQDN}:${VND_ENTITLEMENT_PORT}/entitlement-service
+  VND_PROD_APP                 = http://${VND_PROD_SVC_FQDN}:${VND_PRODUCT_PORT}/product-service
+  VND_PRODW_APP                = http://${VND_PROD_SVC_FQDN}:${VND_PRODUCT_PORT}/product-service
+  VND_SCHL_APP                 = http://${VND_SCHL_SVC_FQDN}:${VND_SCHEDULING_PORT}/scheduling-service
+  VND_SCHLW_APP                = http://${VND_SCHL_SVC_FQDN}:${VND_SCHEDULING_PORT}/scheduling-service
+  VND_USRP_APP                 = http://${VND_USRP_SVC_FQDN}:${VND_USERPROVISIONING_PORT}/userprovisioning-service
+  VND_USRPW_APP                = http://${VND_USRP_SVC_FQDN}:${VND_USERPROVISIONING_PORT}/userprovisioning-service
+
+  API_BASE_URL                  = http://${API_SVC_FQDN}
+  STATIC_BASE_URL               = https://${STATIC_FQDN}
+    SUPPORT_BASE_URL		= http://learn.${EXTERNAL_DOMAIN}
+  WEB_BASE_URL                  = http://${WEB_APP_FQDN}
+  USERVOICE_BASE_URL            = http://yousendit.uservoice.com
+
+  AUTH_DBM_URL			= jdbc:mysql://${DBM_V3_FQDN}:3306/authentication?dumpQueriesOnException=true
+  AUTH_DBS_URL			= jdbc:mysql://${DBS_V3_FQDN}:3306/authentication?dumpQueriesOnException=true
+  BRANDING_DBM_URL		= jdbc:mysql://${DBM_V3_FQDN}:3306/branding?dumpQueriesOnException=true
+  BRANDING_DBS_URL		= jdbc:mysql://${DBS_V3_FQDN}:3306/branding?dumpQueriesOnException=true
+  ERROR_DBM_URL                 = jdbc:mysql://${DBM_V3_FQDN}:3306/error?dumpQueriesOnException=true
+  ERROR_DBS_URL                 = jdbc:mysql://${DBS_V3_FQDN}:3306/error?dumpQueriesOnException=true
+  ESIGN_DBM_URL                 = jdbc:mysql://${DBM_V3_FQDN}:3306/esign
+  GROUP_DBM_URL                 = jdbc:mysql://${DBM_V3_FQDN}:3306/groups?dumpQueriesOnException=true
+  GROUP_DBS_URL                 = jdbc:mysql://${DBS_V3_FQDN}:3306/groups?dumpQueriesOnException=true
+  OAUTH_DBM_URL			= jdbc:mysql://${DBM_V3_FQDN}:3306/oauth_client?dumpQueriesOnException=true
+  OAUTH_DBS_URL			= jdbc:mysql://${DBS_V3_FQDN}:3306/oauth_client?dumpQueriesOnException=true
+  POL_DBM_URL			= jdbc:mysql://${DBM_V3_FQDN}:3306/policy?dumpQueriesOnException=true
+  POL_DBS_URL			= jdbc:mysql://${DBS_V3_FQDN}:3306/policy?dumpQueriesOnException=true
+  NGW_DBM_URL                   = jdbc:mysql://${DBM_V3_FQDN}:3306/notification?dumpQueriesOnException=true
+  NGW_DBS_URL                   = jdbc:mysql://${DBS_V3_FQDN}:3306/notification?dumpQueriesOnException=true
+  RBL_DBM_URL			= jdbc:mysql://${DBM_V3_FQDN}:3306/reliability?dumpQueriesOnException=true
+  RBL_DBS_URL			= jdbc:mysql://${DBS_V3_FQDN}:3306/reliability?dumpQueriesOnException=true
+  SKU_DBM_URL			= jdbc:mysql://${DBM_V3_FQDN}:3306/sku?dumpQueriesOnException=true
+  SKU_DBS_URL			= jdbc:mysql://${DBS_V3_FQDN}:3306/sku?dumpQueriesOnException=true
+  SS_DBM_URL			= jdbc:mysql://${DBM_V3_FQDN}:3306/storage_server?dumpQueriesOnException=true
+  SS_DBS_URL			= jdbc:mysql://${DBS_V3_FQDN}:3306/storage_server?dumpQueriesOnException=true
+  TRC_DBM_URL			= jdbc:mysql://${DBM_V3_FQDN}:3306/trace?dumpQueriesOnException=true
+  TRC_DBS_URL			= jdbc:mysql://${DBS_V3_FQDN}:3306/trace?dumpQueriesOnException=true
+  TPL_DBM_URL                   = jdbc:mysql://${DBM_V3_FQDN}:3306/template?dumpQueriesOnException=true
+  TPL_DBS_URL                   = jdbc:mysql://${DBS_V3_FQDN}:3306/template?dumpQueriesOnException=true
+  USR_DBM_URL			= jdbc:mysql://${DBM_V2_FQDN}:3306/YSIUSER?dumpQueriesOnException=true
+  USR_DBS_URL			= jdbc:mysql://${DBS_V2_FQDN}:3306/YSIUSER?dumpQueriesOnException=true
+  WRK_DBM_URL			= jdbc:mysql://${DBM_V3_FQDN}:3306/workspace?dumpQueriesOnException=true
+  WRK_DBS_URL			= jdbc:mysql://${DBS_V3_FQDN}:3306/workspace?dumpQueriesOnException=true
+
+  DBM_V2_DSN                    = mysql://${DBM_V2_USERNAME}:${DBM_V2_PASSWORD}@tcp(${DBM_V2_FQDN}:3306)
+  DBM_V2_DSN_USR     		= ${DBM_V2_DSN}/YSIUSER
+  DBM_V2_DSN_CMS                = mysql://${DBM_V2_USERNAME}:${DBM_V2_PASSWORD}@${DBM_V2_FQDN}/YSICMS
+  DBM_V2_DSN_ADM                = ${DBM_V2_DSN}/YSIADMIN
+  DBM_V2_DSN_USR_READ           = mysql://ysireader:ysireader@tcp(${DBM_V2_FQDN}:3306)/YSIUSER
+
+### Global Settings
+  
+  PAYFLOW_TESTER_PROFILE	= RT0000076878
+  PAYFLOW_FQDN			= pilot-payflowpro.paypal.com
+  PAYFLOW_PORT			= 443
+  PAYFLOW_TIMEOUT		= 20
+  PAYFLOW_TIMEOUT_V2PHP         = 120
+  PAYFLOW_USER			= devuser 
+  PAYFLOW_VENDOR		= enggtest
+  PAYFLOW_MERCHANT		= paypal
+  PAYFLOW_PASSWORD		= n0m0n3y
+  PAYFLOW_LOGGING_ENABLED	= true
+  PAYFLOW_LOG_FILENAME		= payflow.log
+  PAYFLOW_LOG_FILESIZE		= 500000000
+  PAYFLOW_LOG_LEVEL		= 1
+  
+  CANCELLATION_SURVEY           = http://survey.yousendit.com/go?iv=46w9gsngr7qtu
+  CANCELLATION_SURVEY_HTL       = http://survey.hightail.com/go?iv=28ky5j418v2i2
+
+  ESIGN_TEMP_FILES_CLEANUP_EXCLUSIONS        = 'DO_NOT_REMOVE,DO_NOT_DELETE'
+  VINDICIA_SWITCH               = On 
+  PHI_CSS_FILES_VERSIONING_ENABLED               = true 
+
+    PRIVATE_SUBNETS_CIDR	= "12.226.92.162/32"
+
+  # memcache (spymemcached) properties
+  CACHE_TTL = 43200
+  CACHE_ENABLE = true
+  CACHE_DEFAULT_EXPIRATION_IN_SECONDS = 86400
+  CACHE_ENABLE_TIMING_LOG = false
+  CACHE_BACKOFF_TIME_IN_MILLIS = 60000
+  CACHE_OPERATION_TIMEOUT_MILLIS = 900
+  CACHE_OPERATION_QUEUE_LENGTH = 16384
+  CACHE_READ_BUFFER_SIZE = 16384
+
+# cfg-80
+  MEMCACHE_EXPIRE_1HOUR     = 3600
+  MEMCACHE_EXPIRE_12HOURS   = 43200
+  MEMCACHE_EXPIRE_1DAY      = 86400
+  MEMCACHE_EXPIRE_1WEEK     = 604800
+
+#CFG-84
+  MEMCACHE_EXPIRE_30DAYS    = 2592000
+#updated on cfg-90
+  MEMCACHE_EXPIRE_NEVER     = 0 
+
+# cfg-239
+  CONTACT_LIST_SIZE         = 100
+
+
+
+  SMQ_PROVIDER_URL              = "${SMQ_MST_FQDN}:${SMQ_MST_PORT},${SMQ_SLV_FQDN}:${SMQ_SLV_PORT}"
+  SMQ_CONN_TIMEOUT              = 20
+  SMQ_USERNAME                  = Administrator
+  SMQ_PASSWORD                  = usendit1
+  SMQ_DOMAIN                    = yousendit
+  SMQ_CONN_FACTORY              = SJC_GeneralFactory
+  JMS_MESSAGE_VERSION_VALUE     = 1.1
+  JMS_MESSAGE_VERSION_MODE      = DISABLE
+  JMS_TIMETOLIVE                = 3600000
+  JMS_RECEIVE_TIMEOUT           = 30000
+  JMS_PRIORITY                  = 1
+  JMS_CONCURRENT_CONSUMERS      = 50
+
+    ALCATRAZ_SCORING_ENABLED		= true
+    ALCATRAZ_COMPLAINTS_ENABLED		= false
+    ALCATRAZ_SPAM_SCORING_AGENT_HOST	= ${ENV_PREFIX}spa01.dmz.${ENV_SUFFIX}
+    ALCATRAZ_SPAM_SCORING_AGENT_PORT    =   783
+    ALCATRAZ_JMS_MESSAGE_TTL            = 30000 
+    ALCATRAZ_BAD_THRESHOLD		= 2.5 
+
+    ACTIVITYW_SVC_FQDN		= ${ENV_PREFIX}rpt01.eng.${ENV_SUFFIX}
+    ACTIVITYW_PORT              = 8201
+    ACTIVITYW_ENDP		= http://${ACTIVITYW_SVC_FQDN}:${ACTIVITYW_PORT}/event-service/eventW
+    ACTIVITY_ENDP = http://${ACTIVITYW_SVC_FQDN}:${ACTIVITYW_PORT}/event-service/report
+# cfg-290
+    ACTIVITY_CONNECTION_SESSION_CACHE_SIZE = 10
+
+    ASPERA_EXT_AUTH_PORT	= 8233 
+
+    TOPICS_USER_ENABLED             = true
+    TOPIC_USER_REGISTERED           = user.registered
+    QUEUE_AUDIT                     = AuditQueue 
+
+    EVENT_ACTIVITY_TOPIC_NAME	    = ActivityTopic
+    SMQ_TCP_ACCEPTOR_PORT	    = 10111 
+    SMQ_MST_TCP_ACCEPTOR_PORT       = 10101 
+    SMQ_SLV_TCP_ACCEPTOR_PORT       = 10111 
+
+    REPORT_ACTIVITY		= true
+    ADD_EXTRA_DOWNLOAD_INFO	= true
+    UPLOAD_ACCELERATION		= true
+    DOWNLOAD_ACCELERATION	= true 
+
+    SMQ_MST_FQDN_PREFIX         = sjcsitsmq02.eng
+    SMQ_SLV_FQDN_PREFIX         = sjcsitsmq01.eng
+
+    EVENT_SMQ_QUEUE_SENDER_TTL	= 259200000
+
+    SMQ_NAMING_FACTORY_INITIAL		    = com.sonicsw.jndi.mfcontext.MFContextFactory
+    SMQ_CONN_CACHE_SIZE			    = 10
+    TOPIC_BILLING_SKU_PURCHASED		    = billing.sku.purchased
+    TOPIC_BILLING_SKU_SWITCHED		    = billing.sku.switched
+    TOPIC_BILLING_SKU_PURCHASE_CANCELLED    = billing.sku.purchase.cancelled
+
+    TOPIC_WORKSPACE_USAGE_CHANGED = workspace.usage.changed
+
+    ZIP_SVC_FQDN		= zip.hightail.com
+    STATIC_HTL_FQDN		= static.${ENV_PREFIX}.hightail.com
+
+    CACHE_TUBE_TIMING_LOG	= true 
+
+# Lenovo:
+    LENOVO_WEBAUTH_REALM	= yousendit.com
+    LENOVO_WEBAUTH_LOGIN_ENDP	= https://uss-aws.test.lenovomm.cn/wauthen/gateway
+    LENOVO_WEBAUTH_VERIFY_ENDP	= https://uss-aws.test.lenovomm.cn/interserver/authen/1.4/getaccountid
+
+    WD_BASE_URL		= https://wdconnect.${ENV_PREFIX}.hightail.com
+    KASPERSKY_BASE_URL	= https://kdrive.${ENV_PREFIX}.hightail.com 
+    HT_BASE_URL		= ${PHI_FQDN}
+
+####################################
+# Object Storage:
+
+    FSM_SVC_FQDN        = ${FSM_SVC_FQDN_PREFIX}.${ENV_SUFFIX}
+    FSM_PORT            = 9020
+    FSMW_PORT           = 9021
+    FSM_ENDP            = http://${FSM_SVC_FQDN}:${FSM_PORT}/storageserver/StorageServer
+    FSMW_ENDP           = http://${FSM_SVC_FQDN}:${FSMW_PORT}/storageserverw/StorageServerW
+    FSM_SVC_FQDN_PREFIX = ${ENV_PREFIX}bkr01.dmz
+    PBK_APP_FQDN_PREFIX = ${ENV_PREFIX}pbk01.dmz
+
+    CASSANDRA_FQDN      = cas01.${ENV_PREFIX}.${HTL_DOMAIN}
+    CASSANDRA_PORT      = 9042
+    CASSANDRA_NODES     = ${CASSANDRA_FQDN}
+    CASSANDRA_USERNAME  = ysi
+    CASSANDRA_PASSWORD  = ysi
+    CASSANDRA_DC        = DC1
+
+    CLEVERSAFE_FQDN     = vaccessor01.dmz.yousendit.com
+
+    HSS_PORT            = 8680
+    HSS_FQDN            = hss01.${ENV_PREFIX}.${HTL_DOMAIN}:${HSS_PORT}
+    HSS_ENDP            = http://${HSS_FQDN}/storage-server/a1/files
+
+####################################
+
+    AMQ_WATCH_TOPIC_ADVISORIES = jms.watchTopicAdvisories=false
+    AMQ_CONN_FACTORY	    = ConnectionFactory
+    AMQ_PROVIDER_URL	    = discovery:(multicast://default)?${AMQ_WATCH_TOPIC_ADVISORIES} 
+
+    AMQ_USERNAME	    = hightail
+    AMQ_PASSWORD	    = hightail
+
+    AMQ_CONN_TIMEOUT	    = 200 
+    AMQ_NAMING_FACTORY_INITIAL  = org.apache.activemq.jndi.ActiveMQInitialContextFactory
+    AMQ_CONN_CACHE_SIZE         = 10
+
+    HPI_SVC_FQDN	    = api.${ENV_PREFIX}.${HTL_DOMAIN}
+    WILSON_FQDN		    = www2.${ENV_PREFIX}.${HTL_DOMAIN} 
+    PHI_FQDN                = ${ENV_BASE_URL_SSL}
+    HAPI_BASE_URL           = http://${ENV_PREFIX}hpi01.${ENV_PREFIX}.${HTL_DOMAIN}/api 
+
+    NEW_RELIC_LICENSE_KEY   = 0000000000000000000000000000000000000000 
+
+    AMQ_PROVIDER_FQDN_1	    = ${ENV_PREFIX}mq01.${ENV_PREFIX}.${HTL_DOMAIN}
+    AMQ_PROVIDER_FQDN_2	    = ${ENV_PREFIX}mq02.${ENV_PREFIX}.${HTL_DOMAIN}
+    AMQ_PROVIDER_FQDN_3	    = ${ENV_PREFIX}mq03.${ENV_PREFIX}.${HTL_DOMAIN}
+    AMQ_PROVIDER_PORT	    = 61613 
+
+    KAVE_MIRROR_TOMCAT_PORT	= 8090
+    KAVE_TARGET_PLATFORM	= "kernel:x64;user:x64"
+    KAVE_COMPONENTS_TO_UPDATE	= "Updater;Core;BLST2;KDB;EMU"
+    KAVE_APPLICATIONS_TO_UPDATE = "KAVSDK 8.2.5.17"
+    KAVE_UPDATE_ENABLED		= 1
+    KAVE_USE_OLD_NOTIFICATION	= 1
+
+    ENVIRONMENT_ALIAS	    = DEV_1
+    HTL_ENV_WILSON_CDN_FQDN	= false
+
+    WILSON_ENABLED              = false
+
+    CS_TOOLS_ADMINS = andre.diaz@hightail.com,danielle.berg@hightail.com,jessica.tsuei@hightail.com,kirstin.veltman@hightail.com,mark.stagi@hightail.com,pia.ramos@hightail.com,priya.thakkar@hightail.com,shelly.maynard@hightail.com,hiassistadmin@hightail.com,molleti.vamshi@hightail.com,shwet.shashank@hightail.com,nitin.agarwal@hightail.com,pratyush.mathur@hightail.com,swamy.seetharaman@hightail.com,young.dee@hightail.com
+
+    WRK_CATCHUP_ENABLED = false
+    HFSAMQ_URL = ${AMQ_PROVIDER_URL}
+    HFSAMQ_USERNAME = ${AMQ_USERNAME}
+    HFSAMQ_PASSWORD = ${AMQ_PASSWORD}
+    WRK_CATCHUP_PROCESSING_ENABLED = true
+
+    PRD_ENV_PREFIX              = www
+    PRD_AMQ_PROVIDER_URL        = 'failover:(tcp://mq01.sv3.hightail.com:61688,tcp://mq02.sv3.hightail.com:61688,tcp://mq03.sv3.hightail.com:61688)?randomize=true&${AMQ_WATCH_TOPIC_ADVISORIES}'
+    PRD_CASSANDRA_NODES         = "cas01.sv2.hightail.com, cas02.sv2.hightail.com, cas03.sv2.hightail.com"
+    PRD_CASSANDRA_PASSWORD      = ysi
+    PRD_PBK_APP_FQDN_PREFIX     = sjclbxpbk01.prod
+    PRD_DBM_V2_FQDN_PREFIX      = prd-wdb-v2
+    PRD_DBS_V2_FQDN_PREFIX      = prd-rdb-v2
+    PRD_DBM_V3_FQDN_PREFIX      = prd-wdb-v3
+    PRD_DBS_V3_FQDN_PREFIX      = prd-rdb-v3
+    PRD_DBM_V2_USERNAME         = ENC|PRD:HYFHz5iPi++3pO3p3hsD/JnDZo77JylkTfUhb/VAcOWFDtCpYUe2jrTOI7rVOznC8pHKVofwklEr4idSwF1nRg==
+    PRD_DBM_V2_PASSWORD         = ENC|PRD:iJMU4d6BklYzWU3mKhpyiUeGtTJIvtDNkXUyZNuej3jPyAFiiHIWIW8fAclJ4Vn0tRUqV0fqOwXPHJm0M5nqPw==
+    PRD_DBM_V3_USERNAME         = ENC|PRD:Rbr9jHj5q5E6+Bs2KymixxFFXCLFJuR4f7YoDTpZUhM/Xj+/WRTrQj8qvZYdtmVz0ShvXNo+/D+DjtrEkeIAbw==
+    PRD_DBM_V3_PASSWORD         = ENC|PRD:ZPSxDvtgSVtYvcyg5gVYQ5zm0QEooUoYz8v6PWuU77436+Bqm0L5sip0Tb8Or/UrniBjq0kD2vup1nQL8GPlwg==
+    PRD_NEW_RELIC_LICENSE_KEY	= fc4bc1e62511ca32c9f689f5807b1b3d9dfcf71f
+    PRD_VNB                     = prd-vnb.prod
+    PRD_VNU                     = prd-vnu.prod
+    PRD_AUTH2_ENDP              = https://auth2.prod.${HTL_DOMAIN}/auth2
+
+    LOCALE_URL_MAPPING		= domain 
+
+[[stg]]
+    # We need to copy these values to sjcstg for configtool 2
+    BRAND_VERSION		= hightail
+    ENV_PREFIX			= stg
+    CCH_SERVERS			= """ sjc${ENV_PREFIX}cch01.eng.yousendit.com:${CCH_APP_PORT} sjc${ENV_PREFIX}cch01.eng.yousendit.com:11212 sjc${ENV_PREFIX}cch01.eng.yousendit.com:11213 sjc${ENV_PREFIX}cch02.eng.yousendit.com:${CCH_APP_PORT} sjc${ENV_PREFIX}cch02.eng.yousendit.com:11212 sjc${ENV_PREFIX}cch02.eng.yousendit.com:11213 """
+    CASSANDRA_NODES		= "cas01.${ENV_PREFIX}.${HTL_DOMAIN}, cas02.${ENV_PREFIX}.${HTL_DOMAIN}, cas03.${ENV_PREFIX}.${HTL_DOMAIN}"
+    CLEVERSAFE_FQDN		= accesser.sto.hightail.com
+    PBK_APP_FQDN_PREFIX		= stglbxpbk01.eng
+    NEW_RELIC_LICENSE_KEY	= 58fe924d74409cda01af2dd124b88af26da7270d 
+
+[[sjcstg]]
+
+    BRAND_VERSION = hightail
+    ENV_PREFIX                  = stg
+    ENV_SUFFIX                  = yousendit.com
+    EXTERNAL_WEB_FQDN		= www.${ENV_PREFIX}.${EXTERNAL_DOMAIN}
+
+    FTF_SHARED_SECRET           = 500emerson
+    
+    ## General
+    DBM_V2_FQDN_PREFIX          = ${ENV_PREFIX}-wdb-v2
+    DBS_V2_FQDN_PREFIX          = ${ENV_PREFIX}-rdb-v2
+    DBM_V3_FQDN_PREFIX          = ${ENV_PREFIX}-wdb-v3
+    DBS_V3_FQDN_PREFIX          = ${ENV_PREFIX}-rdb-v3
+    ACT_SVC_FQDN_PREFIX         = ${ENV_PREFIX}lbivin01.eng	
+    BLG_SVC_FQDN_PREFIX         = ${ENV_PREFIX}lbivin01.eng	
+    ADP_SVC_FQDN_PREFIX         = ${ENV_PREFIX}adp01.dmz
+    AMQ_APP_FQDN_PREFIX         = ${ENV_PREFIX}-ysiq
+    API_SVC_FQDN_PREFIX         = ${ENV_PREFIX}-api
+    AUT_SVC_FQDN_PREFIX         = ${ENV_PREFIX}lbiaut01.eng
+    BKR_SVC_FQDN_PREFIX         = ${ENV_PREFIX}lbxbkr02.eng
+    CCH_APP_FQDN_PREFIX         = ${ENV_PREFIX}cch01.eng
+    DROPBOX_FQDN_PREFIX         = ${ENV_PREFIX}-dropbox
+    DEVAPI_SVC_FQDN_PREFIX	= ${ENV_PREFIX}-dpi
+    DPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}-dpi
+    ESIGN_SVC_FQDN_PREFIX       = ${ENV_PREFIX}lbxsig01.eng
+    EVT_SVC_FQDN                = ${ENV_PREFIX}lbievt01.eng
+    JWS_SVC_FQDN_PREFIX		= ${ENV_PREFIX}lbxjws01.eng
+    NGW_SVC_FQDN_PREFIX         = ${ENV_PREFIX}lbingw01.eng
+    PBK_APP_FQDN_PREFIX		= stglbxpbk01.eng
+    PEN_SVC_FQDN_PREFIX         = ${ENV_PREFIX}lbipol01.eng
+    PHI_APP_FQDN_PREFIX         = ${ENV_PREFIX}
+    PRA_SVC_FQDN_PREFIX		= ${ENV_PREFIX}lbxpra02.eng
+    RBL_SVC_FQDN_PREFIX         = ${ENV_PREFIX}-rbl
+    SKU_SVC_FQDN_PREFIX         = ${ENV_PREFIX}lbisku01.eng
+    SMQ_MST_FQDN_PREFIX         = sjc${ENV_PREFIX}smq02.eng
+    SMQ_SLV_FQDN_PREFIX         = sjc${ENV_PREFIX}smq01.eng
+    STATIC_FQDN_PREFIX          = static.${ENV_PREFIX}
+    STATIC_FQDN                 = ${STATIC_HTL_FQDN}
+    TPL_SVC_FQDN_PREFIX         = ${ENV_PREFIX}lbitpl01.eng
+    USR_SVC_FQDN_PREFIX         = ${ENV_PREFIX}lbiusr01.eng
+    VND_ACCT_SVC_FQDN_PREFIX	= ${ENV_PREFIX}lbivnu01.eng
+    VND_ENTL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}lbivnb01.eng
+    VND_PROD_SVC_FQDN_PREFIX	= ${ENV_PREFIX}lbivnb01.eng
+    VND_BILL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}lbivnb01.eng
+    VND_USRP_SVC_FQDN_PREFIX	= ${ENV_PREFIX}lbivnu01.eng
+    VND_SCHL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}lbivnu01.eng
+    WRK_SVC_FQDN_PREFIX         = ${ENV_PREFIX}lbiwrk01.eng
+    WEB_APP_FQDN_PREFIX         = ${ENV_PREFIX}
+    XMPP_MST_FQDN_PREFIX        = ${ENV_PREFIX}xmp01
+    XMPP_SLV_FQDN_PREFIX        = ${ENV_PREFIX}xmp02
+    YPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}lbxypi01.eng
+
+    SMQ_REPORTING_MST_FQDN      = sjcstgsmq02.eng.${ENV_SUFFIX}
+    SMQ_REPORTING_SLV_FQDN      = sjcstgsmq01.eng.${ENV_SUFFIX}
+    SMQ_REPORTING_PROVIDER_URL  = "${SMQ_REPORTING_MST_FQDN}:${SMQ_MST_PORT},${SMQ_REPORTING_SLV_FQDN}:${SMQ_SLV_PORT}"
+
+  ## Platform
+    CCH_SERVERS                 = sjc${ENV_PREFIX}cch01.eng.yousendit.com:${CCH_APP_PORT} sjc${ENV_PREFIX}cch01.eng.yousendit.com:11212 sjc${ENV_PREFIX}cch01.eng.yousendit.com:11213 sjc${ENV_PREFIX}cch02.eng.yousendit.com:${CCH_APP_PORT} sjc${ENV_PREFIX}cch02.eng.yousendit.com:11212 sjc${ENV_PREFIX}cch02.eng.yousendit.com:11213
+    DBM_V2_USERNAME             = ENC|STG:eBPQYm1hwQ/VbtosJ/WiRI39XAntcHDMo/hPrGIw0QE6oCsW4HjAW21t/xIYcxxtznfyEszGYGGd1Lw2GSyw3Q==
+    DBM_V2_PASSWORD             = ENC|STG:Vw/qX2eSjmAVtti50p9yWSE+UJzivnOy2tJ0Vdbt+lFCyqcyUPBBiQ55b3/jm2Pw9vkFXZyb+Y9Nel84bIqlwQ==
+    DBM_V3_USERNAME             = ENC|STG:TES1P2h+uD+sa+TmBNfyNPDPUm6a8EbRvJHWlnUpz9VgqOafaRaFmtVKojQvHJcF4EmwSW17fQn79D8R29vgYQ==
+    DBM_V3_PASSWORD             = ENC|STG:YXdQywv6b4K+0+upP7Z8gxo5ydE0cJWiqM7XMjd+hJhyD/k8vOCDUJDIGzINmMKmsI/3//WB8T0FK2PFAjJxtw==
+
+  PAYFLOW_USER			= qauser 
+
+    PREVIEW_ENDP		= http://preview.${ENV_PREFIX}.${HTL_DOMAIN}/api
+    PREVIEW_V1_ENDP		= http://preview.${ENV_PREFIX}.${HTL_DOMAIN}/api
+
+    VINDICIA_SWITCH             = On
+
+  # don't enable this
+  #  CACHE_NUM_CLIENT_THREADS    = 15
+
+# updated up cfg-90
+#   MEMCACHE_EXPIRE_NEVER         = 2628000
+
+    ALCATRAZ_SCORING_ENABLED		= true
+    ALCATRAZ_SPAM_SCORING_AGENT_HOST	= spa.stg.hightail.com
+
+    REPORT_ACTIVITY             = true
+    ACTIVITYW_SVC_FQDN          = ${ENV_PREFIX}lbxrpt01.eng.${ENV_SUFFIX}
+
+    HTL_WEB_APP_FQDN            = www.${ENV_PREFIX}.${HTL_DOMAIN}
+#    HTL_ENV_CDN_FQDN		= d2u49ymjb3lkvr.cloudfront.net
+#    HTL_ENV_CDN_SSL_FQDN	= d2u49ymjb3lkvr.cloudfront.net 
+    HTL_ENV_CDN_FQDN		= hightail-stage.global.ssl.fastly.net 
+    HTL_ENV_CDN_SSL_FQDN	= hightail-stage.global.ssl.fastly.net 
+#    HTL_ENV_CDN_FQDN		= fastly.hightailcdn.com
+#    HTL_ENV_CDN_SSL_FQDN	= fastly.hightailcdn.com
+# Requested by Wilson team:
+    HTL_ENV_WILSON_CDN_FQDN	= wilson-stage.global.ssl.fastly.net 
+
+    FSM_SVC_FQDN_PREFIX		= ${ENV_PREFIX}lbxbkr02.eng
+    CASSANDRA_NODES		= "cas01.${ENV_PREFIX}.${HTL_DOMAIN}, cas02.${ENV_PREFIX}.${HTL_DOMAIN}, cas03.${ENV_PREFIX}.${HTL_DOMAIN}"
+    CLEVERSAFE_FQDN		= accesser.sto.hightail.com 
+
+    AMQ_PROVIDER_URL	    	= 'failover:(tcp://mq01.stg.hightail.com:61688,tcp://mq02.stg.hightail.com:61688,tcp://mq03.stg.hightail.com:61688)?randomize=true&${AMQ_WATCH_TOPIC_ADVISORIES}'
+
+    NEW_RELIC_LICENSE_KEY	= 58fe924d74409cda01af2dd124b88af26da7270d
+
+    WRK_CATCHUP_ENABLED = true 
+    HFSAMQ_URL = tcp://hfsapi01.stg.hightail.com:61616 
+    HFSAMQ_USERNAME = admin 
+    HFSAMQ_PASSWORD = admin 
+    WRK_CATCHUP_PROCESSING_ENABLED = false 
+
+    WILSON_ENABLED              = false
+
+[[sjcprd]]
+    ENV_PREFIX                  = www
+    ENV_SUFFIX                  = yousendit.com
+
+    ENV_CDN_FQDN		= static.ysicdo002.com
+    ENV_CDN_SSL_FQDN            = a15.ysicdo002.com
+#    HTL_ENV_CDN_FQDN		= dj4wkwqu9ihdk.cloudfront.net
+#    HTL_ENV_CDN_SSL_FQDN	= dj4wkwqu9ihdk.cloudfront.net 
+    
+#    HTL_ENV_CDN_FQDN		= static.hightailcdn.com
+#    HTL_ENV_CDN_SSL_FQDN	= static.hightailcdn.com
+    HTL_ENV_CDN_FQDN		= fastly.hightailcdn.com
+    HTL_ENV_CDN_SSL_FQDN	= fastly.hightailcdn.com
+# Requested by Wilson team:
+    HTL_ENV_WILSON_CDN_FQDN	= wilson.hightailcdn.com
+
+    ENV_HTL_BASE_FQDN           = ${ENV_PREFIX}.${HTL_DOMAIN}
+    HTL_WEB_APP_FQDN            = ${ENV_PREFIX}.${HTL_DOMAIN}
+
+    COOKIE_DOMAIN               = .${HTL_DOMAIN}
+
+    AMD_PREFIX			= amd
+
+    FTF_SHARED_SECRET           = ENC|PRD:ZoGq+1U0Fl5QGWPEUz2A/KuHFO5Llu6ZhurnfZciWCbUkaoJW5nSRYGfS2xlUC98nyQDs1rcquiSwkHdx6/U/w==
+    
+    # for testing for rebranding
+    WEB_HTL_PARTNER_FQDN	= partners.hightail.com
+    WEB_HTL_DROPBOX_FQDN	= dropbox.hightail.com
+    WEB_HTL_DOWNLOAD_FQDN	= download.hightail.com
+    WEB_HTL_IMAGE_FQDN		= images.hightail.com
+    WEB_HTL_FILE_FQDN		= files.hightail.com
+    WEB_HTL_RCPT_FQDN		= rcpt.hightail.com
+
+    # for testing for rebranding
+    WEB_YSI_PARTNER_FQDN	= partners.yousendit.com
+    WEB_YSI_DROPBOX_FQDN	= dropbox.yousendit.com
+    WEB_YSI_DOWNLOAD_FQDN	= download.yousendit.com
+    WEB_YSI_IMAGE_FQDN		= images.yousendit.com
+    WEB_YSI_FILE_FQDN		= files.yousendit.com
+    WEB_YSI_RCPT_FQDN		= rcpt.yousendit.com
+ 
+    WEB_PARTNER_FQDN		= partners.${ENV_SUFFIX}
+    WEB_DROPBOX_FQDN		= dropbox.${ENV_SUFFIX}
+    WEB_DOWNLOAD_FQDN		= download.${ENV_SUFFIX}
+    WEB_IMAGE_FQDN		= images.${ENV_SUFFIX}
+    WEB_FILE_FQDN		= files.${ENV_SUFFIX}
+    WEB_RCPT_FQDN		= rcpt.${ENV_SUFFIX}
+  
+    ## General
+    DBM_V2_FQDN_PREFIX          = prd-wdb-v2
+    DBS_V2_FQDN_PREFIX          = prd-rdb-v2
+    DBM_V3_FQDN_PREFIX          = prd-wdb-v3
+    DBS_V3_FQDN_PREFIX          = prd-rdb-v3
+    ADP_SVC_FQDN_PREFIX         = sjcprdadp05
+    AMQ_APP_FQDN_PREFIX         = ysiq
+    API_SVC_FQDN_PREFIX         = api
+    ACT_SVC_FQDN_PREFIX         = sjclbivnu01.prod
+    BLG_SVC_FQDN_PREFIX         = sjclbivnb01.prod
+    AUT_SVC_FQDN_PREFIX         = sjclbiaut02.prod
+    BKR_SVC_FQDN_PREFIX         = sjclbibkr02.prod
+    CCH_APP_FQDN_PREFIX         = sjcprdcch01.prod
+    DEVAPI_SVC_FQDN_PREFIX      = developer-api
+    DEVAPI_VIP_ENDP		= https://sjclbxdpi01.yousendit.com
+
+    DOWNLOAD_FQDN_PREFIX        = download
+    DROPBOX_FQDN_PREFIX         = dropbox
+    DPI_SVC_FQDN_PREFIX         = dpi
+    ESIGN_SVC_FQDN_PREFIX       = sjclbisig02.prod
+    EVT_SVC_FQDN_PREFIX         = sjclbievt02.prod
+    JWS_SVC_FQDN_PREFIX		= jws
+    NGW_SVC_FQDN_PREFIX         = sjclbingw02.prod
+    PAY_PAL_FQDN                = www.paypal.com
+    PBK_APP_FQDN_PREFIX         = pb
+    PEN_SVC_FQDN_PREFIX         = sjclbipol02.prod
+    PHI_APP_FQDN_PREFIX         = www
+    PRA_SVC_FQDN_PREFIX		= sjclbipra01.prod
+    RBL_SVC_FQDN_PREFIX         = sjclbirbl02.prod
+    SKU_SVC_FQDN_PREFIX         = sjclbisku02.prod
+    SMQ_MST_FQDN_PREFIX         = sjcprdsmq02.prod
+    SMQ_SLV_FQDN_PREFIX         = sjcprdsmq01.prod
+    STATIC_FQDN_PREFIX          = static
+    TPL_SVC_FQDN_PREFIX         = sjclbitpl02.prod
+    USR_SVC_FQDN_PREFIX         = sjclbiusr02.prod
+
+    VND_ACCT_SVC_FQDN_PREFIX    = prd-vnu.prod
+    VND_ENTL_SVC_FQDN_PREFIX    = prd-vnb.prod
+    VND_PROD_SVC_FQDN_PREFIX    = prd-vnb.prod
+    VND_BILL_SVC_FQDN_PREFIX    = prd-vnb.prod
+    VND_USRP_SVC_FQDN_PREFIX    = prd-vnu.prod
+    VND_SCHL_SVC_FQDN_PREFIX    = prd-vnu.prod
+
+    WRK_SVC_FQDN_PREFIX         = sjclbiwrk02.prod
+    WEB_APP_FQDN_PREFIX         = www
+    XMPP_MST_FQDN_PREFIX        = sjclbixmp01.prod
+    XMPP_SLV_FQDN_PREFIX        = sjclbixmp02.prod
+    YPI_SVC_FQDN_PREFIX         = sjclbxypi01
+
+    PAYFLOW_MERCHANT		= ENC|PRD:jH8eOyGzWjh1RJpWy23xKHvH6ZCrXz4qaoPR4cQeoih1ZpBGhxOAKBbCf1Ydh3xG0sC7X+kCfzTcK095RCD57A==
+    PAYFLOW_PASSWORD		= ENC|PRD:HM0vKjp4qI2/AhShp2eEOMCmwifCcZDXEfQFykHdxshTjswyIQiuYjhBrerbLHqnZ7gP832eIWnOAFcXjmJShQ==
+    PAYFLOW_TESTER_PROFILE	= RP0000000006
+    PAYFLOW_FQDN		= payflowpro.paypal.com
+    PAYFLOW_TIMEOUT		= 90
+    PAYFLOW_TIMEOUT_V2PHP       = 120
+    PAYFLOW_USER		= ENC|PRD:DsCNDJb4kiBjcIUml2D/ZCntUGa9f1/Y9ejjrnLuL38Uk8pZG6g0yPt2gF9wMBLui1CVxSJ5Qtl1ADiH98hW9g==
+    PAYFLOW_VENDOR		= ENC|PRD:RL/S0rNmKtCFMQQ+E/JVDAcMBgGlOTUx/oHCOSbZkOY4qYw9juJSZqwnpo1KXNro3WVwwK9AolFpquM0DJpVIQ==
+
+    PREVIEW_ENDP		= http://previewapp.sv2.hightail.com:8080/api 
+    PREVIEW_V1_ENDP		= http://previewapp.sv2.hightail.com:8080/api 
+
+  ## Platform
+#    CCH_SERVERS                 = sjcprdcch01.prod.yousendit.com:${CCH_APP_PORT} sjcprdcch02.prod.yousendit.com:${CCH_APP_PORT}
+#   cfg-102
+     CCH_SERVERS = sjcprdcch01.prod.yousendit.com:${CCH_APP_PORT} sjcprdcch01.prod.yousendit.com:11212 sjcprdcch01.prod.yousendit.com:11213 sjcprdcch02.prod.yousendit.com:${CCH_APP_PORT} sjcprdcch02.prod.yousendit.com:11212 sjcprdcch02.prod.yousendit.com:11213 
+
+    DBM_V2_USERNAME             = ENC|PRD:HYFHz5iPi++3pO3p3hsD/JnDZo77JylkTfUhb/VAcOWFDtCpYUe2jrTOI7rVOznC8pHKVofwklEr4idSwF1nRg==
+    DBM_V2_PASSWORD             = ENC|PRD:iJMU4d6BklYzWU3mKhpyiUeGtTJIvtDNkXUyZNuej3jPyAFiiHIWIW8fAclJ4Vn0tRUqV0fqOwXPHJm0M5nqPw==
+    DBM_V3_USERNAME             = ENC|PRD:Rbr9jHj5q5E6+Bs2KymixxFFXCLFJuR4f7YoDTpZUhM/Xj+/WRTrQj8qvZYdtmVz0ShvXNo+/D+DjtrEkeIAbw==
+    DBM_V3_PASSWORD             = ENC|PRD:ZPSxDvtgSVtYvcyg5gVYQ5zm0QEooUoYz8v6PWuU77436+Bqm0L5sip0Tb8Or/UrniBjq0kD2vup1nQL8GPlwg==
+    DBM_V2_DSN_CMS              = ENC|PRD:KdekRK4vqsLiqY4kXbsRkpT3evgUpD0I7r+zgzTguCZRHsBsCQqsrBrVEHF9JEgWpJqaMKibyMt8BVQChTT2oj/Sarsbhj7OZUxMcCF+ZSK2DKlvGPIceM7sphYYFf40yybGrEngI5gzak2aNlV+nIuqvcpk5V3c6mKq1BBUpqwALY4kjMyVUK7zYKroCBQzGCKOnEyfL+5BeKnPKCvmfbObxUTy3PC+B14Ea/fCEDEgrb9OBN1TYoU0lqMpZdNO
+
+    VINDICIA_SWITCH             = On
+    YPI_FILE_UPLOADS_USE_CLIENT_IP  = false
+    YPI_SVC_ENDP                = https://${YPI_SVC_FQDN}
+    YPI_SVC_ENDP_V2             = https://ypi.${HTL_DOMAIN} 
+    EXTERNAL_YPI_SVC_ENDP       = https://ypi.hightail.com
+
+# don't ever enable this
+#    CACHE_NUM_CLIENT_THREADS    = 15
+
+# udpated on cfg-90
+#   MEMCACHE_EXPIRE_NEVER         = 262800
+
+    SMQ_USERNAME                  = User
+    SMQ_PASSWORD                  = User
+
+    SMQ_REPORTING_MST_FQDN      = sjcprdsmq02.prod.${ENV_SUFFIX}
+    SMQ_REPORTING_SLV_FQDN      = sjcprdsmq01.prod.${ENV_SUFFIX}
+    SMQ_REPORTING_PROVIDER_URL  = "${SMQ_REPORTING_MST_FQDN}:${SMQ_MST_PORT},${SMQ_REPORTING_SLV_FQDN}:${SMQ_SLV_PORT}"
+
+    ALCATRAZ_SCORING_ENABLED		= true
+    ALCATRAZ_SPAM_SCORING_AGENT_HOST	= sjcprdspa01.prod.${ENV_SUFFIX}
+
+    ACTIVITYW_SVC_FQDN			= sjclbirpt01.prod.${ENV_SUFFIX}
+# cfg-290
+# cfg-320, changed to 50::: NEW> reversing, ahmed, 5/9/2013
+    ACTIVITY_CONNECTION_SESSION_CACHE_SIZE = 100
+
+    CMS_HTTPD_SERVER_NAME		= web.${ENV_SUFFIX}
+    CMS_HTTPD_SERVER_ALIAS		= web.${ENV_SUFFIX}
+    CMS_SERVICES_CONTEXT_NAME		= www.${ENV_SUFFIX}
+    TAU_APP_FQDN			= app.${ENV_SUFFIX}
+
+    TPI_SVC_FQDN			= tpi.${ENV_SUFFIX} 
+
+    HT_TAU_APP_FQDN			= app.${HTL_DOMAIN}
+    HT_TPI_SVC_FQDN			= tpi.${HTL_DOMAIN}
+
+    LITHIUM_KEY = 0F08C8026D2B968BEC8BF3FA9365BC51F2E0E71A43C3970A2BB18505F3AF3755
+    LITHIUM_URL = support.yousendit.com 
+    LITHIUM_URL_HTL = learn.hightail.com
+
+    HTL_YAHOO_CONSUMER_KEY	= dj0yJmk9eVNFZ1huQlhrd0V4JmQ9WVdrOWJEVmhibTFITXpZbWNHbzlNVFF3TURZM01UVTJNZy0tJnM9Y29uc3VtZXJzZWNyZXQmeD05ZQ--
+    HTL_YAHOO_CONSUMER_SECRET	= ef767d9c3def8cf19bd0421270d497dd491c6eb5
+    HTL_YAHOO_OAUTH_APP_ID	= l5anmG36
+
+    STATIC_HTL_FQDN = static.hightail.com
+
+    AMQ_USERNAME	    = ENC|PRD:RYCWEMNzXhVsoM7NQ7qQlOnLE2rRfhj3b+khiSAgnDFHOy8PAbF1pWBul7zHxBvq0znHm6ws0ofSheaYkJXUSg==
+    AMQ_PASSWORD	    = ENC|PRD:k6NesX8WdQMM0eWLP8epLyBxdt8lFsZ20wkJHaUrHNiartE10FO4I7E8TNt4OuqzfJ8IKk2Xgw5oE0t0Tn/oYQ==
+
+
+    AMQ_PROVIDER_URL	    = 'failover:(tcp://mq01.sv3.hightail.com:61688,tcp://mq02.sv3.hightail.com:61688,tcp://mq03.sv3.hightail.com:61688)?randomize=true&${AMQ_WATCH_TOPIC_ADVISORIES}'
+
+# Lenovo:
+    LENOVO_WEBAUTH_LOGIN_ENDP = https://passport.lenovo.com/wauthen/gateway 
+    LENOVO_WEBAUTH_VERIFY_ENDP = https://passport.lenovo.com/interserver/authen/1.2/getaccountid 
+# LENOVO_WEBAUTH_LOGIN_ENDP = https://uss-aws.test.lenovomm.cn/wauthen/gateway 
+# LENOVO_WEBAUTH_VERIFY_ENDP = https://uss-aws.test.lenovomm.cn/interserver/authen/1.4/getaccountid 
+
+    WD_BASE_URL			= https://wdconnect.com
+    KASPERSKY_BASE_URL		= https://kaspersky.hightail.com
+    KASPERSKY_EXTERNAL_BASE_URL	= https://center.kaspersky.com
+
+    FSM_SVC_FQDN		= ${FSM_SVC_FQDN_PREFIX}.${HTL_DOMAIN}
+    FSM_SVC_FQDN_PREFIX		= fsm.sv3
+    HPI_SVC_FQDN		= api.${HTL_DOMAIN}
+    WILSON_FQDN			= www2.${HTL_DOMAIN}
+
+    HAPI_BASE_URL		= http://hapi.sv3.${HTL_DOMAIN}/api
+    AUTH2_ENDP			= ${PRD_AUTH2_ENDP}
+
+    NEW_RELIC_LICENSE_KEY	= ${PRD_NEW_RELIC_LICENSE_KEY}
+
+    HSS_FQDN = hss.sv3.${HTL_DOMAIN}:${HSS_PORT}
+
+    ENVIRONMENT_ALIAS	    = PROD
+    HT_EXTERNAL_WEB_BASE_URL = ${EXTERNAL_WEB_BASE_URL_SSL}
+
+    WRK_CATCHUP_ENABLED = true 
+    HFSAMQ_URL = tcp://hfsapi01.sv2.hightail.com:61616 
+    HFSAMQ_USERNAME = admin 
+    HFSAMQ_PASSWORD = admin 
+    WRK_CATCHUP_PROCESSING_ENABLED = false 
+
+    WILSON_ENABLED              = false
+
+[[sjcprdwrk]]
+    WRK_DBS_URL = jdbc:mysql://prd-rdb-wrk.yousendit.com:3306/workspace?dumpQueriesOnException=true
+
+    CCH_SERVERS = sjcprdcch03.prod.yousendit.com:${CCH_APP_PORT} sjcprdcch03.prod.yousendit.com:11212 sjcprdcch03.prod.yousendit.com:11213 sjcprdcch04.prod.yousendit.com:${CCH_APP_PORT} sjcprdcch04.prod.yousendit.com:11212 sjcprdcch04.prod.yousendit.com:11213
+
+[[sjcprdwrk01]]
+    WRK_DBS_URL = jdbc:mysql://sjcprddbw02.prod.yousendit.com:3306/workspace?dumpQueriesOnException=true
+
+[[sjcprdwrk02]]
+    WRK_DBS_URL = jdbc:mysql://sjcprddbw02.prod.yousendit.com:3306/workspace?dumpQueriesOnException=true
+
+[[sjcprdwrk03]]
+    WRK_DBS_URL = jdbc:mysql://sjcprddbw02.prod.yousendit.com:3306/workspace?dumpQueriesOnException=true
+
+[[sjcprdwrk04]]
+   WRK_DBS_URL = jdbc:mysql://sjcprddbw02.prod.yousendit.com:3306/workspace?dumpQueriesOnException=true
+
+[[sjcprdwrk05]]
+   WRK_DBS_URL = jdbc:mysql://sjcprdrdb03.prod.yousendit.com:3306/workspace?dumpQueriesOnException=true
+
+[[sjcprdwrk06]]
+   WRK_DBS_URL = jdbc:mysql://sjcprdrdb03.prod.yousendit.com:3306/workspace?dumpQueriesOnException=true
+
+[[sjcprdwrk07]]
+   WRK_DBS_URL = jdbc:mysql://sjcprdrdb03.prod.yousendit.com:3306/workspace?dumpQueriesOnException=true
+
+[[sjcprdwrk08]]
+   WRK_DBS_URL = jdbc:mysql://sjcprdrdb03.prod.yousendit.com:3306/workspace?dumpQueriesOnException=true
+
+[[sjcprdweb]]
+    DBM_V2_USERNAME             = ENC|PRD:cZZd8ZDRhRGFB/i/Q/2wrNv8FlMwAoVAFw9Fv7NW1iPVgA6tXsj7S2zWMAFO/jH9nbyR+6BX8g7WLwkzF0wZgQ==
+    DBM_V2_PASSWORD             = ENC|PRD:gGJccfTRW9S6wWfpREDZG4CM9CnP1HW45zbV1kzqFhQ25wWhJ4ZjtFQvtxvUWmyVuLF0hQA3bYEQLgtlOHsJsA==
+
+[[sjcprdcnt]]
+    DBM_V2_USERNAME             = ENC|PRD:cZZd8ZDRhRGFB/i/Q/2wrNv8FlMwAoVAFw9Fv7NW1iPVgA6tXsj7S2zWMAFO/jH9nbyR+6BX8g7WLwkzF0wZgQ==
+    DBM_V2_PASSWORD             = ENC|PRD:gGJccfTRW9S6wWfpREDZG4CM9CnP1HW45zbV1kzqFhQ25wWhJ4ZjtFQvtxvUWmyVuLF0hQA3bYEQLgtlOHsJsA==
+
+[[sjcprdcst]]
+    DBM_V2_USERNAME             = ENC|PRD:cZZd8ZDRhRGFB/i/Q/2wrNv8FlMwAoVAFw9Fv7NW1iPVgA6tXsj7S2zWMAFO/jH9nbyR+6BX8g7WLwkzF0wZgQ==
+    DBM_V2_PASSWORD             = ENC|PRD:gGJccfTRW9S6wWfpREDZG4CM9CnP1HW45zbV1kzqFhQ25wWhJ4ZjtFQvtxvUWmyVuLF0hQA3bYEQLgtlOHsJsA==
+
+[[sjcprdutl]]
+    DBM_V2_USERNAME             = ENC|PRD:cZZd8ZDRhRGFB/i/Q/2wrNv8FlMwAoVAFw9Fv7NW1iPVgA6tXsj7S2zWMAFO/jH9nbyR+6BX8g7WLwkzF0wZgQ==
+    DBM_V2_PASSWORD             = ENC|PRD:gGJccfTRW9S6wWfpREDZG4CM9CnP1HW45zbV1kzqFhQ25wWhJ4ZjtFQvtxvUWmyVuLF0hQA3bYEQLgtlOHsJsA==
+
+[[sjcprdapi]]
+    DBM_V2_USERNAME             = ENC|PRD:cZZd8ZDRhRGFB/i/Q/2wrNv8FlMwAoVAFw9Fv7NW1iPVgA6tXsj7S2zWMAFO/jH9nbyR+6BX8g7WLwkzF0wZgQ==
+    DBM_V2_PASSWORD             = ENC|PRD:gGJccfTRW9S6wWfpREDZG4CM9CnP1HW45zbV1kzqFhQ25wWhJ4ZjtFQvtxvUWmyVuLF0hQA3bYEQLgtlOHsJsA==
+
+[[sjcprdpbk]]
+    DBM_V2_USERNAME             = ENC|PRD:cZZd8ZDRhRGFB/i/Q/2wrNv8FlMwAoVAFw9Fv7NW1iPVgA6tXsj7S2zWMAFO/jH9nbyR+6BX8g7WLwkzF0wZgQ==
+    DBM_V2_PASSWORD             = ENC|PRD:gGJccfTRW9S6wWfpREDZG4CM9CnP1HW45zbV1kzqFhQ25wWhJ4ZjtFQvtxvUWmyVuLF0hQA3bYEQLgtlOHsJsA==
+
+[[sv]]
+    ENV_PREFIX                  = ${PRD_ENV_PREFIX}
+    AMQ_PROVIDER_URL            = ${PRD_AMQ_PROVIDER_URL}
+    CASSANDRA_NODES             = ${PRD_CASSANDRA_NODES}
+    CASSANDRA_PASSWORD          = ${PRD_CASSANDRA_PASSWORD}
+    CLEVERSAFE_FQDN             = accesser.sv2.hightail.com
+    HSS_FQDN                    = hss.sv3.${HTL_DOMAIN}:${HSS_PORT}
+    PBK_APP_FQDN_PREFIX         = ${PRD_PBK_APP_FQDN_PREFIX}
+    NEW_RELIC_LICENSE_KEY	= ${PRD_NEW_RELIC_LICENSE_KEY}
+    AUTH2_ENDP			= ${PRD_AUTH2_ENDP}
+
+    VND_ACCT_SVC_FQDN_PREFIX    = ${PRD_VNU}
+    VND_ENTL_SVC_FQDN_PREFIX    = ${PRD_VNB}
+    VND_PROD_SVC_FQDN_PREFIX    = ${PRD_VNB}
+    VND_BILL_SVC_FQDN_PREFIX    = ${PRD_VNB}
+    VND_USRP_SVC_FQDN_PREFIX    = ${PRD_VNU}
+    VND_SCHL_SVC_FQDN_PREFIX    = ${PRD_VNU}
+    AMQ_USERNAME		= ENC|PRD:RYCWEMNzXhVsoM7NQ7qQlOnLE2rRfhj3b+khiSAgnDFHOy8PAbF1pWBul7zHxBvq0znHm6ws0ofSheaYkJXUSg==
+    AMQ_PASSWORD		= ENC|PRD:jY7bI+lw0AfZFbzzJT0uraJzD+v2wcyDyt3s0BC19wX1tHcoUlsBvFu5Qa9gO2ZZIYgScE9ucUhafJ4qjQJxiw==
+
+[[sv3]]
+    ENV_PREFIX                  = ${PRD_ENV_PREFIX}
+    AMQ_PROVIDER_URL            = ${PRD_AMQ_PROVIDER_URL}
+    CASSANDRA_NODES             = ${PRD_CASSANDRA_NODES}
+    CASSANDRA_PASSWORD          = ${PRD_CASSANDRA_PASSWORD}
+    PBK_APP_FQDN_PREFIX         = ${PRD_PBK_APP_FQDN_PREFIX}
+    DBM_V2_FQDN_PREFIX          = ${PRD_DBM_V2_FQDN_PREFIX}
+    DBS_V2_FQDN_PREFIX          = ${PRD_DBS_V2_FQDN_PREFIX}
+    DBM_V3_FQDN_PREFIX          = ${PRD_DBM_V3_FQDN_PREFIX}
+    DBS_V3_FQDN_PREFIX          = ${PRD_DBS_V3_FQDN_PREFIX}
+    DBM_V2_USERNAME             = ${PRD_DBM_V2_USERNAME}
+    DBM_V2_PASSWORD             = ${PRD_DBM_V2_PASSWORD}
+    DBM_V3_USERNAME             = ${PRD_DBM_V3_USERNAME}
+    DBM_V3_PASSWORD             = ${PRD_DBM_V3_PASSWORD}
+    NEW_RELIC_LICENSE_KEY	= ${PRD_NEW_RELIC_LICENSE_KEY}
+    AMQ_USERNAME		= ENC|PRD:RYCWEMNzXhVsoM7NQ7qQlOnLE2rRfhj3b+khiSAgnDFHOy8PAbF1pWBul7zHxBvq0znHm6ws0ofSheaYkJXUSg==
+    AMQ_PASSWORD		= ENC|PRD:OwjBEjy5zb+JTbnYdLjyj1i86vCcQlQeVZKWmQoWzzEm8HogZnYP9SdsyXfxJ8ovyPgL3EgRYcnBGVJskRzRlQ==
+    AUTH2_ENDP			= ${PRD_AUTH2_ENDP}
+
+[[ebf]]
+    ENV_PREFIX                  = www
+    ENV_SUFFIX                  = yousendit.com
+
+    AMQ_APP_FQDN_PREFIX         = ysiq
+    API_SVC_FQDN_PREFIX         = api
+    WEB_APP_FQDN_PREFIX         = www
+
+[[ftf]]
+    ENV_PREFIX                  = www
+    ENV_SUFFIX                  = yousendit.com
+
+    AMQ_APP_FQDN_PREFIX         = ysiq
+    API_SVC_FQDN_PREFIX         = api
+    PBK_APP_FQDN_PREFIX         = pb
+    WEB_APP_FQDN_PREFIX         = www
+
+[[nfs]]
+    ENV_PREFIX                  = nfs
+    ENV_SUFFIX                  = hightail.com
+
+[[dev]]
+## This section is for local development stations.  Primarily used by v2php web developers.
+## See Gaurav or Erik C for details.
+
+    ENV_PREFIX                  = dev
+    ENV_SUFFIX                  = yousendit.com
+### This setting is used for services that are standalone, but need to refer to OTHER environment's resources (personal dev station pointing to SQC engines�) 
+    ENV_PREFIX_OVERRIDE         = sqc
+###
+    FTF_SHARED_SECRET                    = 500emerson
+
+    ## General
+    DBM_V2_FQDN_PREFIX          = ${ENV_PREFIX_OVERRIDE}-wdb-v2.eng.yousendit.com
+    DBS_V2_FQDN_PREFIX          = ${ENV_PREFIX_OVERRIDE}-wdb-v2.eng.yousendit.com
+    DBM_V3_FQDN_PREFIX          = ${ENV_PREFIX_OVERRIDE}-wdb-v3.eng.yousendit.com
+    DBS_V3_FQDN_PREFIX          = ${ENV_PREFIX_OVERRIDE}-wdb-v3.eng.yousendit.com
+    AMQ_APP_FQDN_PREFIX         = ${ENV_PREFIX_OVERRIDE}-ysiq
+    ACT_SVC_FQDN_PREFIX         = ${ENV_PREFIX_OVERRIDE}act01.eng 
+    BLG_SVC_FQDN_PREFIX         = ${ENV_PREFIX_OVERRIDE}blg01.eng 
+    API_SVC_FQDN_PREFIX         = ${ENV_PREFIX}-api
+    AUT_SVC_FQDN_PREFIX         = ${ENV_PREFIX_OVERRIDE}aut01.eng
+    BKR_SVC_FQDN_PREFIX         = ${ENV_PREFIX_OVERRIDE}bkr01.eng
+    CCH_APP_FQDN_PREFIX         = ${ENV_PREFIX_OVERRIDE}cch01.eng
+    DEVAPI_SVC_FQDN_PREFIX      = ${ENV_PREFIX}-dpi
+    DROPBOX_FQDN_PREFIX         = ${ENV_PREFIX}-dropbox
+    DPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}-dpi
+    ESIGN_SVC_FQDN_PREFIX       = ${ENV_PREFIX_OVERRIDE}dpi01.eng
+    EVT_SVC_FQDN                = ${ENV_PREFIX_OVERRIDE}evt01.eng
+    NGW_SVC_FQDN_PREFIX         = ${ENV_PREFIX_OVERRIDE}ngw01.eng
+    PBK_APP_FQDN_PREFIX         = ${ENV_PREFIX}
+    PEN_SVC_FQDN_PREFIX         = ${ENV_PREFIX_OVERRIDE}pen01.eng
+    PHI_APP_FQDN_PREFIX         = dev-wa
+    PRA_SVC_FQDN_PREFIX         = ${ENV_PREFIX_OVERRIDE}pra01.eng
+    RBL_SVC_FQDN_PREFIX         = ${ENV_PREFIX_OVERRIDE}rbl01.eng
+    SKU_SVC_FQDN_PREFIX         = ${ENV_PREFIX_OVERRIDE}sku01.eng
+    STATIC_FQDN_PREFIX          = ${ENV_PREFIX}-static
+    TPL_SVC_FQDN_PREFIX         = ${ENV_PREFIX_OVERRIDE}tpl01.eng
+    USR_SVC_FQDN_PREFIX         = ${ENV_PREFIX_OVERRIDE}usr01.eng
+    VND_ACCT_SVC_FQDN_PREFIX    = ${ENV_PREFIX}vnu01.eng
+    VND_ENTL_SVC_FQDN_PREFIX    = ${ENV_PREFIX}vnb01.eng
+    VND_PROD_SVC_FQDN_PREFIX    = ${ENV_PREFIX}vnb01.eng
+    VND_BILL_SVC_FQDN_PREFIX    = ${ENV_PREFIX}vnb01.eng
+    VND_USRP_SVC_FQDN_PREFIX    = ${ENV_PREFIX}vnu01.eng
+    VND_SCHL_SVC_FQDN_PREFIX    = ${ENV_PREFIX}vnu01.eng
+    WRK_SVC_FQDN_PREFIX         = ${ENV_PREFIX_OVERRIDE}wrk01.eng
+    WEB_APP_FQDN_PREFIX         = ${ENV_PREFIX}
+    XMPP_MST_FQDN_PREFIX        = ${ENV_PREFIX_OVERRIDE}xmp01
+    XMPP_SLV_FQDN_PREFIX        = ${ENV_PREFIX_OVERRIDE}xmp02
+    YPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}ypi01.dmz
+
+  ## Platform
+    CCH_SERVERS                 = ${CCH_APP_FQDN}:${CCH_APP_PORT}
+
+[[ita]]
+    BRAND_VERSION = hightail
+    ENV_PREFIX                  = ita
+    ENV_SUFFIX			= yousendit.com
+    EXTERNAL_WEB_FQDN		= www.${ENV_PREFIX}.${EXTERNAL_DOMAIN}
+    HT_EXTERNAL_WEB_BASE_URL	    = ${HT_BASE_URL}
+    FTF_SHARED_SECRET           = 500emerson
+ 
+  # for testing purposes on rebranding
+  WEB_HTL_PARTNER_FQDN          = partners.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DROPBOX_FQDN          = dropbox.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DOWNLOAD_FQDN         = download.${ENV_PREFIX}.hightail.com
+  ##### Note:  web download endpoints must have trailing "/"
+  WEB_HTL_DOWNLOAD_ENDP         = http://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_DOWNLOAD_SSL_ENDP     = https://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_IMAGE_FQDN            = images.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_FQDN             = files.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_ENDP             = http://${WEB_HTL_FILE_FQDN}/
+  WEB_HTL_RCPT_FQDN             = rcpt.${ENV_PREFIX}.hightail.com
+
+  ENV_BASE_FQDN                 = www.${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_HTL_BASE_FQDN             = www.${ENV_PREFIX}.${HTL_DOMAIN}
+  ENV_BASE_URL                  = http://${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_BASE_URL_SSL              = https://${ENV_HTL_BASE_FQDN}
+
+  HTL_DROPBOX_FQDN              = www.${DROPBOX_FQDN_PREFIX}.${HTL_DOMAIN}
+  HTL_WEB_APP_FQDN              = www.${WEB_APP_FQDN_PREFIX}.${HTL_DOMAIN}
+
+  ## General                     
+    DBM_V2_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBS_V2_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBM_V3_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBS_V3_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    ACT_SVC_FQDN_PREFIX         = ${ENV_PREFIX}act01.dmz	
+    ADP_SVC_FQDN_PREFIX         = ${ENV_PREFIX}adp01.dmz	
+    BLG_SVC_FQDN_PREFIX         = ${ENV_PREFIX}blg01.dmz	
+#    AMQ_APP_FQDN_PREFIX	= ${ENV_PREFIX}-ysiq
+    AMQ_APP_FQDN_PREFIX		= ${ENV_PREFIX}amq01.dmz
+    API_SVC_FQDN_PREFIX		= ${ENV_PREFIX}api01.dmz
+    AUT_SVC_FQDN_PREFIX		= ${ENV_PREFIX}aut01.dmz
+    BKR_SVC_FQDN_PREFIX	 	= ${ENV_PREFIX}bkr01.dmz
+    CCH_APP_FQDN_PREFIX		= ${ENV_PREFIX}cch01.dmz
+    DEVAPI_SVC_FQDN_PREFIX	= ${ENV_PREFIX}dpi01.dmz
+    DROPBOX_FQDN_PREFIX		= ${ENV_PREFIX}-dropbox
+    DPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}dpi01.dmz
+    ESIGN_SVC_FQDN_PREFIX	= ${ENV_PREFIX}sig01.dmz
+    EVT_SVC_FQDN		= ${ENV_PREFIX}evt01.dmz
+    JWS_SVC_FQDN_PREFIX		= ${ENV_PREFIX}jws01.dmz
+    NGW_SVC_FQDN_PREFIX		= ${ENV_PREFIX}ngw01.dmz
+    PEN_SVC_FQDN_PREFIX		= ${ENV_PREFIX}pol01.dmz
+    PHI_APP_FQDN_PREFIX		= ${ENV_PREFIX}
+    PRA_SVC_FQDN_PREFIX		= ${ENV_PREFIX}pra01.dmz
+    RBL_SVC_FQDN_PREFIX		= ${ENV_PREFIX}rbl01.dmz
+    SKU_SVC_FQDN_PREFIX		= ${ENV_PREFIX}sku01.dmz
+    STATIC_FQDN_PREFIX		= ${ENV_PREFIX}-static
+    TPL_SVC_FQDN_PREFIX		= ${ENV_PREFIX}tpl01.dmz
+    USR_SVC_FQDN_PREFIX		= ${ENV_PREFIX}usr01.dmz
+    VND_ACCT_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz	
+    VND_ENTL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_PROD_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_BILL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_USRP_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz	
+    VND_SCHL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz
+    WRK_SVC_FQDN_PREFIX		= ${ENV_PREFIX}wrk01.dmz
+    WEB_APP_FQDN_PREFIX		= ${ENV_PREFIX}
+    XMPP_MST_FQDN_PREFIX	= ${ENV_PREFIX}xmp01
+    XMPP_SLV_FQDN_PREFIX	= ${ENV_PREFIX}xmp02
+    YPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}ypi01.dmz
+
+    ZIP_SVC_FQDN		= ${ENV_PREFIX}tap04.${ENV_PREFIX}.hightail.com 
+
+  ## Platform
+    CCH_SERVERS			= ${CCH_APP_FQDN}:${CCH_APP_PORT}
+
+    PAYFLOW_USER		= qauser 
+
+    ACTIVITYW_SVC_FQDN		= ${ENV_PREFIX}-rpt.${ENV_SUFFIX}
+
+    STATIC_FQDN                 = ${STATIC_HTL_FQDN}
+    CLEVERSAFE_FQDN		= accesser.sto.hightail.com
+
+    ENVIRONMENT_ALIAS		= ITA
+
+    WILSON_ENABLED              = true
+
+[[itb]]
+    BRAND_VERSION = hightail
+    ENV_PREFIX      = itb
+    ENV_SUFFIX			= yousendit.com
+    EXTERNAL_WEB_FQDN		= www.${ENV_PREFIX}.${EXTERNAL_DOMAIN}
+
+    FTF_SHARED_SECRET           = 500emerson
+ 
+  # for testing purposes on rebranding
+  WEB_HTL_PARTNER_FQDN          = partners.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DROPBOX_FQDN          = dropbox.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DOWNLOAD_FQDN         = download.${ENV_PREFIX}.hightail.com
+  ##### Note:  web download endpoints must have trailing "/"
+  WEB_HTL_DOWNLOAD_ENDP         = http://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_DOWNLOAD_SSL_ENDP     = https://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_IMAGE_FQDN            = images.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_FQDN             = files.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_ENDP             = http://${WEB_HTL_FILE_FQDN}/
+  WEB_HTL_RCPT_FQDN             = rcpt.${ENV_PREFIX}.hightail.com
+
+  ENV_BASE_FQDN                 = www.${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_HTL_BASE_FQDN             = www.${ENV_PREFIX}.${HTL_DOMAIN}
+  ENV_BASE_URL                  = http://${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_BASE_URL_SSL              = https://${ENV_HTL_BASE_FQDN}
+
+  HTL_DROPBOX_FQDN              = www.${DROPBOX_FQDN_PREFIX}.${HTL_DOMAIN}
+  HTL_WEB_APP_FQDN              = www.${WEB_APP_FQDN_PREFIX}.${HTL_DOMAIN}
+
+  ## General                     
+    DBM_V2_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBS_V2_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBM_V3_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBS_V3_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    ACT_SVC_FQDN_PREFIX         = ${ENV_PREFIX}act01.dmz	
+    ADP_SVC_FQDN_PREFIX         = ${ENV_PREFIX}adp01.dmz	
+    BLG_SVC_FQDN_PREFIX         = ${ENV_PREFIX}blg01.dmz	
+#    AMQ_APP_FQDN_PREFIX	= ${ENV_PREFIX}-ysiq
+    AMQ_APP_FQDN_PREFIX		= ${ENV_PREFIX}amq01.dmz
+    API_SVC_FQDN_PREFIX		= ${ENV_PREFIX}api01.dmz
+    AUT_SVC_FQDN_PREFIX		= ${ENV_PREFIX}aut01.dmz
+    BKR_SVC_FQDN_PREFIX	 	= ${ENV_PREFIX}bkr01.dmz
+    CCH_APP_FQDN_PREFIX		= ${ENV_PREFIX}cch01.dmz
+    DEVAPI_SVC_FQDN_PREFIX	= ${ENV_PREFIX}dpi01.dmz
+    DROPBOX_FQDN_PREFIX		= ${ENV_PREFIX}-dropbox
+    DPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}dpi01.dmz
+    ESIGN_SVC_FQDN_PREFIX	= ${ENV_PREFIX}dpi01.dmz
+    EVT_SVC_FQDN		= ${ENV_PREFIX}evt01.dmz
+    JWS_SVC_FQDN_PREFIX		= ${ENV_PREFIX}jws01.dmz
+    NGW_SVC_FQDN_PREFIX		= ${ENV_PREFIX}ngw01.dmz
+    PEN_SVC_FQDN_PREFIX		= ${ENV_PREFIX}pol01.dmz
+    PHI_APP_FQDN_PREFIX		= ${ENV_PREFIX}
+    PRA_SVC_FQDN_PREFIX		= ${ENV_PREFIX}pra01.dmz
+    RBL_SVC_FQDN_PREFIX		= ${ENV_PREFIX}rbl01.dmz
+    SKU_SVC_FQDN_PREFIX		= ${ENV_PREFIX}sku01.dmz
+    STATIC_FQDN_PREFIX		= ${ENV_PREFIX}-static
+    TPL_SVC_FQDN_PREFIX		= ${ENV_PREFIX}tpl01.dmz
+    USR_SVC_FQDN_PREFIX		= ${ENV_PREFIX}usr01.dmz
+    VND_ACCT_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz	
+    VND_ENTL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_PROD_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_BILL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_USRP_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz	
+    VND_SCHL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz
+    WRK_SVC_FQDN_PREFIX		= ${ENV_PREFIX}wrk01.dmz
+    WEB_APP_FQDN_PREFIX		= ${ENV_PREFIX}
+    XMPP_MST_FQDN_PREFIX	= ${ENV_PREFIX}xmp01
+    XMPP_SLV_FQDN_PREFIX	= ${ENV_PREFIX}xmp02
+    YPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}ypi01.dmz
+
+    ZIP_SVC_FQDN		= ${ENV_PREFIX}tap04.${ENV_PREFIX}.hightail.com 
+
+  ## Platform
+    CCH_SERVERS			= ${CCH_APP_FQDN}:${CCH_APP_PORT}
+
+    PAYFLOW_USER		= qauser 
+
+    ACTIVITYW_SVC_FQDN		= ${ENV_PREFIX}-rpt.${ENV_SUFFIX}
+
+    STATIC_FQDN                 = ${STATIC_HTL_FQDN}
+
+[[itc]]
+    BRAND_VERSION = hightail
+    ENV_PREFIX      = itc
+    ENV_SUFFIX                  = yousendit.com
+    EXTERNAL_WEB_FQDN   = www.${ENV_PREFIX}.${EXTERNAL_DOMAIN}
+
+  FTF_SHARED_SECRET                    = 500emerson
+
+  # for testing purposes on rebranding
+  WEB_HTL_PARTNER_FQDN          = partners.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DROPBOX_FQDN          = dropbox.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DOWNLOAD_FQDN         = download.${ENV_PREFIX}.hightail.com
+  ##### Note:  web download endpoints must have trailing "/"
+  WEB_HTL_DOWNLOAD_ENDP         = http://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_DOWNLOAD_SSL_ENDP     = https://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_IMAGE_FQDN            = images.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_FQDN             = files.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_ENDP             = http://${WEB_HTL_FILE_FQDN}/
+  WEB_HTL_RCPT_FQDN             = rcpt.${ENV_PREFIX}.hightail.com
+
+  ENV_BASE_FQDN                 = www.${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_HTL_BASE_FQDN             = www.${ENV_PREFIX}.${HTL_DOMAIN}
+  ENV_BASE_URL                  = http://${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_BASE_URL_SSL              = https://${ENV_HTL_BASE_FQDN}
+
+  HTL_DROPBOX_FQDN              = www.${DROPBOX_FQDN_PREFIX}.${HTL_DOMAIN}
+  HTL_WEB_APP_FQDN              = www.${WEB_APP_FQDN_PREFIX}.${HTL_DOMAIN}
+
+  ## General
+    DBM_V2_FQDN_PREFIX    = ${ENV_PREFIX}wdb01.dmz
+    DBS_V2_FQDN_PREFIX    = ${ENV_PREFIX}wdb01.dmz
+    DBM_V3_FQDN_PREFIX    = ${ENV_PREFIX}wdb01.dmz
+    DBS_V3_FQDN_PREFIX    = ${ENV_PREFIX}wdb01.dmz
+    ACT_SVC_FQDN_PREFIX         = ${ENV_PREFIX}act01.dmz  
+    ADP_SVC_FQDN_PREFIX         = ${ENV_PREFIX}adp01.dmz  
+    BLG_SVC_FQDN_PREFIX         = ${ENV_PREFIX}blg01.dmz  
+#    AMQ_APP_FQDN_PREFIX    = ${ENV_PREFIX}-ysiq
+    AMQ_APP_FQDN_PREFIX   = ${ENV_PREFIX}amq01.dmz
+    API_SVC_FQDN_PREFIX   = ${ENV_PREFIX}api01.dmz
+    AUT_SVC_FQDN_PREFIX   = ${ENV_PREFIX}aut01.dmz
+    BKR_SVC_FQDN_PREFIX   = ${ENV_PREFIX}bkr01.dmz
+    CCH_APP_FQDN_PREFIX   = ${ENV_PREFIX}cch01.dmz
+    DEVAPI_SVC_FQDN_PREFIX  = ${ENV_PREFIX}dpi01.dmz
+    DROPBOX_FQDN_PREFIX         = ${ENV_PREFIX}-dropbox
+    DPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}dpi01.dmz
+    ESIGN_SVC_FQDN_PREFIX = ${ENV_PREFIX}sig01.dmz
+    EVT_SVC_FQDN    = ${ENV_PREFIX}evt01.dmz
+    JWS_SVC_FQDN_PREFIX   = ${ENV_PREFIX}jws01.dmz
+    NGW_SVC_FQDN_PREFIX   = ${ENV_PREFIX}ngw01.dmz
+    PEN_SVC_FQDN_PREFIX   = ${ENV_PREFIX}pol01.dmz
+    PHI_APP_FQDN_PREFIX   = ${ENV_PREFIX}
+    PRA_SVC_FQDN_PREFIX   = ${ENV_PREFIX}pra01.dmz
+    RBL_SVC_FQDN_PREFIX   = ${ENV_PREFIX}rbl01.dmz
+    SKU_SVC_FQDN_PREFIX   = ${ENV_PREFIX}sku01.dmz
+    STATIC_FQDN_PREFIX          = ${ENV_PREFIX}-static
+    TPL_SVC_FQDN_PREFIX   = ${ENV_PREFIX}tpl01.dmz
+    USR_SVC_FQDN_PREFIX   = ${ENV_PREFIX}usr01.dmz
+    VND_ACCT_SVC_FQDN_PREFIX  = ${ENV_PREFIX}vnu01.dmz  
+    VND_ENTL_SVC_FQDN_PREFIX  = ${ENV_PREFIX}vnb01.dmz  
+    VND_PROD_SVC_FQDN_PREFIX  = ${ENV_PREFIX}vnb01.dmz  
+    VND_BILL_SVC_FQDN_PREFIX  = ${ENV_PREFIX}vnb01.dmz  
+    VND_USRP_SVC_FQDN_PREFIX  = ${ENV_PREFIX}vnu01.dmz  
+    VND_SCHL_SVC_FQDN_PREFIX  = ${ENV_PREFIX}vnu01.dmz
+    WEB_APP_FQDN_PREFIX         = ${ENV_PREFIX}
+    XMPP_MST_FQDN_PREFIX  = ${ENV_PREFIX}xmp01
+    XMPP_SLV_FQDN_PREFIX  = ${ENV_PREFIX}xmp02
+    YPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}ypi01.dmz
+
+    ZIP_SVC_FQDN    = ${ENV_PREFIX}tap04.${ENV_PREFIX}.hightail.com 
+
+  ## Platform
+    CCH_SERVERS                 = ${CCH_APP_FQDN}:${CCH_APP_PORT}
+
+    PAYFLOW_USER    = qauser 
+
+    ACTIVITYW_SVC_FQDN    = ${ENV_PREFIX}-rpt.${ENV_SUFFIX}
+    STATIC_FQDN                 = ${STATIC_HTL_FQDN}
+
+  ## HFS
+    WRK_SVC_FQDN = hfs01.itc.hightail.com
+    WRK_SVC_FQDN_PREFIX = BADBADBAD
+    WORKSPACE_PORT = 8080
+    WORKSPACEW_PORT = 8080
+    WORKSPACE_PORTW = 8080
+    WORKSPACE_ENDP = http://${WRK_SVC_FQDN}:${WORKSPACE_PORT}/su2/Workspace
+    WORKSPACEW_ENDP = http://${WRK_SVC_FQDN}:${WORKSPACEW_PORT}/su2/WorkspaceW
+    WORKSPACE_REST_ENDP = BADBADBAD
+    WORKSPACEW_REST_ENDP = BADBADBAD
+    WRKW_REST_BASE_URL = BADBADBAD
+
+[[itd]]
+    BRAND_VERSION = hightail
+    ENV_PREFIX      = itd
+    ENV_SUFFIX			= yousendit.com
+    EXTERNAL_WEB_FQDN		= www.${ENV_PREFIX}.${EXTERNAL_DOMAIN}
+
+  FTF_SHARED_SECRET             = 500emerson
+  
+  # for testing purposes on rebranding
+  WEB_HTL_PARTNER_FQDN          = partners.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DROPBOX_FQDN          = dropbox.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DOWNLOAD_FQDN         = download.${ENV_PREFIX}.hightail.com
+  ##### Note:  web download endpoints must have trailing "/"
+  WEB_HTL_DOWNLOAD_ENDP         = http://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_DOWNLOAD_SSL_ENDP     = https://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_IMAGE_FQDN            = images.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_FQDN             = files.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_ENDP             = http://${WEB_HTL_FILE_FQDN}/
+  WEB_HTL_RCPT_FQDN             = rcpt.${ENV_PREFIX}.hightail.com
+
+  ENV_BASE_FQDN                 = www.${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_HTL_BASE_FQDN             = www.${ENV_PREFIX}.${HTL_DOMAIN}
+  ENV_BASE_URL                  = http://${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_BASE_URL_SSL              = https://${ENV_HTL_BASE_FQDN}
+
+  HTL_DROPBOX_FQDN              = www.${DROPBOX_FQDN_PREFIX}.${HTL_DOMAIN}
+  HTL_WEB_APP_FQDN              = www.${WEB_APP_FQDN_PREFIX}.${HTL_DOMAIN}
+
+  ## General                     
+    DBM_V2_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBS_V2_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBM_V3_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBS_V3_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    ACT_SVC_FQDN_PREFIX         = ${ENV_PREFIX}act01.dmz	
+    ADP_SVC_FQDN_PREFIX         = ${ENV_PREFIX}adp01.dmz	
+    BLG_SVC_FQDN_PREFIX         = ${ENV_PREFIX}blg01.dmz	
+#    AMQ_APP_FQDN_PREFIX		= ${ENV_PREFIX}-ysiq
+    AMQ_APP_FQDN_PREFIX		= ${ENV_PREFIX}amq01.dmz
+    API_SVC_FQDN_PREFIX		= ${ENV_PREFIX}api01.dmz
+    AUT_SVC_FQDN_PREFIX		= ${ENV_PREFIX}aut01.dmz
+    BKR_SVC_FQDN_PREFIX	 	= ${ENV_PREFIX}bkr01.dmz
+    CCH_APP_FQDN_PREFIX		= ${ENV_PREFIX}cch01.dmz
+    DEVAPI_SVC_FQDN_PREFIX	= ${ENV_PREFIX}dpi01.dmz
+    DROPBOX_FQDN_PREFIX   = ${ENV_PREFIX}-dropbox
+    DPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}dpi01.dmz
+    ESIGN_SVC_FQDN_PREFIX	= ${ENV_PREFIX}sig01.dmz
+    EVT_SVC_FQDN		= ${ENV_PREFIX}evt01.dmz
+    JWS_SVC_FQDN_PREFIX		= ${ENV_PREFIX}jws01.dmz
+    NGW_SVC_FQDN_PREFIX		= ${ENV_PREFIX}ngw01.dmz
+    PEN_SVC_FQDN_PREFIX		= ${ENV_PREFIX}pol01.dmz
+    PHI_APP_FQDN_PREFIX		= ${ENV_PREFIX}
+    PRA_SVC_FQDN_PREFIX		= ${ENV_PREFIX}pra01.dmz
+    RBL_SVC_FQDN_PREFIX		= ${ENV_PREFIX}rbl01.dmz
+    SKU_SVC_FQDN_PREFIX		= ${ENV_PREFIX}sku01.dmz
+    STATIC_FQDN_PREFIX    = ${ENV_PREFIX}-static
+    TPL_SVC_FQDN_PREFIX		= ${ENV_PREFIX}tpl01.dmz
+    USR_SVC_FQDN_PREFIX		= ${ENV_PREFIX}usr01.dmz
+    VND_ACCT_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz	
+    VND_ENTL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_PROD_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_BILL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_USRP_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz	
+    VND_SCHL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz
+    WRK_SVC_FQDN_PREFIX		= ${ENV_PREFIX}wrk01.dmz
+    WEB_APP_FQDN_PREFIX		= ${ENV_PREFIX}
+    XMPP_MST_FQDN_PREFIX	= ${ENV_PREFIX}xmp01
+    XMPP_SLV_FQDN_PREFIX	= ${ENV_PREFIX}xmp02
+    YPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}ypi01.dmz
+
+# special handling for the cookie cross domain
+#    YPI_SVC_ENDP                = https://${ENV_PREFIX}ypi01.${ENV_PREFIX}.${HTL_DOMAIN}
+# cross the above out and replace with yet another value
+    EXTERNAL_YPI_SVC_ENDP       = https://itd-ypi.yousendit.com
+
+    ZIP_SVC_FQDN		= ${ENV_PREFIX}tap04.${ENV_PREFIX}.hightail.com 
+
+  ## Platform
+    CCH_SERVERS			= ${CCH_APP_FQDN}:${CCH_APP_PORT}
+
+    PAYFLOW_USER		= qauser 
+
+    ACTIVITYW_SVC_FQDN		= ${ENV_PREFIX}-rpt.${ENV_SUFFIX}
+    STATIC_FQDN                 = ${STATIC_HTL_FQDN}
+    CLEVERSAFE_FQDN		= accesser.sto.hightail.com
+
+# Lenovo:
+   LENOVO_WEBAUTH_LOGIN_ENDP	= https://passport.lenovo.com/wauthen/gateway
+    LENOVO_WEBAUTH_VERIFY_ENDP	= https://passport.lenovo.com/interserver/authen/1.2/getaccountid
+
+[[itf]]
+    BRAND_VERSION = hightail
+    ENV_PREFIX      = itf
+    ENV_SUFFIX			= yousendit.com
+    EXTERNAL_WEB_FQDN		= www.${ENV_PREFIX}.${EXTERNAL_DOMAIN}
+
+  FTF_SHARED_SECRET             = 500emerson
+  
+  # for testing purposes on rebranding
+  WEB_HTL_PARTNER_FQDN          = partners.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DROPBOX_FQDN          = dropbox.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DOWNLOAD_FQDN         = download.${ENV_PREFIX}.hightail.com
+  ##### Note:  web download endpoints must have trailing "/"
+  WEB_HTL_DOWNLOAD_ENDP         = http://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_DOWNLOAD_SSL_ENDP     = https://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_IMAGE_FQDN            = images.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_FQDN             = files.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_ENDP             = http://${WEB_HTL_FILE_FQDN}/
+  WEB_HTL_RCPT_FQDN             = rcpt.${ENV_PREFIX}.hightail.com
+
+  ENV_BASE_FQDN                 = www.${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_HTL_BASE_FQDN             = www.${ENV_PREFIX}.${HTL_DOMAIN}
+  ENV_BASE_URL                  = http://${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_BASE_URL_SSL              = https://${ENV_HTL_BASE_FQDN}
+
+  HTL_DROPBOX_FQDN              = www.${DROPBOX_FQDN_PREFIX}.${HTL_DOMAIN}
+  HTL_WEB_APP_FQDN              = www.${WEB_APP_FQDN_PREFIX}.${HTL_DOMAIN}
+
+  ## General                     
+    DBM_V2_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBS_V2_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBM_V3_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBS_V3_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    ACT_SVC_FQDN_PREFIX         = ${ENV_PREFIX}act01.dmz	
+    ADP_SVC_FQDN_PREFIX         = ${ENV_PREFIX}adp01.dmz	
+    BLG_SVC_FQDN_PREFIX         = ${ENV_PREFIX}blg01.dmz	
+#    AMQ_APP_FQDN_PREFIX		= ${ENV_PREFIX}-ysiq
+    AMQ_APP_FQDN_PREFIX		= ${ENV_PREFIX}amq01.dmz
+    API_SVC_FQDN_PREFIX		= ${ENV_PREFIX}api01.dmz
+    AUT_SVC_FQDN_PREFIX		= ${ENV_PREFIX}aut01.dmz
+    BKR_SVC_FQDN_PREFIX	 	= ${ENV_PREFIX}bkr01.dmz
+    CCH_APP_FQDN_PREFIX		= ${ENV_PREFIX}cch01.dmz
+    DEVAPI_SVC_FQDN_PREFIX	= ${ENV_PREFIX}dpi01.dmz
+    DROPBOX_FQDN_PREFIX		= ${ENV_PREFIX}-dropbox
+    DPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}dpi01.dmz
+    ESIGN_SVC_FQDN_PREFIX	= ${ENV_PREFIX}sig01.dmz
+    EVT_SVC_FQDN		= ${ENV_PREFIX}evt01.dmz
+    JWS_SVC_FQDN_PREFIX		= ${ENV_PREFIX}jws01.dmz
+    NGW_SVC_FQDN_PREFIX		= ${ENV_PREFIX}ngw01.dmz
+    PEN_SVC_FQDN_PREFIX		= ${ENV_PREFIX}pol01.dmz
+    PHI_APP_FQDN_PREFIX		= ${ENV_PREFIX}
+    PRA_SVC_FQDN_PREFIX		= ${ENV_PREFIX}pra01.dmz
+    RBL_SVC_FQDN_PREFIX		= ${ENV_PREFIX}rbl01.dmz
+    SKU_SVC_FQDN_PREFIX		= ${ENV_PREFIX}sku01.dmz
+    STATIC_FQDN_PREFIX		= ${ENV_PREFIX}-static
+    TPL_SVC_FQDN_PREFIX		= ${ENV_PREFIX}tpl01.dmz
+    USR_SVC_FQDN_PREFIX		= ${ENV_PREFIX}usr01.dmz
+    VND_ACCT_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz	
+    VND_ENTL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_PROD_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_BILL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_USRP_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz	
+    VND_SCHL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz
+    WRK_SVC_FQDN_PREFIX		= ${ENV_PREFIX}wrk01.dmz
+    WEB_APP_FQDN_PREFIX		= ${ENV_PREFIX}
+    XMPP_MST_FQDN_PREFIX	= ${ENV_PREFIX}xmp01
+    XMPP_SLV_FQDN_PREFIX	= ${ENV_PREFIX}xmp02
+    YPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}ypi01.dmz
+
+    ZIP_SVC_FQDN		= ${ENV_PREFIX}tap04.${ENV_PREFIX}.hightail.com 
+
+  ## Platform
+    CCH_SERVERS			= ${CCH_APP_FQDN}:${CCH_APP_PORT}
+
+    PAYFLOW_USER		= qauser 
+
+    ACTIVITYW_SVC_FQDN		= ${ENV_PREFIX}-rpt.${ENV_SUFFIX}
+    STATIC_FQDN                 = ${STATIC_HTL_FQDN}
+
+[[itg]]
+    BRAND_VERSION = hightail
+    ENV_PREFIX      = itg
+    ENV_SUFFIX			= yousendit.com
+    EXTERNAL_WEB_FQDN		= www.${ENV_PREFIX}.${EXTERNAL_DOMAIN}
+
+  FTF_SHARED_SECRET             = 500emerson
+  
+  # for testing purposes on rebranding
+  WEB_HTL_PARTNER_FQDN          = partners.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DROPBOX_FQDN          = dropbox.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DOWNLOAD_FQDN         = download.${ENV_PREFIX}.hightail.com
+  ##### Note:  web download endpoints must have trailing "/"
+  WEB_HTL_DOWNLOAD_ENDP         = http://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_DOWNLOAD_SSL_ENDP     = https://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_IMAGE_FQDN            = images.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_FQDN             = files.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_ENDP             = http://${WEB_HTL_FILE_FQDN}/
+  WEB_HTL_RCPT_FQDN             = rcpt.${ENV_PREFIX}.hightail.com
+
+  ENV_BASE_FQDN                 = www.${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_HTL_BASE_FQDN             = www.${ENV_PREFIX}.${HTL_DOMAIN}
+  ENV_BASE_URL                  = http://${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_BASE_URL_SSL              = https://${ENV_HTL_BASE_FQDN}
+
+  HTL_DROPBOX_FQDN              = www.${DROPBOX_FQDN_PREFIX}.${HTL_DOMAIN}
+  HTL_WEB_APP_FQDN              = www.${WEB_APP_FQDN_PREFIX}.${HTL_DOMAIN}
+
+  ## General                     
+    DBM_V2_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBS_V2_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBM_V3_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBS_V3_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    ACT_SVC_FQDN_PREFIX         = ${ENV_PREFIX}act01.dmz	
+    ADP_SVC_FQDN_PREFIX         = ${ENV_PREFIX}adp01.dmz	
+    BLG_SVC_FQDN_PREFIX         = ${ENV_PREFIX}blg01.dmz	
+#    AMQ_APP_FQDN_PREFIX		= ${ENV_PREFIX}-ysiq
+    AMQ_APP_FQDN_PREFIX		= ${ENV_PREFIX}amq01.dmz
+    API_SVC_FQDN_PREFIX		= ${ENV_PREFIX}api01.dmz
+    AUT_SVC_FQDN_PREFIX		= ${ENV_PREFIX}aut01.dmz
+    BKR_SVC_FQDN_PREFIX	 	= ${ENV_PREFIX}bkr01.dmz
+    CCH_APP_FQDN_PREFIX		= ${ENV_PREFIX}cch01.dmz
+    DEVAPI_SVC_FQDN_PREFIX	= ${ENV_PREFIX}dpi01.dmz
+    DROPBOX_FQDN_PREFIX		= ${ENV_PREFIX}-dropbox
+    DPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}dpi01.dmz
+    ESIGN_SVC_FQDN_PREFIX	= ${ENV_PREFIX}sig01.dmz
+    EVT_SVC_FQDN		= ${ENV_PREFIX}evt01.dmz
+    JWS_SVC_FQDN_PREFIX		= ${ENV_PREFIX}jws01.dmz
+    NGW_SVC_FQDN_PREFIX		= ${ENV_PREFIX}ngw01.dmz
+    PEN_SVC_FQDN_PREFIX		= ${ENV_PREFIX}pol01.dmz
+    PHI_APP_FQDN_PREFIX		= ${ENV_PREFIX}
+    PRA_SVC_FQDN_PREFIX		= ${ENV_PREFIX}pra01.dmz
+    RBL_SVC_FQDN_PREFIX		= ${ENV_PREFIX}rbl01.dmz
+    SKU_SVC_FQDN_PREFIX		= ${ENV_PREFIX}sku01.dmz
+    STATIC_FQDN_PREFIX		= ${ENV_PREFIX}-static
+    TPL_SVC_FQDN_PREFIX		= ${ENV_PREFIX}tpl01.dmz
+    USR_SVC_FQDN_PREFIX		= ${ENV_PREFIX}usr01.dmz
+    VND_ACCT_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz	
+    VND_ENTL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_PROD_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_BILL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_USRP_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz	
+    VND_SCHL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz
+    WRK_SVC_FQDN_PREFIX		= ${ENV_PREFIX}wrk01.dmz
+    WEB_APP_FQDN_PREFIX		= ${ENV_PREFIX}
+    XMPP_MST_FQDN_PREFIX	= ${ENV_PREFIX}xmp01
+    XMPP_SLV_FQDN_PREFIX	= ${ENV_PREFIX}xmp02
+    YPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}ypi01.dmz
+
+    ZIP_SVC_FQDN		= ${ENV_PREFIX}tap04.${ENV_PREFIX}.hightail.com 
+
+  ## Platform
+    CCH_SERVERS			= ${CCH_APP_FQDN}:${CCH_APP_PORT}
+
+    PAYFLOW_USER		= qauser 
+
+    ACTIVITYW_SVC_FQDN		= ${ENV_PREFIX}-rpt.${ENV_SUFFIX}
+    STATIC_FQDN                 = ${STATIC_HTL_FQDN}
+
+[[ith]]
+    BRAND_VERSION = hightail
+    ENV_PREFIX                  = ith
+    ENV_SUFFIX			= yousendit.com
+    EXTERNAL_WEB_FQDN		= www.${ENV_PREFIX}.${EXTERNAL_DOMAIN}
+  FTF_SHARED_SECRET             = 500emerson
+  
+  # for testing purposes on rebranding
+  WEB_HTL_PARTNER_FQDN          = partners.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DROPBOX_FQDN          = dropbox.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DOWNLOAD_FQDN         = download.${ENV_PREFIX}.hightail.com
+  ##### Note:  web download endpoints must have trailing "/"
+  WEB_HTL_DOWNLOAD_ENDP         = http://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_DOWNLOAD_SSL_ENDP     = https://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_IMAGE_FQDN            = images.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_FQDN             = files.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_ENDP             = http://${WEB_HTL_FILE_FQDN}/
+  WEB_HTL_RCPT_FQDN             = rcpt.${ENV_PREFIX}.hightail.com
+
+  ENV_BASE_FQDN                 = www.${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_HTL_BASE_FQDN             = www.${ENV_PREFIX}.${HTL_DOMAIN}
+  ENV_BASE_URL                  = http://${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_BASE_URL_SSL              = https://${ENV_HTL_BASE_FQDN}
+
+  HTL_DROPBOX_FQDN              = www.${DROPBOX_FQDN_PREFIX}.${HTL_DOMAIN}
+  HTL_WEB_APP_FQDN              = www.${WEB_APP_FQDN_PREFIX}.${HTL_DOMAIN}
+
+  ## General                     
+    DBM_V2_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBS_V2_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBM_V3_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBS_V3_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    ACT_SVC_FQDN_PREFIX         = ${ENV_PREFIX}act01.dmz	
+    ADP_SVC_FQDN_PREFIX         = ${ENV_PREFIX}adp01.dmz	
+    BLG_SVC_FQDN_PREFIX         = ${ENV_PREFIX}blg01.dmz	
+#    AMQ_APP_FQDN_PREFIX		= ${ENV_PREFIX}-ysiq
+    AMQ_APP_FQDN_PREFIX		= ${ENV_PREFIX}amq01.dmz
+    API_SVC_FQDN_PREFIX		= ${ENV_PREFIX}api01.dmz
+    AUT_SVC_FQDN_PREFIX		= ${ENV_PREFIX}aut01.dmz
+    BKR_SVC_FQDN_PREFIX	 	= ${ENV_PREFIX}bkr01.dmz
+    CCH_APP_FQDN_PREFIX		= ${ENV_PREFIX}cch01.dmz
+    DEVAPI_SVC_FQDN_PREFIX	= ${ENV_PREFIX}dpi01.dmz
+    DROPBOX_FQDN_PREFIX		= ${ENV_PREFIX}-dropbox
+    DPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}dpi01.dmz
+    ESIGN_SVC_FQDN_PREFIX	= ${ENV_PREFIX}dpi01.dmz
+    EVT_SVC_FQDN		= ${ENV_PREFIX}evt01.dmz
+    JWS_SVC_FQDN_PREFIX		= ${ENV_PREFIX}jws01.dmz
+    NGW_SVC_FQDN_PREFIX		= ${ENV_PREFIX}ngw01.dmz
+    PEN_SVC_FQDN_PREFIX		= ${ENV_PREFIX}pol01.dmz
+    PHI_APP_FQDN_PREFIX		= ${ENV_PREFIX}
+    PRA_SVC_FQDN_PREFIX		= ${ENV_PREFIX}pra01.dmz
+    RBL_SVC_FQDN_PREFIX		= ${ENV_PREFIX}rbl01.dmz
+    SKU_SVC_FQDN_PREFIX		= ${ENV_PREFIX}sku01.dmz
+    STATIC_FQDN_PREFIX		= ${ENV_PREFIX}-static
+    TPL_SVC_FQDN_PREFIX		= ${ENV_PREFIX}tpl01.dmz
+    USR_SVC_FQDN_PREFIX		= ${ENV_PREFIX}usr01.dmz
+    VND_ACCT_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz	
+    VND_ENTL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_PROD_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_BILL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_USRP_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz	
+    VND_SCHL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz
+    WRK_SVC_FQDN_PREFIX		= ${ENV_PREFIX}wrk01.dmz
+    WEB_APP_FQDN_PREFIX		= ${ENV_PREFIX}
+    XMPP_MST_FQDN_PREFIX	= ${ENV_PREFIX}xmp01
+    XMPP_SLV_FQDN_PREFIX	= ${ENV_PREFIX}xmp02
+    YPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}ypi01.dmz
+
+    ZIP_SVC_FQDN		= ${ENV_PREFIX}tap04.${ENV_PREFIX}.hightail.com 
+
+  ## Platform
+    CCH_SERVERS			= ${CCH_APP_FQDN}:${CCH_APP_PORT}
+
+    PAYFLOW_USER		= qauser 
+
+    ACTIVITYW_SVC_FQDN		= ${ENV_PREFIX}-rpt.${ENV_SUFFIX}
+
+[[iti]]
+    BRAND_VERSION = hightail
+    ENV_PREFIX      = iti
+    ENV_SUFFIX			= yousendit.com
+    EXTERNAL_WEB_FQDN		= www.${ENV_PREFIX}.${EXTERNAL_DOMAIN}
+
+  FTF_SHARED_SECRET             = 500emerson
+  
+  # for testing purposes on rebranding
+  WEB_HTL_PARTNER_FQDN          = partners.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DROPBOX_FQDN          = dropbox.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DOWNLOAD_FQDN         = download.${ENV_PREFIX}.hightail.com
+  ##### Note:  web download endpoints must have trailing "/"
+  WEB_HTL_DOWNLOAD_ENDP         = http://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_DOWNLOAD_SSL_ENDP     = https://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_IMAGE_FQDN            = images.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_FQDN             = files.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_ENDP             = http://${WEB_HTL_FILE_FQDN}/
+  WEB_HTL_RCPT_FQDN             = rcpt.${ENV_PREFIX}.hightail.com
+
+  ENV_BASE_FQDN                 = www.${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_HTL_BASE_FQDN             = www.${ENV_PREFIX}.${HTL_DOMAIN}
+  ENV_BASE_URL                  = http://${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_BASE_URL_SSL              = https://${ENV_HTL_BASE_FQDN}
+
+  HTL_DROPBOX_FQDN              = www.${DROPBOX_FQDN_PREFIX}.${HTL_DOMAIN}
+  HTL_WEB_APP_FQDN              = www.${WEB_APP_FQDN_PREFIX}.${HTL_DOMAIN}
+
+  ## General                     
+    DBM_V2_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBS_V2_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBM_V3_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBS_V3_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    ACT_SVC_FQDN_PREFIX         = ${ENV_PREFIX}act01.dmz	
+    ADP_SVC_FQDN_PREFIX         = ${ENV_PREFIX}adp01.dmz	
+    BLG_SVC_FQDN_PREFIX         = ${ENV_PREFIX}blg01.dmz	
+#    AMQ_APP_FQDN_PREFIX		= ${ENV_PREFIX}-ysiq
+    AMQ_APP_FQDN_PREFIX		= ${ENV_PREFIX}amq01.dmz
+    API_SVC_FQDN_PREFIX		= ${ENV_PREFIX}api01.dmz
+    AUT_SVC_FQDN_PREFIX		= ${ENV_PREFIX}aut01.dmz
+    BKR_SVC_FQDN_PREFIX	 	= ${ENV_PREFIX}bkr01.dmz
+    CCH_APP_FQDN_PREFIX		= ${ENV_PREFIX}cch01.dmz
+    DEVAPI_SVC_FQDN_PREFIX	= ${ENV_PREFIX}dpi01.dmz
+    DROPBOX_FQDN_PREFIX		= ${ENV_PREFIX}-dropbox
+    DPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}dpi01.dmz
+    ESIGN_SVC_FQDN_PREFIX	= ${ENV_PREFIX}dpi01.dmz
+    EVT_SVC_FQDN		= ${ENV_PREFIX}evt01.dmz
+    JWS_SVC_FQDN_PREFIX		= ${ENV_PREFIX}jws01.dmz
+    NGW_SVC_FQDN_PREFIX		= ${ENV_PREFIX}ngw01.dmz
+    PEN_SVC_FQDN_PREFIX		= ${ENV_PREFIX}pol01.dmz
+    PHI_APP_FQDN_PREFIX		= ${ENV_PREFIX}
+    PRA_SVC_FQDN_PREFIX		= ${ENV_PREFIX}pra01.dmz
+    RBL_SVC_FQDN_PREFIX		= ${ENV_PREFIX}rbl01.dmz
+    SKU_SVC_FQDN_PREFIX		= ${ENV_PREFIX}sku01.dmz
+    STATIC_FQDN_PREFIX		= ${ENV_PREFIX}-static
+    TPL_SVC_FQDN_PREFIX		= ${ENV_PREFIX}tpl01.dmz
+    USR_SVC_FQDN_PREFIX		= ${ENV_PREFIX}usr01.dmz
+    VND_ACCT_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz	
+    VND_ENTL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_PROD_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_BILL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_USRP_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz	
+    VND_SCHL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz
+    WRK_SVC_FQDN_PREFIX		= ${ENV_PREFIX}wrk01.dmz
+    WEB_APP_FQDN_PREFIX		= ${ENV_PREFIX}
+    XMPP_MST_FQDN_PREFIX	= ${ENV_PREFIX}xmp01
+    XMPP_SLV_FQDN_PREFIX	= ${ENV_PREFIX}xmp02
+    YPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}ypi01.dmz
+
+    ZIP_SVC_FQDN		= ${ENV_PREFIX}tap04.${ENV_PREFIX}.hightail.com 
+
+  ## Platform
+    CCH_SERVERS			= ${CCH_APP_FQDN}:${CCH_APP_PORT}
+
+    PAYFLOW_USER		= qauser 
+
+    ACTIVITYW_SVC_FQDN		= ${ENV_PREFIX}-rpt.${ENV_SUFFIX}
+    STATIC_FQDN                 = ${STATIC_HTL_FQDN}
+
+[[itj]]
+    BRAND_VERSION = hightail
+    ENV_PREFIX      = itj
+    ENV_SUFFIX			= yousendit.com
+    EXTERNAL_WEB_FQDN		= www.${ENV_PREFIX}.${EXTERNAL_DOMAIN}
+
+  FTF_SHARED_SECRET             = 500emerson
+  
+  # for testing purposes on rebranding
+  WEB_HTL_PARTNER_FQDN          = partners.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DROPBOX_FQDN          = dropbox.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DOWNLOAD_FQDN         = download.${ENV_PREFIX}.hightail.com
+  ##### Note:  web download endpoints must have trailing "/"
+  WEB_HTL_DOWNLOAD_ENDP         = http://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_DOWNLOAD_SSL_ENDP     = https://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_IMAGE_FQDN            = images.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_FQDN             = files.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_ENDP             = http://${WEB_HTL_FILE_FQDN}/
+  WEB_HTL_RCPT_FQDN             = rcpt.${ENV_PREFIX}.hightail.com
+
+  ENV_BASE_FQDN                 = www.${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_HTL_BASE_FQDN             = www.${ENV_PREFIX}.${HTL_DOMAIN}
+  ENV_BASE_URL                  = http://${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_BASE_URL_SSL              = https://${ENV_HTL_BASE_FQDN}
+
+  HTL_DROPBOX_FQDN              = www.${DROPBOX_FQDN_PREFIX}.${HTL_DOMAIN}
+  HTL_WEB_APP_FQDN              = www.${WEB_APP_FQDN_PREFIX}.${HTL_DOMAIN}
+
+  ## General                     
+    DBM_V2_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBS_V2_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBM_V3_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBS_V3_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    ACT_SVC_FQDN_PREFIX         = ${ENV_PREFIX}act01.dmz	
+    ADP_SVC_FQDN_PREFIX         = ${ENV_PREFIX}adp01.dmz	
+    BLG_SVC_FQDN_PREFIX         = ${ENV_PREFIX}blg01.dmz	
+#    AMQ_APP_FQDN_PREFIX		= ${ENV_PREFIX}-ysiq
+    AMQ_APP_FQDN_PREFIX		= ${ENV_PREFIX}amq01.dmz
+    API_SVC_FQDN_PREFIX		= ${ENV_PREFIX}api01.dmz
+    AUT_SVC_FQDN_PREFIX		= ${ENV_PREFIX}aut01.dmz
+    BKR_SVC_FQDN_PREFIX	 	= ${ENV_PREFIX}bkr01.dmz
+    CCH_APP_FQDN_PREFIX		= ${ENV_PREFIX}cch01.dmz
+    DEVAPI_SVC_FQDN_PREFIX	= ${ENV_PREFIX}dpi01.dmz
+    DROPBOX_FQDN_PREFIX   = dropbox
+    DPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}dpi01.dmz
+    ESIGN_SVC_FQDN_PREFIX = ${ENV_PREFIX}sig01.dmz
+    EVT_SVC_FQDN		= ${ENV_PREFIX}evt01.dmz
+    JWS_SVC_FQDN_PREFIX		= ${ENV_PREFIX}jws01.dmz
+    NGW_SVC_FQDN_PREFIX		= ${ENV_PREFIX}ngw01.dmz
+    PEN_SVC_FQDN_PREFIX		= ${ENV_PREFIX}pol01.dmz
+    PHI_APP_FQDN_PREFIX		= ${ENV_PREFIX}
+    PRA_SVC_FQDN_PREFIX		= ${ENV_PREFIX}pra01.dmz
+    RBL_SVC_FQDN_PREFIX		= ${ENV_PREFIX}rbl01.dmz
+    SKU_SVC_FQDN_PREFIX		= ${ENV_PREFIX}sku01.dmz
+    STATIC_FQDN_PREFIX    = static
+    TPL_SVC_FQDN_PREFIX		= ${ENV_PREFIX}tpl01.dmz
+    USR_SVC_FQDN_PREFIX		= ${ENV_PREFIX}usr01.dmz
+    VND_ACCT_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz	
+    VND_ENTL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_PROD_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_BILL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_USRP_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz	
+    VND_SCHL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz
+    WRK_SVC_FQDN_PREFIX		= ${ENV_PREFIX}wrk01.dmz
+    WEB_APP_FQDN_PREFIX		= ${ENV_PREFIX}
+    XMPP_MST_FQDN_PREFIX	= ${ENV_PREFIX}xmp01
+    XMPP_SLV_FQDN_PREFIX	= ${ENV_PREFIX}xmp02
+    YPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}ypi01.dmz
+
+    ZIP_SVC_FQDN		= ${ENV_PREFIX}tap04.${ENV_PREFIX}.hightail.com 
+
+  ## Platform
+    CCH_SERVERS			= ${CCH_APP_FQDN}:${CCH_APP_PORT}
+    PAYFLOW_USER		= qauser 
+    ACTIVITYW_SVC_FQDN		= ${ENV_PREFIX}-rpt.${ENV_SUFFIX}
+
+    PREVIEW_V1_ENDP		= http://itjpreview02.itj.hightail.com:8080/boson-api-1.0.0-rc.1
+
+[[itk]]
+    BRAND_VERSION = hightail
+    ENV_PREFIX      = itk
+    ENV_SUFFIX			= yousendit.com
+    EXTERNAL_WEB_FQDN		= www.${ENV_PREFIX}.${EXTERNAL_DOMAIN}
+
+  FTF_SHARED_SECRET             = 500emerson
+  
+  # for testing purposes on rebranding
+  WEB_HTL_PARTNER_FQDN          = partners.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DROPBOX_FQDN          = dropbox.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DOWNLOAD_FQDN         = download.${ENV_PREFIX}.hightail.com
+  ##### Note:  web download endpoints must have trailing "/"
+  WEB_HTL_DOWNLOAD_ENDP         = http://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_DOWNLOAD_SSL_ENDP     = https://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_IMAGE_FQDN            = images.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_FQDN             = files.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_ENDP             = http://${WEB_HTL_FILE_FQDN}/
+  WEB_HTL_RCPT_FQDN             = rcpt.${ENV_PREFIX}.hightail.com
+
+  ENV_BASE_FQDN                 = www.${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_HTL_BASE_FQDN             = www.${ENV_PREFIX}.${HTL_DOMAIN}
+  ENV_BASE_URL                  = http://${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_BASE_URL_SSL              = https://${ENV_HTL_BASE_FQDN}
+
+  HTL_DROPBOX_FQDN              = www.${DROPBOX_FQDN_PREFIX}.${HTL_DOMAIN}
+  HTL_WEB_APP_FQDN              = www.${WEB_APP_FQDN_PREFIX}.${HTL_DOMAIN}
+
+  ## General                     
+    DBM_V2_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBS_V2_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBM_V3_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBS_V3_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    ACT_SVC_FQDN_PREFIX         = ${ENV_PREFIX}act01.dmz	
+    ADP_SVC_FQDN_PREFIX         = ${ENV_PREFIX}adp01.dmz	
+    BLG_SVC_FQDN_PREFIX         = ${ENV_PREFIX}blg01.dmz	
+#    AMQ_APP_FQDN_PREFIX		= ${ENV_PREFIX}-ysiq
+    AMQ_APP_FQDN_PREFIX		= ${ENV_PREFIX}amq01.dmz
+    API_SVC_FQDN_PREFIX		= ${ENV_PREFIX}api01.dmz
+    AUT_SVC_FQDN_PREFIX		= ${ENV_PREFIX}aut01.dmz
+    BKR_SVC_FQDN_PREFIX	 	= ${ENV_PREFIX}bkr01.dmz
+    CCH_APP_FQDN_PREFIX		= ${ENV_PREFIX}cch01.dmz
+    DEVAPI_SVC_FQDN_PREFIX	= ${ENV_PREFIX}dpi01.dmz
+    DROPBOX_FQDN_PREFIX		= ${ENV_PREFIX}-dropbox
+    DPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}dpi01.dmz
+    ESIGN_SVC_FQDN_PREFIX	= ${ENV_PREFIX}sig01.dmz
+    EVT_SVC_FQDN		= ${ENV_PREFIX}evt01.dmz
+    JWS_SVC_FQDN_PREFIX		= ${ENV_PREFIX}jws01.dmz
+    NGW_SVC_FQDN_PREFIX		= ${ENV_PREFIX}ngw01.dmz
+    PEN_SVC_FQDN_PREFIX		= ${ENV_PREFIX}pol01.dmz
+    PHI_APP_FQDN_PREFIX		= ${ENV_PREFIX}
+    PRA_SVC_FQDN_PREFIX		= ${ENV_PREFIX}pra01.dmz
+    RBL_SVC_FQDN_PREFIX		= ${ENV_PREFIX}rbl01.dmz
+    SKU_SVC_FQDN_PREFIX		= ${ENV_PREFIX}sku01.dmz
+    STATIC_FQDN_PREFIX		= ${ENV_PREFIX}-static
+    TPL_SVC_FQDN_PREFIX		= ${ENV_PREFIX}tpl01.dmz
+    USR_SVC_FQDN_PREFIX		= ${ENV_PREFIX}usr01.dmz
+    VND_ACCT_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz	
+    VND_ENTL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_PROD_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_BILL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_USRP_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz	
+    VND_SCHL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz
+    #WRK_SVC_FQDN_PREFIX		= ${ENV_PREFIX}wrk01.dmz
+    WEB_APP_FQDN_PREFIX		= ${ENV_PREFIX}
+    XMPP_MST_FQDN_PREFIX	= ${ENV_PREFIX}xmp01
+    XMPP_SLV_FQDN_PREFIX	= ${ENV_PREFIX}xmp02
+    YPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}ypi01.dmz
+
+    ZIP_SVC_FQDN		= ${ENV_PREFIX}tap04.${ENV_PREFIX}.hightail.com 
+
+  ## Platform
+    CCH_SERVERS			= ${CCH_APP_FQDN}:${CCH_APP_PORT}
+
+    PAYFLOW_USER		= qauser 
+
+    ACTIVITYW_SVC_FQDN		= ${ENV_PREFIX}-rpt.${ENV_SUFFIX}
+    STATIC_FQDN                 = ${STATIC_HTL_FQDN}
+
+    WRK_SVC_FQDN = hfs01.itk.hightail.com
+    WRK_SVC_FQDN_PREFIX = BADBADBAD
+    WORKSPACE_PORT = 8080
+    WORKSPACEW_PORT = 8080
+    WORKSPACE_PORTW = 8080
+    WORKSPACE_ENDP = http://${WRK_SVC_FQDN}:${WORKSPACE_PORT}/su2/Workspace
+    WORKSPACEW_ENDP = http://${WRK_SVC_FQDN}:${WORKSPACEW_PORT}/su2/WorkspaceW
+    WORKSPACE_REST_ENDP = BADBADBAD
+    WORKSPACEW_REST_ENDP = BADBADBAD
+    WRKW_REST_BASE_URL = BADBADBAD
+
+[[itl]]
+    BRAND_VERSION = hightail
+    ENV_PREFIX      = itl
+    ENV_SUFFIX			= yousendit.com
+    EXTERNAL_WEB_FQDN		= www.${ENV_PREFIX}.${EXTERNAL_DOMAIN}
+
+  FTF_SHARED_SECRET             = 500emerson
+  
+  # for testing purposes on rebranding
+  WEB_HTL_PARTNER_FQDN          = partners.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DROPBOX_FQDN          = dropbox.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DOWNLOAD_FQDN         = download.${ENV_PREFIX}.hightail.com
+  ##### Note:  web download endpoints must have trailing "/"
+  WEB_HTL_DOWNLOAD_ENDP         = http://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_DOWNLOAD_SSL_ENDP     = https://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_IMAGE_FQDN            = images.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_FQDN             = files.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_ENDP             = http://${WEB_HTL_FILE_FQDN}/
+  WEB_HTL_RCPT_FQDN             = rcpt.${ENV_PREFIX}.hightail.com
+
+  ENV_BASE_FQDN                 = www.${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_HTL_BASE_FQDN             = www.${ENV_PREFIX}.${HTL_DOMAIN}
+  ENV_BASE_URL                  = http://${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_BASE_URL_SSL              = https://${ENV_HTL_BASE_FQDN}
+
+  HTL_DROPBOX_FQDN              = www.${DROPBOX_FQDN_PREFIX}.${HTL_DOMAIN}
+  HTL_WEB_APP_FQDN              = www.${WEB_APP_FQDN_PREFIX}.${HTL_DOMAIN}
+
+  ## General                     
+    DBM_V2_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBS_V2_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBM_V3_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBS_V3_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    ACT_SVC_FQDN_PREFIX         = ${ENV_PREFIX}act01.dmz	
+    ADP_SVC_FQDN_PREFIX         = ${ENV_PREFIX}adp01.dmz	
+    BLG_SVC_FQDN_PREFIX         = ${ENV_PREFIX}blg01.dmz	
+#    AMQ_APP_FQDN_PREFIX		= ${ENV_PREFIX}-ysiq
+    AMQ_APP_FQDN_PREFIX		= ${ENV_PREFIX}amq01.dmz
+    API_SVC_FQDN_PREFIX		= ${ENV_PREFIX}api01.dmz
+    AUT_SVC_FQDN_PREFIX		= ${ENV_PREFIX}aut01.dmz
+    BKR_SVC_FQDN_PREFIX	 	= ${ENV_PREFIX}bkr01.dmz
+    CCH_APP_FQDN_PREFIX		= ${ENV_PREFIX}cch01.dmz
+    DEVAPI_SVC_FQDN_PREFIX	= ${ENV_PREFIX}dpi01.dmz
+    DROPBOX_FQDN_PREFIX		= ${ENV_PREFIX}-dropbox
+    DPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}dpi01.dmz
+    ESIGN_SVC_FQDN_PREFIX	= ${ENV_PREFIX}sig01.dmz
+    EVT_SVC_FQDN		= ${ENV_PREFIX}evt01.dmz
+    JWS_SVC_FQDN_PREFIX		= ${ENV_PREFIX}jws01.dmz
+    NGW_SVC_FQDN_PREFIX		= ${ENV_PREFIX}ngw01.dmz
+    PEN_SVC_FQDN_PREFIX		= ${ENV_PREFIX}pol01.dmz
+    PHI_APP_FQDN_PREFIX		= ${ENV_PREFIX}
+    PRA_SVC_FQDN_PREFIX		= ${ENV_PREFIX}pra01.dmz
+    RBL_SVC_FQDN_PREFIX		= ${ENV_PREFIX}rbl01.dmz
+    SKU_SVC_FQDN_PREFIX		= ${ENV_PREFIX}sku01.dmz
+    STATIC_FQDN_PREFIX		= ${ENV_PREFIX}-static
+    TPL_SVC_FQDN_PREFIX		= ${ENV_PREFIX}tpl01.dmz
+    USR_SVC_FQDN_PREFIX		= ${ENV_PREFIX}usr01.dmz
+    VND_ACCT_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz	
+    VND_ENTL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_PROD_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_BILL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_USRP_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz	
+    VND_SCHL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz
+    WRK_SVC_FQDN_PREFIX		= ${ENV_PREFIX}wrk01.dmz
+    WEB_APP_FQDN_PREFIX		= ${ENV_PREFIX}
+    XMPP_MST_FQDN_PREFIX	= ${ENV_PREFIX}xmp01
+    XMPP_SLV_FQDN_PREFIX	= ${ENV_PREFIX}xmp02
+    YPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}ypi01.dmz
+
+    ZIP_SVC_FQDN		= ${ENV_PREFIX}tap04.${ENV_PREFIX}.hightail.com 
+
+    CCH_SERVERS			= ${CCH_APP_FQDN}:${CCH_APP_PORT}
+    PAYFLOW_USER		= qauser 
+    ACTIVITYW_SVC_FQDN		= ${ENV_PREFIX}-rpt.${ENV_SUFFIX}
+    STATIC_FQDN                 = ${STATIC_HTL_FQDN}
+
+    ALCATRAZ_COMPLAINTS_ENABLED = true
+
+[[itm]]
+    BRAND_VERSION = hightail
+    ENV_PREFIX      = itm
+    ENV_SUFFIX			= yousendit.com
+    EXTERNAL_WEB_FQDN		= www.${ENV_PREFIX}.${EXTERNAL_DOMAIN}
+
+  FTF_SHARED_SECRET             = 500emerson
+  
+  # for testing purposes on rebranding
+  WEB_HTL_PARTNER_FQDN          = partners.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DROPBOX_FQDN          = dropbox.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DOWNLOAD_FQDN         = download.${ENV_PREFIX}.hightail.com
+  ##### Note:  web download endpoints must have trailing "/"
+  WEB_HTL_DOWNLOAD_ENDP         = http://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_DOWNLOAD_SSL_ENDP     = https://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_IMAGE_FQDN            = images.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_FQDN             = files.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_ENDP             = http://${WEB_HTL_FILE_FQDN}/
+  WEB_HTL_RCPT_FQDN             = rcpt.${ENV_PREFIX}.hightail.com
+
+  ENV_BASE_FQDN                 = www.${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_HTL_BASE_FQDN             = www.${ENV_PREFIX}.${HTL_DOMAIN}
+  ENV_BASE_URL                  = http://${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_BASE_URL_SSL              = https://${ENV_HTL_BASE_FQDN}
+
+  HTL_DROPBOX_FQDN              = www.${DROPBOX_FQDN_PREFIX}.${HTL_DOMAIN}
+  HTL_WEB_APP_FQDN              = www.${WEB_APP_FQDN_PREFIX}.${HTL_DOMAIN}
+
+  ## General                     
+    DBM_V2_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBS_V2_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBM_V3_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBS_V3_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    ACT_SVC_FQDN_PREFIX         = ${ENV_PREFIX}act01.dmz	
+    ADP_SVC_FQDN_PREFIX         = ${ENV_PREFIX}adp01.dmz	
+    BLG_SVC_FQDN_PREFIX         = ${ENV_PREFIX}blg01.dmz	
+#    AMQ_APP_FQDN_PREFIX		= ${ENV_PREFIX}-ysiq
+    AMQ_APP_FQDN_PREFIX		= ${ENV_PREFIX}amq01.dmz
+    API_SVC_FQDN_PREFIX		= ${ENV_PREFIX}api01.dmz
+    AUT_SVC_FQDN_PREFIX		= ${ENV_PREFIX}aut01.dmz
+    BKR_SVC_FQDN_PREFIX	 	= ${ENV_PREFIX}bkr01.dmz
+    CCH_APP_FQDN_PREFIX		= ${ENV_PREFIX}cch01.dmz
+    DEVAPI_SVC_FQDN_PREFIX	= ${ENV_PREFIX}dpi01.dmz
+    DROPBOX_FQDN_PREFIX		= ${ENV_PREFIX}-dropbox
+    DPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}dpi01.dmz
+    ESIGN_SVC_FQDN_PREFIX = ${ENV_PREFIX}dpi01.dmz
+    EVT_SVC_FQDN		= ${ENV_PREFIX}evt01.dmz
+    JWS_SVC_FQDN_PREFIX		= ${ENV_PREFIX}jws01.dmz
+    NGW_SVC_FQDN_PREFIX		= ${ENV_PREFIX}ngw01.dmz
+    PEN_SVC_FQDN_PREFIX		= ${ENV_PREFIX}pol01.dmz
+    PHI_APP_FQDN_PREFIX		= ${ENV_PREFIX}
+    PRA_SVC_FQDN_PREFIX		= ${ENV_PREFIX}pra01.dmz
+    RBL_SVC_FQDN_PREFIX		= ${ENV_PREFIX}rbl01.dmz
+    SKU_SVC_FQDN_PREFIX		= ${ENV_PREFIX}sku01.dmz
+    STATIC_FQDN_PREFIX		= ${ENV_PREFIX}-static
+    TPL_SVC_FQDN_PREFIX		= ${ENV_PREFIX}tpl01.dmz
+    USR_SVC_FQDN_PREFIX		= ${ENV_PREFIX}usr01.dmz
+    VND_ACCT_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz	
+    VND_ENTL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_PROD_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_BILL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_USRP_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz	
+    VND_SCHL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz
+    WRK_SVC_FQDN_PREFIX		= ${ENV_PREFIX}wrk01.dmz
+    WEB_APP_FQDN_PREFIX		= ${ENV_PREFIX}
+    XMPP_MST_FQDN_PREFIX	= ${ENV_PREFIX}xmp01
+    XMPP_SLV_FQDN_PREFIX	= ${ENV_PREFIX}xmp02
+    YPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}-ypi
+
+    ZIP_SVC_FQDN		= ${ENV_PREFIX}tap04.${ENV_PREFIX}.hightail.com 
+
+  ## Platform
+    CCH_SERVERS			= ${CCH_APP_FQDN}:${CCH_APP_PORT}
+
+    PAYFLOW_USER		= qauser 
+
+    ACTIVITYW_SVC_FQDN		= ${ENV_PREFIX}-rpt.${ENV_SUFFIX}
+    STATIC_FQDN                 = ${STATIC_HTL_FQDN}
+
+[[partners]]
+
+##### START_YSI_GLOBALS : yousendit-specific global vars for Hightail'ing:
+
+  YSI_SERVER_NAME		= hightail.com
+  YSI_DOMAIN			= hightail.com
+  LITHIUM_URL			= stage-lithium.hightail.com 
+  WEB_YSI_PARTNER_FQDN		= ${ENV_PREFIX}.hightail.com
+  WEB_YSI_DROPBOX_FQDN		= dropbox.${ENV_PREFIX}.hightail.com
+  WEB_YSI_DOWNLOAD_FQDN		= download.${ENV_PREFIX}.hightail.com
+  WEB_YSI_IMAGE_FQDN		= images.${ENV_PREFIX}.hightail.com
+  WEB_YSI_FILE_FQDN		= files.${ENV_PREFIX}.hightail.com
+  WEB_YSI_RCPT_FQDN		= rcpt.${ENV_PREFIX}.hightail.com
+  USERVOICE_BASE_URL            = http://hightail.uservoice.com
+  CANCELLATION_SURVEY           = http://survey.hightail.com/go?iv=46w9gsngr7qtu
+  SMQ_DOMAIN                    = yousendit
+
+  # Hostnames are really: 
+  #   smq01.partners.hightail.com
+  #   smq01.partners.hightail.com
+  # This legacy setting is due to licensing
+  SMQ_MST_FQDN			= ${SMQ_MST_FQDN_PREFIX}.yousendit.com
+  SMQ_SLV_FQDN			= ${SMQ_SLV_FQDN_PREFIX}.yousendit.com
+
+##### END_YSI_GLOBALS : yousendit-specific global vars for Hightail'ing:
+
+    BRAND_VERSION = hightail
+    ENV_PREFIX			= partners 
+    ENV_SUFFIX			= hightail.com
+    EXTERNAL_WEB_FQDN		= www.${ENV_PREFIX}.${EXTERNAL_DOMAIN}
+    HT_EXTERNAL_WEB_BASE_URL	    = ${HT_BASE_URL}
+
+    COOKIE_DOMAIN               = .hightailpartners.com
+
+  FTF_SHARED_SECRET             = 500emerson
+  
+  # for testing purposes on rebranding
+  WEB_HTL_PARTNER_FQDN          = partners.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DROPBOX_FQDN          = dropbox.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DOWNLOAD_FQDN         = download.${ENV_PREFIX}.hightail.com
+  ##### Note:  web download endpoints must have trailing "/"
+  WEB_HTL_DOWNLOAD_ENDP         = http://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_DOWNLOAD_SSL_ENDP     = https://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_IMAGE_FQDN            = images.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_FQDN             = files.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_ENDP             = http://${WEB_HTL_FILE_FQDN}/
+  WEB_HTL_RCPT_FQDN             = rcpt.${ENV_PREFIX}.hightail.com
+
+  ENV_BASE_FQDN                 = www.${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_HTL_BASE_FQDN             = www.${ENV_PREFIX}.${HTL_DOMAIN}
+  ENV_BASE_URL                  = http://${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_BASE_URL_SSL              = https://${ENV_HTL_BASE_FQDN}
+
+  HTL_DROPBOX_FQDN              = ${DROPBOX_FQDN_PREFIX}.${HTL_DOMAIN}
+  HTL_WEB_APP_FQDN              = www.${WEB_APP_FQDN_PREFIX}.${HTL_DOMAIN}
+
+  ## General                     
+    DBM_V2_FQDN_PREFIX          = wdb01.${ENV_PREFIX}
+    DBS_V2_FQDN_PREFIX          = wdb01.${ENV_PREFIX}
+    DBM_V3_FQDN_PREFIX          = wdb01.${ENV_PREFIX}
+    DBS_V3_FQDN_PREFIX          = wdb01.${ENV_PREFIX}
+    ACT_SVC_FQDN_PREFIX         = act01.${ENV_PREFIX}
+    ADP_SVC_FQDN_PREFIX         = adp01.${ENV_PREFIX}
+    AMQ_APP_FQDN_PREFIX         = ysiq.${ENV_PREFIX}
+    BLG_SVC_FQDN_PREFIX         = blg01.${ENV_PREFIX}
+    API_SVC_FQDN_PREFIX         = api01.${ENV_PREFIX}
+    AUT_SVC_FQDN_PREFIX         = aut01.${ENV_PREFIX}
+    BKR_SVC_FQDN_PREFIX         = bkr01.${ENV_PREFIX}
+    CCH_APP_FQDN_PREFIX         = cch01.${ENV_PREFIX}
+    DEVAPI_SVC_FQDN_PREFIX      = dpi01.${ENV_PREFIX}
+    DROPBOX_FQDN_PREFIX         = dropbox.${ENV_PREFIX}
+    DPI_SVC_FQDN_PREFIX         = dpi01.${ENV_PREFIX}
+    ESIGN_SVC_FQDN_PREFIX       = sig01.${ENV_PREFIX}
+    EVT_SVC_FQDN                = ${ENV_PREFIX}evt.${ENV_PREFIX}
+    JWS_SVC_FQDN_PREFIX         = ${ENV_PREFIX}jws01.dmz
+    NGW_SVC_FQDN_PREFIX         = ngw01.${ENV_PREFIX}
+    PBK_APP_FQDN_PREFIX         = pbk01.${ENV_PREFIX}
+    PEN_SVC_FQDN_PREFIX         = pol01.${ENV_PREFIX}
+    PHI_APP_FQDN_PREFIX         = phi.${ENV_PREFIX}
+    PRA_SVC_FQDN_PREFIX         = ${ENV_PREFIX}pra02.eng
+    RBL_SVC_FQDN_PREFIX         = rbl01.${ENV_PREFIX}
+    SKU_SVC_FQDN_PREFIX         = sku01.${ENV_PREFIX}
+    STATIC_FQDN_PREFIX          = static.${ENV_PREFIX}
+    TPL_SVC_FQDN_PREFIX         = tpl01.${ENV_PREFIX}
+    USR_SVC_FQDN_PREFIX         = usr01.${ENV_PREFIX}
+    VND_ACCT_SVC_FQDN_PREFIX    = vnu01.${ENV_PREFIX}
+    VND_ENTL_SVC_FQDN_PREFIX    = vnb01.${ENV_PREFIX}
+    VND_PROD_SVC_FQDN_PREFIX    = vnb01.${ENV_PREFIX}
+    VND_BILL_SVC_FQDN_PREFIX    = vnb01.${ENV_PREFIX}
+    VND_USRP_SVC_FQDN_PREFIX    = vnu01.${ENV_PREFIX}
+    VND_SCHL_SVC_FQDN_PREFIX    = vnu01.${ENV_PREFIX}
+    WRK_SVC_FQDN_PREFIX         = wrk01.${ENV_PREFIX}
+    WEB_APP_FQDN_PREFIX         = ${ENV_PREFIX}
+    XMPP_MST_FQDN_PREFIX        = ${ENV_PREFIX}xmp01
+    XMPP_SLV_FQDN_PREFIX        = ${ENV_PREFIX}xmp02
+    YPI_SVC_FQDN_PREFIX         = ypi01.${ENV_PREFIX}
+    YPI_SVC_ENDP_V2 = https://ypi.dev.hightailpartners.com
+
+    ZIP_SVC_FQDN                = ${ENV_PREFIX}tap04.${ENV_PREFIX}.hightail.com
+
+
+  ## Platform
+    CCH_SERVERS			= ${CCH_APP_FQDN}:${CCH_APP_PORT}
+
+    PAYFLOW_USER		= qauser 
+
+    ACTIVITYW_SVC_FQDN		= rpt.${ENV_PREFIX}.${HTL_DOMAIN}
+    STATIC_FQDN                 = ${STATIC_HTL_FQDN}
+
+    CLEVERSAFE_FQDN             = accesser.sto.hightail.com
+
+    ENVIRONMENT_ALIAS	    = PARTNERS
+    HAPI_BASE_URL	    = http://hapi.partners.${HTL_DOMAIN}/api
+
+    KASPERSKY_BASE_URL	    = https://kdrive.dev.hightailpartners.com
+    WD_BASE_URL		    = https://wdconnect.dev.hightailpartners.com
+    HT_BASE_URL		    = https://www2.dev.hightailpartners.com 
+
+    HPI_SVC_FQDN	    = api.dev.hightailpartners.com
+
+    PREVIEW_ENABLED         = true
+    PREVIEW_ENDP            = http://preview.dev.hightailpartners.com/api
+    PREVIEW_V1_ENDP         = http://preview.dev.hightailpartners.com/api
+    REPORT_ACTIVITY	    = false
+
+[[int]]
+
+##### START_YSI_GLOBALS : yousendit-specific global vars for Hightail'ing:
+
+  YSI_SERVER_NAME               = htdev.com
+  YSI_DOMAIN                    = htdev.com
+  LITHIUM_URL                   = stage-lithium.htdev.com
+  WEB_YSI_PARTNER_FQDN          = ${ENV_PREFIX}.htdev.com
+  WEB_YSI_DROPBOX_FQDN          = dropbox.${ENV_PREFIX}.htdev.com
+  WEB_YSI_DOWNLOAD_FQDN         = download.${ENV_PREFIX}.htdev.com
+  WEB_YSI_IMAGE_FQDN            = images.${ENV_PREFIX}.htdev.com
+  WEB_YSI_FILE_FQDN             = files.${ENV_PREFIX}.htdev.com
+  WEB_YSI_RCPT_FQDN             = rcpt.${ENV_PREFIX}.htdev.com
+  USERVOICE_BASE_URL            = http://hightail.uservoice.com
+  CANCELLATION_SURVEY           = http://survey.htdev.com/go?iv=46w9gsngr7qtu
+  SMQ_DOMAIN                    = yousendit
+
+  # Hostnames are really:
+  #   smq01.int.htdev.com
+  #   smq01.int.htdev.com
+  # This legacy setting is due to licensing
+  SMQ_MST_FQDN                  = ${SMQ_MST_FQDN_PREFIX}.yousendit.com
+  SMQ_SLV_FQDN                  = ${SMQ_SLV_FQDN_PREFIX}.yousendit.com
+
+##### END_YSI_GLOBALS : yousendit-specific global vars for Hightail'ing:
+
+    BRAND_VERSION = hightail
+    ENV_PREFIX                  = int 
+    ENV_SUFFIX                  = htdev.com
+    EXTERNAL_WEB_FQDN           = www.${ENV_PREFIX}.${EXTERNAL_DOMAIN}
+
+  FTF_SHARED_SECRET             = 500emerson
+
+  # for testing purposes on rebranding
+  WEB_HTL_PARTNER_FQDN          = int.${ENV_PREFIX}.htdev.com
+  WEB_HTL_DROPBOX_FQDN          = dropbox.${ENV_PREFIX}.htdev.com
+  WEB_HTL_DOWNLOAD_FQDN         = download.${ENV_PREFIX}.htdev.com
+  ##### Note:  web download endpoints must have trailing "/"
+  WEB_HTL_DOWNLOAD_ENDP         = http://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_DOWNLOAD_SSL_ENDP     = https://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_IMAGE_FQDN            = images.${ENV_PREFIX}.htdev.com
+  WEB_HTL_FILE_FQDN             = files.${ENV_PREFIX}.htdev.com
+  WEB_HTL_FILE_ENDP             = http://${WEB_HTL_FILE_FQDN}/
+  WEB_HTL_RCPT_FQDN             = rcpt.${ENV_PREFIX}.htdev.com
+
+  ENV_BASE_FQDN                 = www.${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_HTL_BASE_FQDN             = www.${ENV_PREFIX}.${HTL_DOMAIN}
+  ENV_BASE_URL                  = http://${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_BASE_URL_SSL              = https://${ENV_HTL_BASE_FQDN}
+
+  HTL_DROPBOX_FQDN              = ${DROPBOX_FQDN_PREFIX}.${HTL_DOMAIN}
+  HTL_WEB_APP_FQDN              = www.${WEB_APP_FQDN_PREFIX}.${HTL_DOMAIN}
+
+  ## General
+    DBM_V2_FQDN_PREFIX          = sql01.${ENV_PREFIX}
+    DBS_V2_FQDN_PREFIX          = sql01.${ENV_PREFIX}
+    DBM_V3_FQDN_PREFIX          = sql01.${ENV_PREFIX}
+    DBS_V3_FQDN_PREFIX          = sql01.${ENV_PREFIX}
+    ACT_SVC_FQDN_PREFIX         = act01.${ENV_PREFIX}
+    ADP_SVC_FQDN_PREFIX         = adp01.${ENV_PREFIX}
+    AMQ_APP_FQDN_PREFIX         = ysiq.${ENV_PREFIX}
+    BLG_SVC_FQDN_PREFIX         = blg01.${ENV_PREFIX}
+    API_SVC_FQDN_PREFIX         = api01.${ENV_PREFIX}
+    AUT_SVC_FQDN_PREFIX         = aut01.${ENV_PREFIX}
+    BKR_SVC_FQDN_PREFIX         = bkr01.${ENV_PREFIX}
+    CCH_APP_FQDN_PREFIX         = cch01.${ENV_PREFIX}
+    DEVAPI_SVC_FQDN_PREFIX      = dpi01.${ENV_PREFIX}
+    DROPBOX_FQDN_PREFIX         = dropbox.${ENV_PREFIX}
+    DPI_SVC_FQDN_PREFIX         = dpi01.${ENV_PREFIX}
+    ESIGN_SVC_FQDN_PREFIX       = sig01.${ENV_PREFIX}
+    EVT_SVC_FQDN                = ${ENV_PREFIX}evt.${ENV_PREFIX}
+    JWS_SVC_FQDN_PREFIX         = ${ENV_PREFIX}jws01.dmz
+    NGW_SVC_FQDN_PREFIX         = ngw01.${ENV_PREFIX}
+    PBK_APP_FQDN_PREFIX         = pbk01.${ENV_PREFIX}
+    PEN_SVC_FQDN_PREFIX         = pol01.${ENV_PREFIX}
+    PHI_APP_FQDN_PREFIX         = phi.${ENV_PREFIX}
+    PRA_SVC_FQDN_PREFIX         = ${ENV_PREFIX}pra02.eng
+    RBL_SVC_FQDN_PREFIX         = rbl01.${ENV_PREFIX}
+    SKU_SVC_FQDN_PREFIX         = sku01.${ENV_PREFIX}
+    STATIC_FQDN_PREFIX          = static.${ENV_PREFIX}
+    TPL_SVC_FQDN_PREFIX         = tpl01.${ENV_PREFIX}
+    USR_SVC_FQDN_PREFIX         = usr01.${ENV_PREFIX}
+    VND_ACCT_SVC_FQDN_PREFIX    = vnu01.${ENV_PREFIX}
+    VND_ENTL_SVC_FQDN_PREFIX    = vnb01.${ENV_PREFIX}
+    VND_PROD_SVC_FQDN_PREFIX    = vnb01.${ENV_PREFIX}
+    VND_BILL_SVC_FQDN_PREFIX    = vnb01.${ENV_PREFIX}
+    VND_USRP_SVC_FQDN_PREFIX    = vnu01.${ENV_PREFIX}
+    VND_SCHL_SVC_FQDN_PREFIX    = vnu01.${ENV_PREFIX}
+    WRK_SVC_FQDN_PREFIX         = wrk01.${ENV_PREFIX}
+    WEB_APP_FQDN_PREFIX         = ${ENV_PREFIX}
+    XMPP_MST_FQDN_PREFIX        = ${ENV_PREFIX}xmp01
+    XMPP_SLV_FQDN_PREFIX        = ${ENV_PREFIX}xmp02
+    YPI_SVC_FQDN_PREFIX         = ypi01.${ENV_PREFIX}
+
+    ZIP_SVC_FQDN                = ${ENV_PREFIX}tap04.${ENV_PREFIX}.htdev.com
+
+
+  ## Platform
+    CCH_SERVERS                 = ${CCH_APP_FQDN}:${CCH_APP_PORT}
+
+    PAYFLOW_USER                = qauser
+
+
+    ACTIVITYW_SVC_FQDN          = rpt.${ENV_PREFIX}.${HTL_DOMAIN}
+    STATIC_FQDN                 = ${STATIC_HTL_FQDN}
+
+    ENVIRONMENT_ALIAS       = PRIVATE_DEV
+
+[[sbx]]
+    BRAND_VERSION = hightail
+    ENV_PREFIX			= sbx
+    ENV_SUFFIX			= yousendit.com
+    EXTERNAL_WEB_FQDN		= www.${ENV_PREFIX}.${EXTERNAL_DOMAIN}
+    HT_EXTERNAL_WEB_BASE_URL	    = ${HT_BASE_URL}
+
+  FTF_SHARED_SECRET             = 500emerson
+  
+  # for testing purposes on rebranding
+  WEB_HTL_PARTNER_FQDN          = partners.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DROPBOX_FQDN          = dropbox.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DOWNLOAD_FQDN         = download.${ENV_PREFIX}.hightail.com
+  ##### Note:  web download endpoints must have trailing "/"
+  WEB_HTL_DOWNLOAD_ENDP         = http://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_DOWNLOAD_SSL_ENDP     = https://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_IMAGE_FQDN            = images.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_FQDN             = files.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_ENDP             = http://${WEB_HTL_FILE_FQDN}/
+  WEB_HTL_RCPT_FQDN             = rcpt.${ENV_PREFIX}.hightail.com
+
+  ENV_BASE_FQDN                 = www.${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_HTL_BASE_FQDN             = www.${ENV_PREFIX}.${HTL_DOMAIN}
+  ENV_BASE_URL                  = http://${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_BASE_URL_SSL              = https://${ENV_HTL_BASE_FQDN}
+
+  HTL_DROPBOX_FQDN              = www.${DROPBOX_FQDN_PREFIX}.${HTL_DOMAIN}
+  HTL_WEB_APP_FQDN              = www.${WEB_APP_FQDN_PREFIX}.${HTL_DOMAIN}
+
+  ## General                     
+    DBM_V2_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBS_V2_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBM_V3_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBS_V3_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    ACT_SVC_FQDN_PREFIX         = ${ENV_PREFIX}act01.dmz	
+    ADP_SVC_FQDN_PREFIX         = ${ENV_PREFIX}adp01.dmz	
+    BLG_SVC_FQDN_PREFIX         = ${ENV_PREFIX}blg01.dmz	
+#    AMQ_APP_FQDN_PREFIX		= ${ENV_PREFIX}-ysiq
+    AMQ_APP_FQDN_PREFIX		= ${ENV_PREFIX}amq01.dmz
+    API_SVC_FQDN_PREFIX		= ${ENV_PREFIX}api01.dmz
+    AUT_SVC_FQDN_PREFIX		= ${ENV_PREFIX}aut01.dmz
+    BKR_SVC_FQDN_PREFIX	 	= ${ENV_PREFIX}bkr01.dmz
+    CCH_APP_FQDN_PREFIX		= ${ENV_PREFIX}cch01.dmz
+    DEVAPI_SVC_FQDN_PREFIX	= ${ENV_PREFIX}dpi01.dmz
+    DROPBOX_FQDN_PREFIX		= ${ENV_PREFIX}-dropbox
+    DPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}dpi01.dmz
+    ESIGN_SVC_FQDN_PREFIX	= ${ENV_PREFIX}sig01.dmz
+    EVT_SVC_FQDN		= ${ENV_PREFIX}evt01.dmz
+    JWS_SVC_FQDN_PREFIX		= ${ENV_PREFIX}jws01.dmz
+    NGW_SVC_FQDN_PREFIX		= ${ENV_PREFIX}ngw01.dmz
+    PEN_SVC_FQDN_PREFIX		= ${ENV_PREFIX}pol01.dmz
+    PHI_APP_FQDN_PREFIX		= ${ENV_PREFIX}
+    PRA_SVC_FQDN_PREFIX		= ${ENV_PREFIX}pra01.dmz
+    RBL_SVC_FQDN_PREFIX		= ${ENV_PREFIX}rbl01.dmz
+    SKU_SVC_FQDN_PREFIX		= ${ENV_PREFIX}sku01.dmz
+    STATIC_FQDN_PREFIX		= ${ENV_PREFIX}-static
+    TPL_SVC_FQDN_PREFIX		= ${ENV_PREFIX}tpl01.dmz
+    USR_SVC_FQDN_PREFIX		= ${ENV_PREFIX}usr01.dmz
+    VND_ACCT_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz	
+    VND_ENTL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_PROD_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_BILL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_USRP_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz	
+    VND_SCHL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz
+    #WRK_SVC_FQDN_PREFIX		= ${ENV_PREFIX}wrk01.dmz
+    WEB_APP_FQDN_PREFIX		= ${ENV_PREFIX}
+    XMPP_MST_FQDN_PREFIX	= ${ENV_PREFIX}xmp01
+    XMPP_SLV_FQDN_PREFIX	= ${ENV_PREFIX}xmp02
+    YPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}ypi01.dmz
+
+    ZIP_SVC_FQDN		= ${ENV_PREFIX}tap04.${ENV_PREFIX}.hightail.com 
+
+  ## Platform
+    CCH_SERVERS			= ${CCH_APP_FQDN}:${CCH_APP_PORT}
+
+    PAYFLOW_USER		= qauser 
+
+    ACTIVITYW_SVC_FQDN		= ${ENV_PREFIX}-rpt.${ENV_SUFFIX}
+    STATIC_FQDN                 = ${STATIC_HTL_FQDN}
+    CLEVERSAFE_FQDN		= accesser.sto.hightail.com
+
+    NEW_RELIC_LICENSE_KEY	= 12f1886629161e8d2031c17203708c6976c36962
+
+    PREVIEW_ENDP            = https://preview.${ENV_PREFIX}.hightail.com/api
+    PREVIEW_V1_ENDP         = https://preview.${ENV_PREFIX}.hightail.com/api
+
+    WRK_SVC_FQDN_PREFIX         = ${ENV_PREFIX}wrk01.dmz
+
+    WILSON_ENABLED              = true
+
+[[sqa]]
+    BRAND_VERSION = hightail
+    ENV_PREFIX			= sqa
+    ENV_SUFFIX			= yousendit.com
+    EXTERNAL_WEB_FQDN		= www.${ENV_PREFIX}.${EXTERNAL_DOMAIN}
+
+  FTF_SHARED_SECRET             = 500emerson
+  
+  # for testing purposes on rebranding
+  WEB_HTL_PARTNER_FQDN          = partners.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DROPBOX_FQDN          = dropbox.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DOWNLOAD_FQDN         = download.${ENV_PREFIX}.hightail.com
+  ##### Note:  web download endpoints must have trailing "/"
+  WEB_HTL_DOWNLOAD_ENDP         = http://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_DOWNLOAD_SSL_ENDP     = https://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_IMAGE_FQDN            = images.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_FQDN             = files.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_ENDP             = http://${WEB_HTL_FILE_FQDN}/
+  WEB_HTL_RCPT_FQDN             = rcpt.${ENV_PREFIX}.hightail.com
+
+  ENV_BASE_FQDN                 = www.${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_HTL_BASE_FQDN             = www.${ENV_PREFIX}.${HTL_DOMAIN}
+  ENV_BASE_URL                  = http://${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_BASE_URL_SSL              = https://${ENV_HTL_BASE_FQDN}
+
+  HTL_DROPBOX_FQDN              = www.${DROPBOX_FQDN_PREFIX}.${HTL_DOMAIN}
+  HTL_WEB_APP_FQDN              = www.${WEB_APP_FQDN_PREFIX}.${HTL_DOMAIN}
+
+  ## General                     
+    DBM_V2_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBS_V2_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBM_V3_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBS_V3_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    ACT_SVC_FQDN_PREFIX         = ${ENV_PREFIX}act01.dmz	
+    ADP_SVC_FQDN_PREFIX         = ${ENV_PREFIX}adp01.dmz	
+    BLG_SVC_FQDN_PREFIX         = ${ENV_PREFIX}blg01.dmz	
+#    AMQ_APP_FQDN_PREFIX		= ${ENV_PREFIX}-ysiq
+    AMQ_APP_FQDN_PREFIX		= ${ENV_PREFIX}amq01.dmz
+    API_SVC_FQDN_PREFIX		= ${ENV_PREFIX}api01.dmz
+    AUT_SVC_FQDN_PREFIX		= ${ENV_PREFIX}aut01.dmz
+    BKR_SVC_FQDN_PREFIX	 	= ${ENV_PREFIX}bkr01.dmz
+    CCH_APP_FQDN_PREFIX		= ${ENV_PREFIX}cch01.dmz
+    DEVAPI_SVC_FQDN_PREFIX	= ${ENV_PREFIX}dpi01.dmz
+    DROPBOX_FQDN_PREFIX		= ${ENV_PREFIX}-dropbox
+    DPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}dpi01.dmz
+    ESIGN_SVC_FQDN_PREFIX	= ${ENV_PREFIX}sig01.dmz
+    EVT_SVC_FQDN		= ${ENV_PREFIX}evt01.dmz
+    JWS_SVC_FQDN_PREFIX		= ${ENV_PREFIX}jws01.dmz
+    NGW_SVC_FQDN_PREFIX		= ${ENV_PREFIX}ngw01.dmz
+    PEN_SVC_FQDN_PREFIX		= ${ENV_PREFIX}pol01.dmz
+    PHI_APP_FQDN_PREFIX		= ${ENV_PREFIX}
+    PRA_SVC_FQDN_PREFIX		= ${ENV_PREFIX}pra01.dmz
+    RBL_SVC_FQDN_PREFIX		= ${ENV_PREFIX}rbl01.dmz
+    SKU_SVC_FQDN_PREFIX		= ${ENV_PREFIX}sku01.dmz
+    STATIC_FQDN_PREFIX		= ${ENV_PREFIX}-static
+    TPL_SVC_FQDN_PREFIX		= ${ENV_PREFIX}tpl01.dmz
+    USR_SVC_FQDN_PREFIX		= ${ENV_PREFIX}usr01.dmz
+    VND_ACCT_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz	
+    VND_ENTL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_PROD_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_BILL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_USRP_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz	
+    VND_SCHL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz
+    WRK_SVC_FQDN_PREFIX		= ${ENV_PREFIX}wrk01.dmz
+    WEB_APP_FQDN_PREFIX		= ${ENV_PREFIX}
+    XMPP_MST_FQDN_PREFIX	= ${ENV_PREFIX}xmp01
+    XMPP_SLV_FQDN_PREFIX	= ${ENV_PREFIX}xmp02
+    YPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}ypi01.dmz
+
+    ZIP_SVC_FQDN		= ${ENV_PREFIX}tap04.${ENV_PREFIX}.hightail.com 
+
+  ## Platform
+    CCH_SERVERS			= ${CCH_APP_FQDN}:${CCH_APP_PORT}
+
+    PAYFLOW_USER		= qauser 
+
+    ACTIVITYW_SVC_FQDN		= ${ENV_PREFIX}-rpt.${ENV_SUFFIX}
+    STATIC_FQDN                 = ${STATIC_HTL_FQDN}
+    NEW_RELIC_LICENSE_KEY	= af8d2b109c4143b9286b2235c94de1547da450aa
+
+    WILSON_ENABLED              = true
+
+ [[sqb]]
+    ENV_PREFIX                  = sqb
+    ENV_SUFFIX                  = yousendit.com
+
+  FTF_SHARED_SECRET             = 500emerson
+  
+  ## General
+    DBM_V2_FQDN_PREFIX          = ${ENV_PREFIX}-wdb-v2.eng
+    DBS_V2_FQDN_PREFIX          = ${ENV_PREFIX}-wdb-v2.eng
+    DBM_V3_FQDN_PREFIX          = ${ENV_PREFIX}-wdb-v3.eng
+    DBS_V3_FQDN_PREFIX          = ${ENV_PREFIX}-wdb-v3.eng
+    ACT_SVC_FQDN_PREFIX         = ${ENV_PREFIX}act01.eng
+    ACCOUNT_V4_ENDP             = ${VND_ACCT_APP} 
+    AMQ_APP_FQDN_PREFIX         = ${ENV_PREFIX}-ysiq
+    API_SVC_FQDN_PREFIX         = ${ENV_PREFIX}-api
+    AUT_SVC_FQDN_PREFIX         = ${ENV_PREFIX}aut01.eng
+    AUTH_V4_ENDP                = ${VND_USRPW_APP}/soap/Auth
+    BLG_SVC_FQDN_PREFIX         = ${ENV_PREFIX}blg01.eng  
+    BKR_SVC_FQDN_PREFIX         = ${ENV_PREFIX}bkr01.eng
+    CCH_APP_FQDN_PREFIX         = ${ENV_PREFIX}cch01.eng
+    DEVAPI_SVC_FQDN_PREFIX  = ${ENV_PREFIX}-dpi
+    DROPBOX_FQDN_PREFIX         = ${ENV_PREFIX}-dropbox
+    DPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}-dpi
+    ESIGN_SVC_FQDN_PREFIX       = ${ENV_PREFIX}dpi01.eng
+    EVT_SVC_FQDN                = ${ENV_PREFIX}evt01.eng
+    ENTITLEMENT_V4_ENDP         = ${VND_ENTL_APP} 
+    JWS_SVC_FQDN_PREFIX   = ${ENV_PREFIX}jws01.eng
+    NGW_SVC_FQDN_PREFIX         = ${ENV_PREFIX}ngw01.eng
+    PAYMENT_V4_ENDP             = ${VND_BILL_APP}/soap/Payments
+    PAYMENTW_V4_ENDP            = ${VND_USRPW_APP}/soap/PaymentsW 
+    PEN_SVC_FQDN_PREFIX         = ${ENV_PREFIX}pol01.eng
+    PHI_APP_FQDN_PREFIX         = ${ENV_PREFIX}
+    PRA_SVC_FQDN_PREFIX   = ${ENV_PREFIX}pra01.eng
+    RBL_SVC_FQDN_PREFIX         = ${ENV_PREFIX}-rbl
+    SKU_SVC_FQDN_PREFIX         = ${ENV_PREFIX}sku01.eng
+    SKU_V4_ENDP                 = ${VND_PROD_APP}/soap/Skus 
+    STATIC_FQDN_PREFIX          = ${ENV_PREFIX}-static
+    TPL_SVC_FQDN_PREFIX         = ${ENV_PREFIX}tpl01.eng
+    USR_SVC_FQDN_PREFIX         = ${ENV_PREFIX}usr01.eng
+    USER_V4_ENDP                = ${VND_ENTL_APP}/soap/User
+    USERW_V4_ENDP               = ${VND_USRPW_APP}/soap/UserW  
+    VND_ACCT_SVC_FQDN_PREFIX  = ${ENV_PREFIX}vnu01.eng  
+    VND_ENTL_SVC_FQDN_PREFIX  = ${ENV_PREFIX}vnb01.eng  
+    VND_PROD_SVC_FQDN_PREFIX  = ${ENV_PREFIX}vnb01.eng  
+    VND_BILL_SVC_FQDN_PREFIX  = ${ENV_PREFIX}vnb01.eng  
+    VND_USRP_SVC_FQDN_PREFIX  = ${ENV_PREFIX}vnu01.eng  
+    VND_SCHL_SVC_FQDN_PREFIX  = ${ENV_PREFIX}vnu01.eng  
+    WRK_SVC_FQDN_PREFIX         = ${ENV_PREFIX}wrk01.eng
+    WEB_APP_FQDN_PREFIX         = ${ENV_PREFIX}
+    XMPP_MST_FQDN_PREFIX        = ${ENV_PREFIX}xmp01
+    XMPP_SLV_FQDN_PREFIX        = ${ENV_PREFIX}xmp02
+    YPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}ypi01.dmz
+
+  ## Platform
+    CCH_SERVERS                 = ${CCH_APP_FQDN}:${CCH_APP_PORT}
+
+  PAYFLOW_USER      = qauser 
+  VINDICIA_SWITCH               = On
+
+
+ [[sqc]]
+    BRAND_VERSION = hightail
+    ENV_PREFIX                  = sqc
+    ENV_SUFFIX			= yousendit.com
+    EXTERNAL_WEB_FQDN		= www.${ENV_PREFIX}.${EXTERNAL_DOMAIN}
+
+  FTF_SHARED_SECRET             = 500emerson
+  
+  ## General                     
+    DBM_V2_FQDN_PREFIX          = ${ENV_PREFIX}-wdb-v2.eng
+    DBS_V2_FQDN_PREFIX          = ${ENV_PREFIX}-wdb-v2.eng
+    DBM_V3_FQDN_PREFIX          = ${ENV_PREFIX}-wdb-v3.eng
+    DBS_V3_FQDN_PREFIX          = ${ENV_PREFIX}-wdb-v3.eng
+    ADP_SVC_FQDN_PREFIX         = ${ENV_PREFIX}adp01.eng  
+    ACT_SVC_FQDN_PREFIX         = ${ENV_PREFIX}act01.eng
+    ACCOUNT_V4_ENDP             = ${VND_ACCT_APP} 
+    AMQ_APP_FQDN_PREFIX         = ${ENV_PREFIX}-ysiq
+    API_SVC_FQDN_PREFIX         = ${ENV_PREFIX}-api
+    AUT_SVC_FQDN_PREFIX         = ${ENV_PREFIX}aut01.eng
+    AUTH_V4_ENDP                = ${VND_USRPW_APP}/soap/Auth
+    BLG_SVC_FQDN_PREFIX         = ${ENV_PREFIX}blg01.eng  
+    BKR_SVC_FQDN_PREFIX         = ${ENV_PREFIX}bkr01.eng
+    CCH_APP_FQDN_PREFIX         = ${ENV_PREFIX}cch01.eng
+    DEVAPI_SVC_FQDN_PREFIX  = ${ENV_PREFIX}-dpi
+    DROPBOX_FQDN_PREFIX		= ${ENV_PREFIX}-dropbox
+    DPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}-dpi
+    ESIGN_SVC_FQDN_PREFIX       = ${ENV_PREFIX}sig01.eng
+    EVT_SVC_FQDN                = ${ENV_PREFIX}evt01.eng
+    ENTITLEMENT_V4_ENDP         = ${VND_ENTL_APP} 
+    JWS_SVC_FQDN_PREFIX   = ${ENV_PREFIX}jws01.eng
+    NGW_SVC_FQDN_PREFIX         = ${ENV_PREFIX}ngw01.eng
+    PAYMENT_V4_ENDP             = ${VND_BILL_APP}/soap/Payments
+    PAYMENTW_V4_ENDP            = ${VND_USRPW_APP}/soap/PaymentsW 
+    PBK_APP_FQDN_PREFIX		= sqcweb02.sqc.hightail.com
+    PBK_APP_FQDN		= sqcweb02.sqc.hightail.com
+    PEN_SVC_FQDN_PREFIX         = ${ENV_PREFIX}pol01.eng
+    PHI_APP_FQDN_PREFIX		= ${ENV_PREFIX}
+    PRA_SVC_FQDN_PREFIX   = ${ENV_PREFIX}pra01.eng
+    RBL_SVC_FQDN_PREFIX         = ${ENV_PREFIX}-rbl
+    SKU_SVC_FQDN_PREFIX         = ${ENV_PREFIX}sku01.eng
+    SKU_V4_ENDP                 = ${VND_PROD_APP}/soap/Skus 
+    STATIC_FQDN_PREFIX		= ${ENV_PREFIX}-static
+    TPL_SVC_FQDN_PREFIX         = ${ENV_PREFIX}tpl01.eng
+    USR_SVC_FQDN_PREFIX         = ${ENV_PREFIX}usr01.eng
+    USER_V4_ENDP                = ${VND_ENTL_APP}/soap/User
+    USERW_V4_ENDP               = ${VND_USRPW_APP}/soap/UserW  
+    VND_ACCT_SVC_FQDN_PREFIX  = ${ENV_PREFIX}vnu01.eng  
+    VND_ENTL_SVC_FQDN_PREFIX  = ${ENV_PREFIX}vnb01.eng  
+    VND_PROD_SVC_FQDN_PREFIX  = ${ENV_PREFIX}vnb01.eng  
+    VND_BILL_SVC_FQDN_PREFIX  = ${ENV_PREFIX}vnb01.eng  
+    VND_USRP_SVC_FQDN_PREFIX  = ${ENV_PREFIX}vnu01.eng  
+    VND_SCHL_SVC_FQDN_PREFIX  = ${ENV_PREFIX}vnu01.eng  
+    #WRK_SVC_FQDN_PREFIX         = ${ENV_PREFIX}wrk01.eng
+    WEB_APP_FQDN_PREFIX		= ${ENV_PREFIX}
+    XMPP_MST_FQDN_PREFIX	= ${ENV_PREFIX}xmp01
+    XMPP_SLV_FQDN_PREFIX	= ${ENV_PREFIX}xmp02
+    YPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}dpi01.eng
+
+  ## Platform
+    CCH_SERVERS			= ${CCH_APP_FQDN}:${CCH_APP_PORT}
+
+    PAYFLOW_USER		= qauser 
+  VINDICIA_SWITCH               = On
+
+    ALCATRAZ_SCORING_ENABLED  = true
+    ALCATRAZ_SPAM_SCORING_AGENT_HOST  = ${ENV_PREFIX}spa01.eng.${ENV_SUFFIX}
+
+    HTL_WEB_APP_FQDN              = www.${ENV_PREFIX}.${HTL_DOMAIN}
+
+    ZIP_SVC_FQDN    = ${ENV_PREFIX}tap02.${ENV_PREFIX}.hightail.com 
+    FSM_SVC_FQDN_PREFIX   = ${ENV_PREFIX}bkr01.eng
+
+    SRT_ENDP		    = http://sqcweb01.eng.yousendit.com/postback/pbhandler.php 
+    NEW_RELIC_LICENSE_KEY	= 86886618c6f984eb2483ddfdc3cbda420653f4b6
+
+# Lenovo:
+    LENOVO_WEBAUTH_LOGIN_ENDP = https://passport.lenovo.com/wauthen/gateway
+    LENOVO_WEBAUTH_VERIFY_ENDP = https://passport.lenovo.com/interserver/authen/1.2/getaccountid
+# LENOVO_WEBAUTH_LOGIN_ENDP = https://uss-aws.test.lenovomm.cn/wauthen/gateway
+# LENOVO_WEBAUTH_VERIFY_ENDP = https://uss-aws.test.lenovomm.cn/interserver/authen/1.4/getaccountid
+
+    WILSON_ENABLED              = false
+
+    WRK_SVC_FQDN = hfs01.sqc.hightail.com
+    WRK_SVC_FQDN_PREFIX = BADBADBAD 
+    WORKSPACE_PORT = 8080 
+    WORKSPACEW_PORT = 8080
+    WORKSPACE_PORTW = 8080
+    WORKSPACE_ENDP = http://${WRK_SVC_FQDN}:${WORKSPACE_PORT}/su2/Workspace 
+    WORKSPACEW_ENDP = http://${WRK_SVC_FQDN}:${WORKSPACEW_PORT}/su2/WorkspaceW 
+    WORKSPACE_REST_ENDP = BADBADBAD 
+    WORKSPACEW_REST_ENDP = BADBADBAD 
+    WRKW_REST_BASE_URL = BADBADBAD
+
+
+[[odpphi01]]
+  EXTERNAL_WEB_FQDN             = dev.${ENV_PREFIX}.${EXTERNAL_DOMAIN}
+  ENV_BASE_FQDN                 = dev.${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_HTL_BASE_FQDN             = dev.${ENV_PREFIX}.${HTL_DOMAIN}
+  HTL_DROPBOX_FQDN              = dev.${DROPBOX_FQDN_PREFIX}.${HTL_DOMAIN}
+  HTL_WEB_APP_FQDN              = dev.${WEB_APP_FQDN_PREFIX}.${HTL_DOMAIN}
+
+[[odpcnt01]]
+  EXTERNAL_WEB_FQDN             = dev.${ENV_PREFIX}.${EXTERNAL_DOMAIN}
+  ENV_BASE_FQDN                 = dev.${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_HTL_BASE_FQDN             = dev.${ENV_PREFIX}.${HTL_DOMAIN}
+  HTL_DROPBOX_FQDN              = dev.${DROPBOX_FQDN_PREFIX}.${HTL_DOMAIN}
+  HTL_WEB_APP_FQDN              = dev.${WEB_APP_FQDN_PREFIX}.${HTL_DOMAIN}
+
+[[odpweb01]]
+  EXTERNAL_WEB_FQDN             = dev.${ENV_PREFIX}.${EXTERNAL_DOMAIN}
+  ENV_BASE_FQDN                 = dev.${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_HTL_BASE_FQDN             = dev.${ENV_PREFIX}.${HTL_DOMAIN}
+  HTL_DROPBOX_FQDN              = dev.${DROPBOX_FQDN_PREFIX}.${HTL_DOMAIN}
+  HTL_WEB_APP_FQDN              = dev.${WEB_APP_FQDN_PREFIX}.${HTL_DOMAIN}
+
+[[od]]
+  BRAND_VERSION                 = hightail
+  ENV_SUFFIX			= yousendit.com
+  EXTERNAL_WEB_FQDN		= www.${ENV_PREFIX}.${EXTERNAL_DOMAIN}
+
+  FTF_SHARED_SECRET             = 500emerson
+  
+  # for testing purposes on rebranding
+  WEB_HTL_PARTNER_FQDN          = partners.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DROPBOX_FQDN          = dropbox.${ENV_PREFIX}.hightail.com
+  WEB_HTL_DOWNLOAD_FQDN         = download.${ENV_PREFIX}.hightail.com
+  ##### Note:  web download endpoints must have trailing "/"
+  WEB_HTL_DOWNLOAD_ENDP         = http://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_DOWNLOAD_SSL_ENDP     = https://${WEB_HTL_DOWNLOAD_FQDN}/
+  WEB_HTL_IMAGE_FQDN            = images.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_FQDN             = files.${ENV_PREFIX}.hightail.com
+  WEB_HTL_FILE_ENDP             = http://${WEB_HTL_FILE_FQDN}/
+  WEB_HTL_RCPT_FQDN             = rcpt.${ENV_PREFIX}.hightail.com
+
+  ENV_BASE_FQDN                 = www.${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_HTL_BASE_FQDN             = www.${ENV_PREFIX}.${HTL_DOMAIN}
+  ENV_BASE_URL                  = http://${ENV_PREFIX}.${ENV_SUFFIX}
+  ENV_BASE_URL_SSL              = https://${ENV_HTL_BASE_FQDN}
+
+  HTL_DROPBOX_FQDN              = www.${DROPBOX_FQDN_PREFIX}.${HTL_DOMAIN}
+  HTL_WEB_APP_FQDN              = www.${WEB_APP_FQDN_PREFIX}.${HTL_DOMAIN}
+
+  ## General                     
+    DBM_V2_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBS_V2_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBM_V3_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    DBS_V3_FQDN_PREFIX		= ${ENV_PREFIX}wdb01.dmz
+    ACT_SVC_FQDN_PREFIX         = ${ENV_PREFIX}act01.dmz	
+    ADP_SVC_FQDN_PREFIX         = ${ENV_PREFIX}adp01.dmz	
+    BLG_SVC_FQDN_PREFIX         = ${ENV_PREFIX}blg01.dmz	
+#    AMQ_APP_FQDN_PREFIX		= ${ENV_PREFIX}-ysiq
+    AMQ_APP_FQDN_PREFIX		= ${ENV_PREFIX}amq01.dmz
+    API_SVC_FQDN_PREFIX		= ${ENV_PREFIX}api01.dmz
+    AUT_SVC_FQDN_PREFIX		= ${ENV_PREFIX}aut01.dmz
+    BKR_SVC_FQDN_PREFIX	 	= ${ENV_PREFIX}bkr01.dmz
+    CCH_APP_FQDN_PREFIX		= ${ENV_PREFIX}cch01.dmz
+    DEVAPI_SVC_FQDN_PREFIX	= ${ENV_PREFIX}dpi01.dmz
+    DROPBOX_FQDN_PREFIX		= ${ENV_PREFIX}-dropbox
+    DPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}dpi01.dmz
+    ESIGN_SVC_FQDN_PREFIX	= ${ENV_PREFIX}sig01.dmz
+    EVT_SVC_FQDN		= ${ENV_PREFIX}evt01.dmz
+    JWS_SVC_FQDN_PREFIX		= ${ENV_PREFIX}jws01.dmz
+    NGW_SVC_FQDN_PREFIX		= ${ENV_PREFIX}ngw01.dmz
+    PEN_SVC_FQDN_PREFIX		= ${ENV_PREFIX}pol01.dmz
+    PHI_APP_FQDN_PREFIX		= ${ENV_PREFIX}
+    PRA_SVC_FQDN_PREFIX		= ${ENV_PREFIX}pra01.dmz
+    RBL_SVC_FQDN_PREFIX		= ${ENV_PREFIX}rbl01.dmz
+    SKU_SVC_FQDN_PREFIX		= ${ENV_PREFIX}sku01.dmz
+    STATIC_FQDN_PREFIX		= ${ENV_PREFIX}-static
+    TPL_SVC_FQDN_PREFIX		= ${ENV_PREFIX}tpl01.dmz
+    USR_SVC_FQDN_PREFIX		= ${ENV_PREFIX}usr01.dmz
+    VND_ACCT_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz	
+    VND_ENTL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_PROD_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_BILL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnb01.dmz	
+    VND_USRP_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz	
+    VND_SCHL_SVC_FQDN_PREFIX	= ${ENV_PREFIX}vnu01.dmz
+    WRK_SVC_FQDN_PREFIX		= ${ENV_PREFIX}wrk01.dmz
+    WEB_APP_FQDN_PREFIX		= ${ENV_PREFIX}
+    XMPP_MST_FQDN_PREFIX	= ${ENV_PREFIX}xmp01
+    XMPP_SLV_FQDN_PREFIX	= ${ENV_PREFIX}xmp02
+    YPI_SVC_FQDN_PREFIX         = ${ENV_PREFIX}ypi01.dmz
+
+    ZIP_SVC_FQDN		= ${ENV_PREFIX}tap04.${ENV_PREFIX}.hightail.com 
+
+  ## Platform
+    CCH_SERVERS			= ${CCH_APP_FQDN}:${CCH_APP_PORT}
+
+    PAYFLOW_USER		= qauser 
+
+    ACTIVITYW_SVC_FQDN		= ${ENV_PREFIX}-rpt.${ENV_SUFFIX}
+
+[[odd]]
+  ENV_PREFIX			= odd
+
+[[odp]]
+  ENV_PREFIX			= odp
+
+[[itx]]
+
+# - End of File Marker - DO NOT REMOVE
+

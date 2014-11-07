@@ -16,6 +16,33 @@ module.exports = function(grunt) {
         }
       }
     },
+    sass: {
+      options: {
+        includePaths: [
+          './app/client/appearance/base/common/styles'
+        ]
+      },
+      default: {
+        options: {
+          outputStyle: 'nested'
+        },
+        files: {
+          './app/client/wilson.css': [
+            './app/client/appearance/base/common/styles/app.scss'
+          ]
+        }
+      },
+      dist: {
+        options: {
+          outputStyle: 'compressed'
+        },
+        files: {
+          './app/client/wilson.css': [
+            './app/client/appearance/base/common/styles/app.scss'
+          ]
+        }
+      }
+    },
     express: {
       default: {
         options: {
@@ -27,8 +54,8 @@ module.exports = function(grunt) {
     },
     watch: {
       express: {
-        files:  [ 'app/**/*.{js,json,hbs,html}' ],
-        tasks:  [ 'express:default' ],
+        files:  [ 'app/**/*.{js,json,hbs,html,scss}' ],
+        tasks:  [ 'restartServer' ],
         options: {
           spawn: false // for grunt-contrib-watch v0.5.0+, "nospawn: true" for lower versions. Without this option specified express won't be reloaded
         }
@@ -38,7 +65,9 @@ module.exports = function(grunt) {
 
   grunt.registerTask('install', ['shell:installDependencies']);
 
-  grunt.registerTask('server', ['express:default', 'watch']);
+  grunt.registerTask('restartServer', ['sass:dist','express:default']);
+
+  grunt.registerTask('server', ['restartServer', 'watch']);
 
   // Default task(s).
   grunt.registerTask('default', ['server']);
