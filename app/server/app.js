@@ -12,7 +12,7 @@ _.str = require('underscore.string');
 
 //Create the express app
 var app = express();
-app.set('port', '3000');
+app.set('port', '5000');
 
 //Set up static assets
 app.use('/client', express.static(path.join(__dirname, '../client')));

@@ -46,7 +46,7 @@ module.exports = function(grunt) {
     express: {
       default: {
         options: {
-          port: process.env.PORT || 3000,
+          port: process.env.PORT || 5000,
           script: 'app/server/app.js',
           background: true
         }
