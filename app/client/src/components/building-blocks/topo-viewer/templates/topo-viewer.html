@@ -12,25 +12,22 @@
 
   
   <div class="drop-container">
-  <accordion close-others="oneAtATime">
-    <div class="container">
-    <accordion-group heading="Environments" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
-    
-    <div class="nav-drop">
+    <accordion close-others="oneAtATime">
+      <div class="container">
+        <accordion-group heading="Environments" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+          <div class="nav-drop">
 
-   <!--      <img  class="search-icon" src="/client/appearance/base/common/assets/search.svg" alt="search"> -->
-  
+     <!--      <img  class="search-icon" src="/client/appearance/base/common/assets/search.svg" alt="search"> -->
+            <ht-environment-nav groups="envGroups"
+                                group-names="groupKeys"
+                                selection-manager="envSelectionManager">
+            </ht-environment-nav>
 
-        <ht-environment-nav groups="envGroups"
-                            group-names="groupKeys"
-                            selection-manager="envSelectionManager">
-        </ht-environment-nav>
-
-  </div>
-
-    </accordion-group>
+          </div>
+        </accordion-group>
       </div>
-</div>
+    </accordion>
+  </div>
 
   <div class="container">
     <div class="results-filter">
