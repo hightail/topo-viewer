@@ -5,19 +5,14 @@
       <ht-topo-file-selector topos="topos"></ht-topo-file-selector>
     </div>
   </div>
-  <div ht-selection-helper="envSelectionManager"
-       selection-data="envCollection"
-       selection-id-field="id">
-  </div>
-  <div ht-selection-helper="keySelectionManager"
-       selection-data="keyCollection"
-       selection-id-field="id">
-  </div>
+
+  <div ht-selection-helper="envSelectionManager" selection-data="envCollection" selection-id-field="id"></div>
+  <div ht-selection-helper="keySelectionManager" selection-data="keyCollection" selection-id-field="id"></div>
   
   <div class="drop-container">
     <accordion close-others="oneAtATime">
       <div class="container">
-        <accordion-group heading="Environments" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+        <accordion-group heading="[[ENV_NAV_HEADER_TEXT]]" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
           <div class="nav-drop">
 
      <!--      <img  class="search-icon" src="/client/appearance/base/common/assets/search.svg" alt="search"> -->

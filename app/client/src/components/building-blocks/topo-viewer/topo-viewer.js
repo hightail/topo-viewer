@@ -20,6 +20,10 @@ angular.wilson.component('topo-viewer', {
   controller: ['$scope', 'TopoModel', function($scope, TopoModel) {
     var controller = this;
 
+    function updateEnvNavHeaderText() {
+      $scope.ENV_NAV_HEADER_TEXT = _.str.sprintf('Environments (%s)', $scope.selectedEnvs.join(', '));
+    }
+
     controller.watchAndPersist('selectedEnvs', []);
     controller.watchAndPersist('showEmptyKeys', false);
     controller.watchAndPersist('showDefaultValues', false);
@@ -111,7 +115,10 @@ angular.wilson.component('topo-viewer', {
 
     $scope.$watch('selectedEnvs', function(selectedEnvs) {
       updateFilteredKeys();
+      updateEnvNavHeaderText();
     });
+
+    updateEnvNavHeaderText();
   }],
 
   link: function($scope, $element, $attrs, controller) {
