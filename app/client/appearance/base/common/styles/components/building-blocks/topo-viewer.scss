@@ -2,13 +2,23 @@
  * TopoViewerComponent Properties
  ************************************************/
 // Default Properties for the topo-viewer component go here
-$highlighter-color: #cfff04;
+$selected-row-color: #B7D5EF;
+$selected-row-hover-color: darken($selected-row-color, 10%);
+$default-text-color: #0000FF;
+$tdMaxWidth: 300px;
 
 /*************************************************
  * TopoViewerComponent Styles
  ************************************************/
+@mixin animation($animation) {
+  -webkit-animation: $animation;
+  -moz-animation: $animation;
+  -ms-animation: $animation;
+  animation: $animation;
+}
+
 .results-filter {
-  padding-top: 34px;
+  padding-top: 15px;
   display: inline-block;
   .checkbox {
     display: inline;
@@ -18,14 +28,33 @@ $highlighter-color: #cfff04;
 
 .results-search {
   margin-left: 20px;
+  padding: 0px;
   display: inline-block;
   float: right;
-  padding-top: 20px;
 }
 
-$tdMaxWidth: 300px;
+.env-search {
+  margin-left: 20px;
+  display: inline-block;
+}
 
 .ht-topo-viewer {
+  .header-table {
+    margin-bottom: 0;
+  }
+
+  .navbar-fixed-top.scroll-active {
+    box-shadow: 0px 2px 5px #888888;
+  }
+
+  .show-all-ctrls {
+    padding-right: 23px;
+  }
+
+  .content-container {
+    padding-top: 261px;
+  }
+
   table{
     table-layout: fixed;
   }
@@ -36,11 +65,44 @@ $tdMaxWidth: 300px;
     width: $tdMaxWidth;
 
     &.default-value {
-      color: blue;
+      color: $default-text-color;
+
+      &:hover {
+        color: lighten($default-text-color, 10%);
+      }
     }
   }
 
-  tr.selected {
-    background-color: $highlighter-color;
+  tr {
+    @include transition(all .5s);
+
+    &.ng-enter {
+      @include animation(bounceIn 0.5s);
+    }
+    &.ng-leave {
+      @include animation(bounceOut 0.5s);
+    }
+
+    &.selected {
+      background-color: $selected-row-color;
+
+      &:hover {
+        background-color: $selected-row-hover-color;
+      }
+    }
+  }
+
+  .dropdown-menu li {
+    a.selected {
+      background-color: $selected-row-color;
+    }
+
+    &.active a.selected{
+      background-color: darkred;
+    }
+  }
+
+  .display-label {
+    padding-right: 15px;
   }
 }

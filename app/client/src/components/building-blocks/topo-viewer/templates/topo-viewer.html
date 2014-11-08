@@ -1,66 +1,112 @@
 <div class="ht-topo-viewer">
-  <div class="page-header">
-    <div class="container">
-      <h1>TOPO<small ng-click="stateMachine.next()">[[ stateMachine.current ]]</small></h1>
-      <ht-topo-file-selector topos="topos"></ht-topo-file-selector>
-    </div>
-  </div>
-
   <div ht-selection-helper="envSelectionManager" selection-data="envCollection" selection-id-field="id"></div>
   <div ht-selection-helper="keySelectionManager" selection-data="keyCollection" selection-id-field="id"></div>
-  
-  <div class="drop-container">
-    <accordion close-others="oneAtATime">
+
+  <nav class="navbar navbar-default navbar-fixed-top"
+       ng-class="{ 'scroll-active': isScrollActive }" role="navigation">
+    <div class="page-header">
       <div class="container">
-        <accordion-group heading="[[ENV_NAV_HEADER_TEXT]]" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
-          <div class="nav-drop">
-
-     <!--      <img  class="search-icon" src="/client/appearance/base/common/assets/search.svg" alt="search"> -->
-            <ht-environment-nav groups="envGroups"
-                                group-names="groupKeys"
-                                selection-manager="envSelectionManager">
-            </ht-environment-nav>
-
-          </div>
-        </accordion-group>
-      </div>
-    </accordion>
-  </div>
-
-  <div class="container">
-    <div class="results-filter">
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" ng-model="showEmptyKeys">
-          Show empty keys
-        </label>
-      </div>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" ng-model="showDefaultValues">
-          Show default values
-        </label>
-      </div>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" ng-model="showExpandedValues">
-          Show expanded values
-        </label>
+        <h1>TOPO<small ng-click="stateMachine.next()">[[ stateMachine.current ]]</small></h1>
+        <ht-topo-file-selector topos="topos"></ht-topo-file-selector>
       </div>
     </div>
-    
-    <form class="navbar-form navbar-left results-search" role="search">
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search">
-      </div>
-      <!-- <button type="submit" class="btn btn-default">Submit</button> -->
-    </form>
 
+    <div class="drop-container">
+      <accordion close-others="oneAtATime">
+        <div class="container">
+          <accordion-group is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+            <accordion-heading>
+              Environments
+              <div class="pull-right">
+                <span class="show-all-ctrls">
+                  <span ng-show="status.isFirstOpen">Hide</span>
+                  <span ng-hide="status.isFirstOpen">Show All</span>
+                </span>
+                <span class="btn-group">
+                  <button ng-repeat="env in selectedEnvs"
+                          ht-prevent-default
+                          type="button"
+                          class="btn btn-primary"
+                          ng-click="envSelectionManager.toggleSelectionById(env)">[[ env ]]</button>
+                </span>
+                <form class="env-search"
+                      role="search"
+                      ht-prevent-default>
+                  <input type="text"
+                         placeholder="Search environments"
+                         ng-model="searchEnvValue"
+                         typeahead="env for env in allEnvironments | filter:$viewValue | limitTo:10"
+                         typeahead-on-select="onTypeAheadEnvSelect($item, $model, $label)"
+                         typeahead-template-url="envTypeAhead.html"
+                         class="form-control">
+                </form>
+              </div>
+            </accordion-heading>
+            <div class="nav-drop">
+       <!--      <img  class="search-icon" src="/client/appearance/base/common/assets/search.svg" alt="search"> -->
+              <ht-environment-nav groups="envGroups"
+                                  group-names="groupKeys"
+                                  selection-manager="envSelectionManager">
+              </ht-environment-nav>
+            </div>
+          </accordion-group>
+        </div>
+      </accordion>
+    </div>
+
+    <div class="container">
+      <label class="display-label">
+        <strong>Display</strong>
+      </label>
+      <div class="results-filter">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" ng-model="showDefaultValues">
+            Default values
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" ng-model="showExpandedValues">
+            Expanded values
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" ng-model="showSelectedKeys">
+            Selected keys only
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" ng-model="showEmptyKeys">
+            Empty keys
+          </label>
+        </div>
+      </div>
+
+      <form class="navbar-form navbar-left results-search" role="search">
+        <div class="form-group">
+          <input type="text"
+                 placeholder="Search keys"
+                 ng-model="searchKeyValue"
+                 typeahead="topoKey for topoKey in topoKeys | filter:$viewValue | limitTo:10"
+                 typeahead-on-select="onTypeAheadKeySelect($item, $model, $label)"
+                 typeahead-template-url="keyTypeAhead.html"
+                 class="form-control">
+        </div>
+        <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+      </form>
+      <table class="table header-table">
+        <th>Key</th>
+        <th ng-repeat="env in selectedEnvs">
+          [[ env ]]
+        </th>
+      </table>
+    </div>
+  </nav>
+  <div class="container content-container" ht-scroll="onScroll()">
     <table ng-if="topos" class="table table-hover">
-      <th>Key</th>
-      <th ng-repeat="env in selectedEnvs">
-        [[ env ]]
-      </th>
       <tr ng-repeat="key in filteredKeys"
           ng-click="keySelectionManager.toggleSelectionById(key)"
           ng-class="{ 'selected': keySelectionManager.isIdSelected(key) }">
