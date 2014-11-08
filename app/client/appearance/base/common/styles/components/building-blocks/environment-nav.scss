@@ -26,3 +26,22 @@
 	background-color: #EFEAEA;
 	padding: 40px;
 }
+
+.selection-search {
+	display: inline-block;
+}
+
+	.panel {
+		border-radius: 0px !important;
+		border: 0px !important;
+		.panel-heading {
+			background-color: #EFEAEA;
+		}
+		.panel-body {
+			padding: 0px;
+		}
+}
+
+.drop-container {
+	background-color: #EFEAEA;
+}

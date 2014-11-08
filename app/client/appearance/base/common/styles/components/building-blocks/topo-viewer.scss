@@ -8,6 +8,12 @@
  ************************************************/
 .results-filter {
   padding-top: 34px;
+  display: inline-block;
+}
+
+.results-search {
+  margin-left: 20px;
+  display: inline-block;
 }
 
 $tdMaxWidth: 300px;

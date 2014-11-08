@@ -6,6 +6,27 @@
 /*************************************************
  * TopoFileSelectorComponent Styles
  ************************************************/
+.top-drop-btn {
+	text-transform: uppercase;
+	font-size: .9em;
+}
+
+.ng-binding {
+	font-size: .8em;
+	padding-right: 15px;
+
+}
+
 .ht-topo-file-selector {
   display: inline-block;
+	float: right;
+	padding-top: 16px;
+
+	.dropdown {
+		display: inline;
+		margin-right: 5px;
+		.caret {
+			margin-left: 2px;
+		}
+	}
 }

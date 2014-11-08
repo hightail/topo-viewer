@@ -11,8 +11,14 @@ body {
    font-weight: 300;
 }
 
+.btn-default {
+	border-radius: 2px;
+}
+.dropdown-menu {
+	border-radius: 0px 0px 2px 2px;
+}
 .container {
-	width: 1200px;
+	
 }
 .ht-home {
   h1 {
