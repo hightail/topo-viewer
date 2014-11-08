@@ -11,10 +11,10 @@
   "homepage": "https://github.com/hightail/wilson",
   "dependencies": {
     "express": "^4.8.0",
+    "gift": "^0.4.3-1",
     "hbs": "2.7.0",
     "i18next": "^1.7.4",
     "lodash": "^2.4.1",
-    "nodegit": "^0.1.4",
     "q": "^1.0.1",
     "underscore.string": "^2.3.3",
     "wilson": "hightail/wilson#develop",

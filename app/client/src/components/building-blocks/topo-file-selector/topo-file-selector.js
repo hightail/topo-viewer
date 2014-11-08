@@ -22,6 +22,17 @@ angular.wilson.component('topo-file-selector', {
   controller: ['$scope', 'TopoService', function($scope, TopoService) {
     var controller = this;
 
+    function loadToposFromGit(topoFile, treeish) {
+      TopoService.loadFromGit(topoFile, treeish).then(
+        function(topos) {
+          $scope.topos = topos;
+        },
+        function(error) {
+          console.log('Error retrieving TOPOs', error);
+        }
+      );
+    }
+
     $scope.fileNames = [
       'environment.topo',
       'environment.topo.base',
@@ -29,8 +40,14 @@ angular.wilson.component('topo-file-selector', {
     ];
 
     $scope.branches = [
-      '14.10.0',
-      '14.9.0'
+      'release/14.10.0',
+      'hotfix/14.9.52',
+      'hotfix/14.9.51',
+      'hotfix/14.9.50',
+      'hotfix/14.9.49',
+      'hotfix/14.9.48',
+      'hotfix/14.9.47',
+      'hotfix/14.9.46'
     ];
 
     $scope.selectedFileName = $scope.fileNames[0];
@@ -38,20 +55,15 @@ angular.wilson.component('topo-file-selector', {
 
     $scope.selectFileName = function(value) {
       $scope.selectedFileName = value;
+      loadToposFromGit($scope.selectedFileName, $scope.selectedBranch);
     };
 
     $scope.selectBranch = function(value) {
       $scope.selectedBranch = value;
+      loadToposFromGit($scope.selectedFileName, $scope.selectedBranch);
     };
 
-    TopoService.getTopos().then(
-      function(topos) {
-        $scope.topos = topos;
-      },
-      function(error) {
-        console.log('Error retrieving TOPOs', error);
-      }
-    );
+    loadToposFromGit($scope.selectedFileName, $scope.selectedBranch);
 //  controller.setState({
 //    initial: '',
 //    events: [

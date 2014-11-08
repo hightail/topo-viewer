@@ -15,6 +15,7 @@ newrelic_agent.log
 node_modules
 bower_components
 
+topo-repo
 wilson.css
 
 **/server/.cache

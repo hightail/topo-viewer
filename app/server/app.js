@@ -6,6 +6,7 @@ var express = require('express'),
     http = require('http'),
     request = require('request'),
     _ = require('lodash'),
+    TopoLoader = require('./services/TopoLoader'),
     TopoParser = require('./services/TopoParser');
 
 _.str = require('underscore.string');
@@ -25,47 +26,15 @@ var wilson = Wilson(app, wilsonConfigJson);
 app.use(wilson.config.client.app.mountpath, wilson.router);
 
 //Load topos
-var TOPO_NAME = 'environment-sbx';
-//var TOPO_NAME = 'environment-ita-11-6-14';
-var toposPath = path.join(wilson.config.server.projectPaths.root, '/server/topos/' + TOPO_NAME +'.topo');
-var toposStr = fs.readFileSync(toposPath, 'utf8');
-var topoJson = TopoParser.topo2Json(toposStr);
-
-app.get('/topo', function(req, res) {
-  res.send(topoJson);
-});
-
 app.get('/topo/:name/:commitHash', function(req, res) {
-  var topoPath = _.str.sprintf('https://stash.corp.hightail.com/projects/TOPOS/repos/topos/browse/src/topos/%s.topo?at=%s&raw', req.params.name, req.params.commitHash);
+  var topoFilePath = 'src/topos/' + req.params.name;
+  var commitHash = req.params.commitHash;
 
-  console.log('topoPath', topoPath);
-  request.get({
-    url: topoPath,
-    strictSSL: false
-  }, function (error, response, body) {
-    if (!error && response.statusCode == 200) {
-      console.log('body', body);
-
-      res.send(TopoParser.topo2Json(body));
-    } else {
-      console.log('ERROR');
-      console.log('body', body);
-      console.log('error', error);
-
-      var errorObject = {
-        message: "An unknown error occurred"
-      };
-
-      if (body && body.response) {
-        errorObject = body.response;
-      } else if (error) {
-        errorObject = error;
-      }
-
-      res.send(errorObject);
+  TopoLoader.loadFromGit(topoFilePath, commitHash).then(
+    function(fileContents) {
+      res.send(TopoParser.topo2Json(fileContents));
     }
-  })
-
+  );
 });
 
 //Load index page
