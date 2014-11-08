@@ -35,6 +35,10 @@ angular.wilson.component('topo-viewer', {
         topoModel = new TopoModel(topos);
 
         $scope.allEnvironments = topoModel.getAllEnvironments();
+        $scope.topoKeys = topoModel.getAllKeys();
+        $scope.groupKeys = topoModel.getGroupNames();
+        $scope.envGroups = topoModel.getGroupDicitonary();
+
 
         $scope.envCollection = [];
         _.each($scope.allEnvironments, function (env) {
@@ -42,15 +46,22 @@ angular.wilson.component('topo-viewer', {
             id: env
           });
         });
-        //$scope.environments = ['default', 'sbx', 'ita', 'partners'];
 
-        $scope.topoKeys = topoModel.getAllKeys();
-        $scope.groupKeys = topoModel.getGroupNames();
-        $scope.envGroups = topoModel.getGroupDicitonary();
+        $scope.keyCollection = [];
+        _.each($scope.topoKeys, function (key) {
+          $scope.keyCollection.push({
+            id: key
+          });
+        });
 
         $scope.envSelectionManager.setDataCollection($scope.envCollection);
         _.each($scope.selectedEnvs, function (env) {
           $scope.envSelectionManager.selectById(env);
+        });
+
+        $scope.keySelectionManager.setDataCollection($scope.keyCollection);
+        _.each($scope.selectedKeys, function (key) {
+          $scope.keySelectionManager.selectById(key);
         });
       }
     });

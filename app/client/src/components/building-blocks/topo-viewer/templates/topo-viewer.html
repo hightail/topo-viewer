@@ -9,7 +9,10 @@
        selection-data="envCollection"
        selection-id-field="id">
   </div>
-
+  <div ht-selection-helper="keySelectionManager"
+       selection-data="keyCollection"
+       selection-id-field="id">
+  </div>
   
   <div class="drop-container">
     <accordion close-others="oneAtATime">
@@ -63,7 +66,9 @@
       <th ng-repeat="env in selectedEnvs">
         [[ env ]]
       </th>
-      <tr ng-repeat="key in filteredKeys">
+      <tr ng-repeat="key in filteredKeys"
+          ng-click="keySelectionManager.toggleSelectionById(key)"
+          ng-class="{ 'selected': keySelectionManager.isIdSelected(key) }">
         <td>
           [[ key ]]
         </td>

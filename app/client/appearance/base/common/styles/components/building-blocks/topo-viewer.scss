@@ -2,6 +2,7 @@
  * TopoViewerComponent Properties
  ************************************************/
 // Default Properties for the topo-viewer component go here
+$highlighter-color: #cfff04;
 
 /*************************************************
  * TopoViewerComponent Styles
@@ -37,5 +38,9 @@ $tdMaxWidth: 300px;
     &.default-value {
       color: blue;
     }
+  }
+
+  tr.selected {
+    background-color: $highlighter-color;
   }
 }
