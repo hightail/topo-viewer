@@ -1,7 +1,7 @@
 // Panels
 
 @mixin panel-variant($heading-text-color, $heading-bg-color) {
-  border-color: $border;
+
 
   & > .panel-heading {
     color: $heading-text-color;
@@ -9,7 +9,7 @@
     
 
     + .panel-collapse > .panel-body {
-      border-top-color: $border;
+
     }
     .badge {
       color: $heading-bg-color;
