@@ -16,25 +16,27 @@
         <div class="container">
           <accordion-group is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
             <accordion-heading>
-              Environments
+              <!--LEFT-->
+              <span class="left-header">
+                <span>Environments</span>
+                <button ng-repeat="env in selectedEnvs"
+                        ht-prevent-default
+                        type="button"
+                        class="btn btn-primary"
+                        ng-click="envSelectionManager.toggleSelectionById(env)">[[ env ]]</button>
+              </span>
+              <!--RIGHT-->
               <div class="pull-right">
                 <span class="show-all-ctrls">
                   <span ng-show="status.isFirstOpen">Hide</span>
                   <span ng-hide="status.isFirstOpen">Show All</span>
-                </span>
-                <span class="btn-group">
-                  <button ng-repeat="env in selectedEnvs"
-                          ht-prevent-default
-                          type="button"
-                          class="btn btn-primary"
-                          ng-click="envSelectionManager.toggleSelectionById(env)">[[ env ]]</button>
                 </span>
                 <form class="env-search"
                       role="search"
                       ht-prevent-default>
                   <input type="text"
                          placeholder="Search environments"
-                         ng-model="searchEnvValue"
+                         ng-model="$parent.$parent.searchEnvValue"
                          typeahead="env for env in allEnvironments | filter:$viewValue | limitTo:10"
                          typeahead-on-select="onTypeAheadEnvSelect($item, $model, $label)"
                          typeahead-template-url="envTypeAhead.html"
@@ -85,8 +87,7 @@
         </div>
       </div>
 
-      <form class="navbar-form navbar-left results-search" role="search">
-        <div class="form-group">
+      <form class="results-search pull-right" role="search">
           <input type="text"
                  placeholder="Search keys"
                  ng-model="searchKeyValue"
@@ -94,7 +95,6 @@
                  typeahead-on-select="onTypeAheadKeySelect($item, $model, $label)"
                  typeahead-template-url="keyTypeAhead.html"
                  class="form-control">
-        </div>
         <!-- <button type="submit" class="btn btn-default">Submit</button> -->
       </form>
       <table class="table header-table">
