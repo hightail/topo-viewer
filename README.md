@@ -15,7 +15,7 @@ Install dependencies
 ~/topo-viewer $ npm install; bower install;
 ```
 
-There is a grunt "server" task to install dependencies and run the application.
+There is a grunt "server" task to run the application.
 
 ```
 ~/topo-viewer $ grunt server
