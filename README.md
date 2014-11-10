@@ -30,6 +30,6 @@ This is the default task so you can also just run:
 See the Gruntfile.js for more info.
 
 #Features
-Easily select specific environments and TOPO keys to view
-Show fully resolved TOPO values (all variables will be replaced with the correct value for each environment)
-Show/hide default values
+* Easily select specific environments and TOPO keys to view
+* Show fully resolved TOPO values (all variables will be replaced with the correct value for each environment)
+* Show/hide default values
