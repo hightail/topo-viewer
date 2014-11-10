@@ -12,7 +12,7 @@ git clone https://github.com/hightail/topo-viewer.git
 
 Install dependencies
 ```
-npm install; bower install;
+~/topo-viewer $ npm install; bower install;
 ```
 
 There is a grunt "server" task to install dependencies and run the application.
