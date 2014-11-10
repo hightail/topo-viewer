@@ -1,31 +1,35 @@
-wilson-demo-app
+topo-editor
 ======
 
 #Summary
-This is a simple application to demostrate the how to setup and run a Wilson app.
+Tools to load and view TOPO's
 
-#Run the app
+#Getting started
+Clone the repo
+```
+git clone https://github.com/hightail/topo-viewer.git
+```
+
+Install dependencies
+```
+npm install; bower install;
+```
+
 There is a grunt "server" task to install dependencies and run the application.
 
 ```
-grunt server
+~/topo-viewer $ grunt server
 ```
 
 This is the default task so you can also just run:
 
 ```
-grunt
+~/topo-viewer $ grunt
 ```
 
 See the Gruntfile.js for more info.
 
-#Understanding
-The server code is located in `app/server/app.js`
-
-The client side angular app is located in `app/client/app.js`
-
-App specific Wilson configuration is located in `app/server/config/wilson-config.json`
-
-App routing is located in `app/client/routing.json`
-
-App specific tag middleware is located in `app/server/tag-middleware`
+#Features
+Easily select specific environments and TOPO keys to view
+Show fully resolved TOPO values (all variables will be replaced with the correct value for each environment)
+Show/hide default values
