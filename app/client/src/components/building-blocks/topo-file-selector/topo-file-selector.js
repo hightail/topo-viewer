@@ -22,10 +22,19 @@ angular.wilson.component('topo-file-selector', {
   controller: ['$scope', 'TopoService', function($scope, TopoService) {
     var controller = this;
 
+    function getStashLink(topoFile, treeish, raw) {
+      var link = _.str.sprintf('https://stash.corp.hightail.com/projects/TOPOS/repos/topos/browse/src/topos/%s?at=%s', topoFile, treeish);
+      if (raw) {
+        link += '&raw';
+      }
+      return link;
+    }
+
     function loadToposFromGit(topoFile, treeish) {
       TopoService.loadFromGit(topoFile, treeish).then(
         function(topos) {
           $scope.topos = topos;
+          $scope.linkToStash = getStashLink(topoFile, treeish, false);
         },
         function(error) {
           console.log('Error retrieving TOPOs', error);
@@ -73,8 +82,6 @@ angular.wilson.component('topo-file-selector', {
 //    callbacks: {}
 //  });
   }],
-  
   link: function($scope, $element, $attrs, controller) {
   }
-  
 });

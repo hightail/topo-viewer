@@ -5,6 +5,12 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    env: {
+      dev : {
+        NODE_ENV : 'development',
+        PRERENDER_SERVICE_URL: 'http://localhost:3000'
+      }
+    },
     shell: {
       installDependencies: {
         command: [
@@ -65,7 +71,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('install', ['shell:installDependencies']);
 
-  grunt.registerTask('restartServer', ['sass:dist','express:default']);
+  grunt.registerTask('restartServer', ['env:dev', 'sass:dist','express:default']);
 
   grunt.registerTask('server', ['restartServer', 'watch']);
 

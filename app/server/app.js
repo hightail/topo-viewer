@@ -13,14 +13,14 @@ _.str = require('underscore.string');
 
 //Create the express app
 var app = express();
-app.set('port', '5000');
-
-//Set up static assets
-app.use('/client', express.static(path.join(__dirname, '../client')));
+app.set('port', process.env.PORT);
 
 //Load wilson, and set up routes
 var wilsonConfigJson = require('./config/wilson-config.json');
 var wilson = Wilson(app, wilsonConfigJson);
+
+//Set up static assets
+app.use('/client', express.static(path.join(__dirname, '../client')));
 
 //attach the wilson routes under '/wilson'
 app.use(wilson.config.client.app.mountpath, wilson.router);

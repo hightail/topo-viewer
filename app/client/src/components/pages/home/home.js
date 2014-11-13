@@ -30,5 +30,4 @@ angular.wilson.component('home', {
 //      callbacks: {}
 //    });
   }]
-  
 });
