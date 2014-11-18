@@ -106,14 +106,14 @@
     </div>
   </nav>
   <div class="container content-container" ht-scroll="onScroll()">
-    <table ng-if="topos" class="table table-hover">
+    <table class="table table-hover">
       <tr ng-repeat="key in filteredKeys"
           ng-click="keySelectionManager.toggleSelectionById(key)"
           ng-class="{ 'selected': keySelectionManager.isIdSelected(key) }">
-        <td>
+        <td class="topo-key">
           [[ key ]]
         </td>
-        <td ng-repeat="env in selectedEnvs" ng-class="{ 'default-value': isDefaultValue(env, key) }">
+        <td class="topo-value" ng-repeat="env in selectedEnvs" ng-class="{ 'default-value': isDefaultValue(env, key) }">
           [[ getTopoValue(env, key) ]]
         </td>
       </tr>

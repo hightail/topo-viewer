@@ -36,7 +36,7 @@ angular.wilson.component('topo-viewer', {
       $scope.ENV_NAV_HEADER_TEXT = _.str.sprintf('Environments (%s)', $scope.selectedEnvs.join(', '));
     }
 
-    controller.watchAndPersist('selectedEnvs', []);
+    controller.watchAndPersist('selectedEnvs', ['default']);
     controller.watchAndPersist('selectedKeys', []);
     controller.watchAndPersist('showEmptyKeys', false);
     controller.watchAndPersist('showSelectedKeys', false);
@@ -49,6 +49,8 @@ angular.wilson.component('topo-viewer', {
     $scope.onScroll = function() {
       //console.log('topo-viewer:onScroll', event);
     };
+
+    controller.registerDataDependency('topos');
 
     $scope.$watch('topos', function(topos) {
       if (!_.isEmpty(topos)) {

@@ -1,14 +1,14 @@
 {
   "name": "wilson-demo-app",
   "version": "0.0.0",
-  "description": "Demo app to show how to use the Wilson framework",
+  "description": "Tools to make sense of TOPOs",
   "main": "app/server/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Justin Fiedler",
   "license": "MIT",
-  "homepage": "https://github.com/hightail/wilson",
+  "homepage": "https://github.com/hightail/topo-viewer",
   "dependencies": {
     "express": "^4.8.0",
     "gift": "^0.4.3-1",
