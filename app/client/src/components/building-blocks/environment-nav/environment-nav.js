@@ -21,7 +21,7 @@ angular.wilson.component('environment-nav', {
     groups: '=',
     selectionManager: '='
   },
-  controller: ['$scope', '$attrs', function($scope, $attrs) {
+  controller: ['$scope', '$element', function($scope, $element) {
     var controller = this;
 
 //  controller.setState({

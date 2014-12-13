@@ -168,26 +168,26 @@ angular.wilson.component('topo-viewer', {
   link: function($scope, $element, $attrs, controller) {
     // Set up edit listeners
     if ($scope.envSelectionManager) {
-      controller.autosubscribe($scope.envSelectionManager, 'selected', function (event) {
+      controller.auto.subscribe($scope.envSelectionManager, 'selected', function (event) {
         //console.log('event', event);
         var selected = _.pluck($scope.envSelectionManager.getSelectedEntries(), 'id');
         $scope.selectedEnvs = selected;
         //angular.wilson.utils.replaceArray($scope.selectedEnvs, selected);
       });
 
-      controller.autosubscribe($scope.envSelectionManager, 'deselected', function (event) {
+      controller.auto.subscribe($scope.envSelectionManager, 'deselected', function (event) {
         var selected = _.pluck($scope.envSelectionManager.getSelectedEntries(), 'id');
         $scope.selectedEnvs = selected;
         //angular.wilson.utils.replaceArray($scope.selectedEnvs, selected);
       });
 
-      controller.autosubscribe($scope.keySelectionManager, 'selected', function (event) {
+      controller.auto.subscribe($scope.keySelectionManager, 'selected', function (event) {
         //console.log('event', event);
         var selected = _.pluck($scope.keySelectionManager.getSelectedEntries(), 'id');
         $scope.selectedKeys = selected;
       });
 
-      controller.autosubscribe($scope.keySelectionManager, 'deselected', function (event) {
+      controller.auto.subscribe($scope.keySelectionManager, 'deselected', function (event) {
         var selected = _.pluck($scope.keySelectionManager.getSelectedEntries(), 'id');
         $scope.selectedKeys = selected;
       });
