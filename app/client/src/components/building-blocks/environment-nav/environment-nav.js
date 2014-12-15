@@ -24,6 +24,7 @@ angular.wilson.component('environment-nav', {
   controller: ['$scope', '$element', function($scope, $element) {
     var controller = this;
 
+    controller.registerDataDependency('groups');
 //  controller.setState({
 //    initial: '',
 //    events: [
